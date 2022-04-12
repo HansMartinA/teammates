@@ -1,76 +1,78 @@
 package teammates.ui.request;
 
-/**
- * The request of updating a student profile.
- */
 public class StudentProfileUpdateRequest extends BasicRequest {
+private String shortName;
 
-    private String shortName;
-    private String email;
-    private String institute;
-    private String nationality;
-    private String gender;
-    private String moreInfo;
-    private String existingNationality;
+private String email;
 
-    public String getEmail() {
-        return email;
-    }
+private String institute;
 
-    public String getExistingNationality() {
-        return existingNationality;
-    }
+private String nationality;
 
-    public String getGender() {
-        return gender;
-    }
+private String gender;
 
-    public String getInstitute() {
-        return institute;
-    }
+private String moreInfo;
 
-    public String getNationality() {
-        return nationality;
-    }
+private String existingNationality;
 
-    public String getMoreInfo() {
-        return moreInfo;
-    }
+public  String getEmail() {
+return email;
+}
 
-    public String getShortName() {
-        return shortName;
-    }
+public  String getExistingNationality() {
+return existingNationality;
+}
 
-    public void setInstitute(String institute) {
-        this.institute = institute;
-    }
+public  String getGender() {
+return gender;
+}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+public  String getInstitute() {
+return institute;
+}
 
-    public void setExistingNationality(String existingNationality) {
-        this.existingNationality = existingNationality;
-    }
+public  String getNationality() {
+return nationality;
+}
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+public  String getMoreInfo() {
+return moreInfo;
+}
 
-    public void setMoreInfo(String moreInfo) {
-        this.moreInfo = moreInfo;
-    }
+public  String getShortName() {
+return shortName;
+}
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
+public  void setInstitute(String institute) {
+this.institute = institute;
+}
 
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
-    }
+public  void setEmail(String email) {
+this.email = email;
+}
 
-    @Override
-    public void validate() {
-        // no specific validation needed here.
-    }
+public  void setExistingNationality(String existingNationality) {
+this.existingNationality = existingNationality;
+}
+
+public  void setGender(String gender) {
+this.gender = gender;
+}
+
+public  void setMoreInfo(String moreInfo) {
+this.moreInfo = moreInfo;
+}
+
+public  void setNationality(String nationality) {
+this.nationality = nationality;
+}
+
+public  void setShortName(String shortName) {
+this.shortName = shortName;
+}
+
+@Override
+public  void validate() {
+}
+
 }

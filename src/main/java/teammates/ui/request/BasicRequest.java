@@ -1,21 +1,13 @@
 package teammates.ui.request;
 
-/**
- * The request body of a HTTP request.
- */
 public abstract class BasicRequest {
+public abstract  void validate()throws InvalidHttpRequestBodyException ;
 
-    /**
-     * Validate the request.
-     */
-    public abstract void validate() throws InvalidHttpRequestBodyException;
+ void assertTrue(boolean condition, String message)throws InvalidHttpRequestBodyException {
+if (!condition)
+{
+throw new  InvalidHttpRequestBodyException(message);
+}
+}
 
-    /**
-     * Asserts a condition or throws {@link InvalidHttpRequestBodyException}.
-     */
-    void assertTrue(boolean condition, String message) throws InvalidHttpRequestBodyException {
-        if (!condition) {
-            throw new InvalidHttpRequestBodyException(message);
-        }
-    }
 }

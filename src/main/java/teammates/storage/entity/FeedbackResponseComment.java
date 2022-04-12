@@ -3,265 +3,210 @@ package teammates.storage.entity;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import com.googlecode.objectify.annotation.Translate;
 import com.googlecode.objectify.annotation.Unindex;
-
 import teammates.common.datatransfer.FeedbackParticipantType;
 import teammates.common.util.SanitizationHelper;
-
-/**
- * An association class that represents the association
- * Giver --> [comments about] --> FeedbackResponse.
- * Giver can be a student or an instructor or a team
- */
 @Entity
 @Index
 public class FeedbackResponseComment extends BaseEntity {
+@Id
+private transient Long feedbackResponseCommentId;
 
-    @Id
-    private transient Long feedbackResponseCommentId;
+private String courseId;
 
-    /** The foreign key to locate the Course object. */
-    private String courseId;
+private String feedbackSessionName;
 
-    /** The foreign key to locate the FeedbackSession object. */
-    private String feedbackSessionName;
+private String feedbackQuestionId;
 
-    /** The foreign key to locate the FeedbackQuestion object. */
-    private String feedbackQuestionId;
+private String giverEmail;
 
-    /**
-     * The giver of the comment.
-     *
-     * <p>It is email in case when comment giver is a student or instructor, and team name in case of team.
-     */
-    private String giverEmail;
+private FeedbackParticipantType commentGiverType;
 
-    /**
-     * Role of a comment giver.
-     *
-     * <p>Can only be INSTRUCTORS, STUDENTS or TEAMS.
-     */
-    private FeedbackParticipantType commentGiverType;
+private String feedbackResponseId;
 
-    /** The foreign key to locate the FeedbackResponse object commented on. */
-    private String feedbackResponseId;
+private String giverSection;
 
-    /** Response giver section. */
-    private String giverSection;
+private String receiverSection;
 
-    /** Response receiver section. */
-    private String receiverSection;
+private List<FeedbackParticipantType> showCommentTo = new  ArrayList<>();
 
-    private List<FeedbackParticipantType> showCommentTo = new ArrayList<>();
+private List<FeedbackParticipantType> showGiverNameTo = new  ArrayList<>();
 
-    private List<FeedbackParticipantType> showGiverNameTo = new ArrayList<>();
+private Boolean isVisibilityFollowingFeedbackQuestion;
 
-    private Boolean isVisibilityFollowingFeedbackQuestion;
+private boolean isCommentFromFeedbackParticipant;
 
-    /** True if the comment is given by a feedback participant. */
-    private boolean isCommentFromFeedbackParticipant;
+@Translate(InstantTranslatorFactory.class)
+private Instant createdAt;
 
-    /** The creation time of this comment. */
-    @Translate(InstantTranslatorFactory.class)
-    private Instant createdAt;
+@Unindex
+private String commentText;
 
-    /** The comment from giver about the feedback response. */
-    @Unindex
-    private String commentText;
+private String lastEditorEmail;
 
-    /** The e-mail of the account that last edited the comment. */
-    private String lastEditorEmail;
+@Translate(InstantTranslatorFactory.class)
+private Instant lastEditedAt;
 
-    /** The time in which the comment is last edited. */
-    @Translate(InstantTranslatorFactory.class)
-    private Instant lastEditedAt;
+@SuppressWarnings("unused")
+private  FeedbackResponseComment(){
+}
+public  FeedbackResponseComment(String courseId, String feedbackSessionName, String feedbackQuestionId, String giverEmail, FeedbackParticipantType commentGiverType, String feedbackResponseId, Instant createdAt, String commentText, String giverSection, String receiverSection, List<FeedbackParticipantType> showCommentTo, List<FeedbackParticipantType> showGiverNameTo, String lastEditorEmail, Instant lastEditedAt, boolean isCommentFromFeedbackParticipant, boolean isVisibilityFollowingFeedbackQuestion){
+this.feedbackResponseCommentId = null;
+this.courseId = courseId;
+this.feedbackSessionName = feedbackSessionName;
+this.feedbackQuestionId = feedbackQuestionId;
+this.giverEmail = giverEmail;
+this.commentGiverType = commentGiverType;
+this.feedbackResponseId = feedbackResponseId;
+this.createdAt = createdAt;
+this.commentText = SanitizationHelper.sanitizeForRichText(commentText);
+this.giverSection = giverSection;
+this.receiverSection = receiverSection;
+this.showCommentTo = showCommentTo == null ? new  ArrayList<>() : showCommentTo;
+this.showGiverNameTo = showGiverNameTo == null ? new  ArrayList<>() : showGiverNameTo;
+this.isVisibilityFollowingFeedbackQuestion = isVisibilityFollowingFeedbackQuestion;
+this.lastEditorEmail = lastEditorEmail == null ? giverEmail : lastEditorEmail;
+this.lastEditedAt = lastEditedAt == null ? this.createdAt : lastEditedAt;
+this.isCommentFromFeedbackParticipant = isCommentFromFeedbackParticipant;
+}
+public  Long getFeedbackResponseCommentId() {
+return feedbackResponseCommentId;
+}
 
-    @SuppressWarnings("unused")
-    private FeedbackResponseComment() {
-        // required by Objectify
-    }
+public  String getCourseId() {
+return courseId;
+}
 
-    public FeedbackResponseComment(String courseId, String feedbackSessionName, String feedbackQuestionId,
-            String giverEmail, FeedbackParticipantType commentGiverType, String feedbackResponseId, Instant createdAt,
-            String commentText, String giverSection, String receiverSection, List<FeedbackParticipantType> showCommentTo,
-            List<FeedbackParticipantType> showGiverNameTo, String lastEditorEmail, Instant lastEditedAt,
-            boolean isCommentFromFeedbackParticipant, boolean isVisibilityFollowingFeedbackQuestion) {
-        this.feedbackResponseCommentId = null; // Auto-generated by Cloud Datastore
-        this.courseId = courseId;
-        this.feedbackSessionName = feedbackSessionName;
-        this.feedbackQuestionId = feedbackQuestionId;
-        this.giverEmail = giverEmail;
-        this.commentGiverType = commentGiverType;
-        this.feedbackResponseId = feedbackResponseId;
-        this.createdAt = createdAt;
-        this.commentText = SanitizationHelper.sanitizeForRichText(commentText);
-        this.giverSection = giverSection;
-        this.receiverSection = receiverSection;
-        this.showCommentTo = showCommentTo == null ? new ArrayList<>() : showCommentTo;
-        this.showGiverNameTo = showGiverNameTo == null ? new ArrayList<>() : showGiverNameTo;
-        this.isVisibilityFollowingFeedbackQuestion = isVisibilityFollowingFeedbackQuestion;
-        this.lastEditorEmail = lastEditorEmail == null ? giverEmail : lastEditorEmail;
-        this.lastEditedAt = lastEditedAt == null ? this.createdAt : lastEditedAt;
-        this.isCommentFromFeedbackParticipant = isCommentFromFeedbackParticipant;
-    }
+public  void setCourseId(String courseId) {
+this.courseId = courseId;
+}
 
-    /**
-     * Use only if the comment has already persisted in the database and has its ID generated.
-     * @return the feedbackResponseCommentId
-     */
-    public Long getFeedbackResponseCommentId() {
-        return feedbackResponseCommentId;
-    }
+public  String getFeedbackSessionName() {
+return feedbackSessionName;
+}
 
-    public String getCourseId() {
-        return courseId;
-    }
+public  void setFeedbackSessionName(String feedbackSessionName) {
+this.feedbackSessionName = feedbackSessionName;
+}
 
-    public void setCourseId(String courseId) {
-        this.courseId = courseId;
-    }
+public  String getFeedbackQuestionId() {
+return feedbackQuestionId;
+}
 
-    public String getFeedbackSessionName() {
-        return feedbackSessionName;
-    }
+public  void setFeedbackQuestionId(String feedbackQuestionId) {
+this.feedbackQuestionId = feedbackQuestionId;
+}
 
-    public void setFeedbackSessionName(String feedbackSessionName) {
-        this.feedbackSessionName = feedbackSessionName;
-    }
+public  boolean getIsVisibilityFollowingFeedbackQuestion() {
+if (this.isVisibilityFollowingFeedbackQuestion == null)
+{
+return true;
+}
+return this.isVisibilityFollowingFeedbackQuestion;
+}
 
-    public String getFeedbackQuestionId() {
-        return feedbackQuestionId;
-    }
+public  void setIsVisibilityFollowingFeedbackQuestion(Boolean isVisibilityFollowingFeedbackQuestion) {
+this.isVisibilityFollowingFeedbackQuestion = isVisibilityFollowingFeedbackQuestion;
+}
 
-    public void setFeedbackQuestionId(String feedbackQuestionId) {
-        this.feedbackQuestionId = feedbackQuestionId;
-    }
+public  String getGiverEmail() {
+return giverEmail;
+}
 
-    /**
-     * Gets whether the visibility setting of the comment follow the corresponding question.
-     */
-    public boolean getIsVisibilityFollowingFeedbackQuestion() {
-        if (this.isVisibilityFollowingFeedbackQuestion == null) {
-            // true as the default value if the field is null
-            return true;
-        }
-        return this.isVisibilityFollowingFeedbackQuestion;
-    }
+public  void setGiverEmail(String giverEmail) {
+this.giverEmail = giverEmail;
+}
 
-    public void setIsVisibilityFollowingFeedbackQuestion(Boolean isVisibilityFollowingFeedbackQuestion) {
-        this.isVisibilityFollowingFeedbackQuestion = isVisibilityFollowingFeedbackQuestion;
-    }
+public  FeedbackParticipantType getCommentGiverType() {
+return commentGiverType;
+}
 
-    public String getGiverEmail() {
-        return giverEmail;
-    }
+public  void setCommentGiverType(FeedbackParticipantType commentGiverType) {
+this.commentGiverType = commentGiverType;
+}
 
-    /**
-     * Sets the giver email of the response comment.
-     *
-     * @param giverEmail the giverEmail to set.
-     *         This is the email used by the user in the course, not the one associated with the user's google account.
-     */
-    public void setGiverEmail(String giverEmail) {
-        this.giverEmail = giverEmail;
-    }
+public  void setShowCommentTo(List<FeedbackParticipantType> showCommentTo) {
+this.showCommentTo = showCommentTo;
+}
 
-    /**
-     * Gets the giver type of the comment.
-     */
-    public FeedbackParticipantType getCommentGiverType() {
-        return commentGiverType;
-    }
+public  List<FeedbackParticipantType> getShowCommentTo() {
+return showCommentTo;
+}
 
-    /**
-     * Sets the giver type of the comment.
-     */
-    public void setCommentGiverType(FeedbackParticipantType commentGiverType) {
-        this.commentGiverType = commentGiverType;
-    }
+public  void setShowGiverNameTo(List<FeedbackParticipantType> showGiverNameTo) {
+this.showGiverNameTo = showGiverNameTo;
+}
 
-    public void setShowCommentTo(List<FeedbackParticipantType> showCommentTo) {
-        this.showCommentTo = showCommentTo;
-    }
+public  List<FeedbackParticipantType> getShowGiverNameTo() {
+return showGiverNameTo;
+}
 
-    public List<FeedbackParticipantType> getShowCommentTo() {
-        return showCommentTo;
-    }
+public  String getFeedbackResponseId() {
+return feedbackResponseId;
+}
 
-    public void setShowGiverNameTo(List<FeedbackParticipantType> showGiverNameTo) {
-        this.showGiverNameTo = showGiverNameTo;
-    }
+public  void setFeedbackResponseId(String feedbackResponseId) {
+this.feedbackResponseId = feedbackResponseId;
+}
 
-    public List<FeedbackParticipantType> getShowGiverNameTo() {
-        return showGiverNameTo;
-    }
+public  Instant getCreatedAt() {
+return createdAt;
+}
 
-    public String getFeedbackResponseId() {
-        return feedbackResponseId;
-    }
+public  void setCreatedAt(Instant createdAt) {
+this.createdAt = createdAt;
+}
 
-    public void setFeedbackResponseId(String feedbackResponseId) {
-        this.feedbackResponseId = feedbackResponseId;
-    }
+public  String getCommentText() {
+return commentText;
+}
 
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
+public  void setCommentText(String commentText) {
+this.commentText = commentText;
+}
 
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
+public  String getGiverSection() {
+return giverSection;
+}
 
-    public String getCommentText() {
-        return commentText;
-    }
+public  void setGiverSection(String giverSection) {
+this.giverSection = giverSection;
+}
 
-    public void setCommentText(String commentText) {
-        this.commentText = commentText;
-    }
+public  String getReceiverSection() {
+return receiverSection;
+}
 
-    public String getGiverSection() {
-        return giverSection;
-    }
+public  void setReceiverSection(String receiverSection) {
+this.receiverSection = receiverSection;
+}
 
-    public void setGiverSection(String giverSection) {
-        this.giverSection = giverSection;
-    }
+public  void setLastEditorEmail(String lastEditorEmail) {
+this.lastEditorEmail = lastEditorEmail;
+}
 
-    public String getReceiverSection() {
-        return receiverSection;
-    }
+public  String getLastEditorEmail() {
+return this.lastEditorEmail;
+}
 
-    public void setReceiverSection(String receiverSection) {
-        this.receiverSection = receiverSection;
-    }
+public  Instant getLastEditedAt() {
+return this.lastEditedAt;
+}
 
-    public void setLastEditorEmail(String lastEditorEmail) {
-        this.lastEditorEmail = lastEditorEmail;
-    }
+public  void setLastEditedAt(Instant lastEditedAt) {
+this.lastEditedAt = lastEditedAt;
+}
 
-    public String getLastEditorEmail() {
-        return this.lastEditorEmail;
-    }
+public  boolean getIsCommentFromFeedbackParticipant() {
+return this.isCommentFromFeedbackParticipant;
+}
 
-    public Instant getLastEditedAt() {
-        return this.lastEditedAt;
-    }
+public  void setIsCommentFromFeedbackParticipant(boolean isCommentFromFeedbackParticipant) {
+this.isCommentFromFeedbackParticipant = isCommentFromFeedbackParticipant;
+}
 
-    public void setLastEditedAt(Instant lastEditedAt) {
-        this.lastEditedAt = lastEditedAt;
-    }
-
-    public boolean getIsCommentFromFeedbackParticipant() {
-        return this.isCommentFromFeedbackParticipant;
-    }
-
-    public void setIsCommentFromFeedbackParticipant(boolean isCommentFromFeedbackParticipant) {
-        this.isCommentFromFeedbackParticipant = isCommentFromFeedbackParticipant;
-    }
 }

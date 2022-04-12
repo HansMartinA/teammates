@@ -2,34 +2,41 @@ package teammates.common.util;
 
 import java.io.InputStream;
 import java.util.Scanner;
-
-/**
- * Holds file-related functions.
- */
 public final class FileHelper {
+private  FileHelper(){
+}
+public static  InputStream getResourceAsStream(String file) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("file", file);
+threadMonitoringController.enterService("_s-ggsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_s-i88LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+InputStream longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681749009295065020968435 = Thread.currentThread().getContextClassLoader().getResourceAsStream(file);
+threadMonitoringController.exitInternalAction("_s-i88LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681749009295065020968435;
+}
+finally {
+threadMonitoringController.exitService("_s-ggsLngEeyIw-dB1KCaVA");
+}
+}
 
-    private FileHelper() {
-        // utility class
-    }
-
-    /**
-     * Reads the contents of a file in the {@code resources} folder
-     * as an {@link InputStream}.
-     * @param file The file name, which must be in the {@code resources} folder.
-     */
-    public static InputStream getResourceAsStream(String file) {
-        return Thread.currentThread().getContextClassLoader().getResourceAsStream(file);
-    }
-
-    /**
-     * Reads the contents of a file in the {@code resources} folder.
-     * @param file The file name, which must be in the {@code resources} folder.
-     */
-    public static String readResourceFile(String file) {
-
-        try (Scanner scanner = new Scanner(getResourceAsStream(file), Const.ENCODING)) {
-            return scanner.useDelimiter("\\Z").next();
-        }
-    }
+public static  String readResourceFile(String file) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("file", file);
+threadMonitoringController.enterService("_tIN2ULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_tIPrgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+try(Scanner scanner = new  Scanner(getResourceAsStream(file), Const.ENCODING)) {
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681831009931364592947601 = scanner.useDelimiter("\\Z").next();
+threadMonitoringController.exitInternalAction("_tIPrgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681831009931364592947601;
+}
+}
+finally {
+threadMonitoringController.exitService("_tIN2ULngEeyIw-dB1KCaVA");
+}
+}
 
 }

@@ -1,31 +1,30 @@
 package teammates.ui.request;
 
-/**
- * The basic request of modifying a course.
- */
 public class CourseBasicRequest extends BasicRequest {
-    private String courseName;
-    private String timeZone;
+private String courseName;
 
-    @Override
-    public void validate() throws InvalidHttpRequestBodyException {
-        assertTrue(courseName != null, "Course name should not be null");
-        assertTrue(timeZone != null, "Time zone should not be null");
-    }
+private String timeZone;
 
-    public String getCourseName() {
-        return courseName;
-    }
+@Override
+public  void validate()throws InvalidHttpRequestBodyException {
+assertTrue(courseName != null, "Course name should not be null");
+assertTrue(timeZone != null, "Time zone should not be null");
+}
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
+public  String getCourseName() {
+return courseName;
+}
 
-    public String getTimeZone() {
-        return timeZone;
-    }
+public  void setCourseName(String courseName) {
+this.courseName = courseName;
+}
 
-    public void setTimeZone(String timeZone) {
-        this.timeZone = timeZone;
-    }
+public  String getTimeZone() {
+return timeZone;
+}
+
+public  void setTimeZone(String timeZone) {
+this.timeZone = timeZone;
+}
+
 }

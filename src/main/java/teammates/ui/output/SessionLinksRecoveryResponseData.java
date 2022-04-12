@@ -1,22 +1,20 @@
 package teammates.ui.output;
 
-/**
- * The output format for session links recovery request.
- */
 public class SessionLinksRecoveryResponseData extends ApiOutput {
-    private final boolean isEmailSent;
-    private final String message;
+private final boolean isEmailSent;
 
-    public SessionLinksRecoveryResponseData(boolean isEmailSent, String message) {
-        this.isEmailSent = isEmailSent;
-        this.message = message;
-    }
+private final String message;
 
-    public boolean isEmailSent() {
-        return this.isEmailSent;
-    }
+public  SessionLinksRecoveryResponseData(boolean isEmailSent, String message){
+this.isEmailSent = isEmailSent;
+this.message = message;
+}
+public  boolean isEmailSent() {
+return this.isEmailSent;
+}
 
-    public String getMessage() {
-        return message;
-    }
+public  String getMessage() {
+return message;
+}
+
 }

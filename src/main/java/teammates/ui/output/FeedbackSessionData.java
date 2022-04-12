@@ -1,266 +1,277 @@
 package teammates.ui.output;
 
 import java.time.Instant;
-
 import javax.annotation.Nullable;
-
 import teammates.common.datatransfer.InstructorPermissionSet;
 import teammates.common.datatransfer.attributes.FeedbackSessionAttributes;
 import teammates.common.util.Const;
 import teammates.common.util.TimeHelper;
-
-/**
- * The API output format of {@link FeedbackSessionAttributes}.
- */
 public class FeedbackSessionData extends ApiOutput {
-    private final String courseId;
-    private final String timeZone;
-    private final String feedbackSessionName;
-    private final String instructions;
+private final String courseId;
 
-    private final Long submissionStartTimestamp;
-    private final Long submissionEndTimestamp;
-    @Nullable
-    private Long sessionVisibleFromTimestamp;
-    @Nullable
-    private Long resultVisibleFromTimestamp;
-    private Long gracePeriod;
+private final String timeZone;
 
-    private SessionVisibleSetting sessionVisibleSetting;
-    @Nullable
-    private Long customSessionVisibleTimestamp;
+private final String feedbackSessionName;
 
-    private ResponseVisibleSetting responseVisibleSetting;
-    @Nullable
-    private Long customResponseVisibleTimestamp;
+private final String instructions;
 
-    private FeedbackSessionSubmissionStatus submissionStatus;
-    private FeedbackSessionPublishStatus publishStatus;
+private final Long submissionStartTimestamp;
 
-    private Boolean isClosingEmailEnabled;
-    private Boolean isPublishedEmailEnabled;
+private final Long submissionEndTimestamp;
 
-    private long createdAtTimestamp;
-    @Nullable
-    private final Long deletedAtTimestamp;
-    @Nullable
-    private InstructorPermissionSet privileges;
+@Nullable
+private Long sessionVisibleFromTimestamp;
 
-    public FeedbackSessionData(FeedbackSessionAttributes feedbackSessionAttributes) {
-        String timeZone = feedbackSessionAttributes.getTimeZone();
-        this.courseId = feedbackSessionAttributes.getCourseId();
-        this.timeZone = timeZone;
-        this.feedbackSessionName = feedbackSessionAttributes.getFeedbackSessionName();
-        this.instructions = feedbackSessionAttributes.getInstructions();
-        this.submissionStartTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(
-                feedbackSessionAttributes.getStartTime(), timeZone, true).toEpochMilli();
-        this.submissionEndTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(
-                feedbackSessionAttributes.getEndTime(), timeZone, true).toEpochMilli();
-        this.gracePeriod = feedbackSessionAttributes.getGracePeriodMinutes();
+@Nullable
+private Long resultVisibleFromTimestamp;
 
-        Instant sessionVisibleTime = feedbackSessionAttributes.getSessionVisibleFromTime();
-        this.sessionVisibleFromTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(
-                sessionVisibleTime, timeZone, true).toEpochMilli();
-        if (sessionVisibleTime.equals(Const.TIME_REPRESENTS_FOLLOW_OPENING)) {
-            this.sessionVisibleSetting = SessionVisibleSetting.AT_OPEN;
-        } else {
-            this.sessionVisibleSetting = SessionVisibleSetting.CUSTOM;
-            this.customSessionVisibleTimestamp = this.sessionVisibleFromTimestamp;
-        }
+private Long gracePeriod;
 
-        Instant responseVisibleTime = feedbackSessionAttributes.getResultsVisibleFromTime();
-        this.resultVisibleFromTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(
-                responseVisibleTime, timeZone, true).toEpochMilli();
-        if (responseVisibleTime.equals(Const.TIME_REPRESENTS_FOLLOW_VISIBLE)) {
-            this.responseVisibleSetting = ResponseVisibleSetting.AT_VISIBLE;
-        } else if (responseVisibleTime.equals(Const.TIME_REPRESENTS_LATER)) {
-            this.responseVisibleSetting = ResponseVisibleSetting.LATER;
-        } else {
-            this.responseVisibleSetting = ResponseVisibleSetting.CUSTOM;
-            this.customResponseVisibleTimestamp = this.resultVisibleFromTimestamp;
-        }
+private SessionVisibleSetting sessionVisibleSetting;
 
-        if (!feedbackSessionAttributes.isVisible()) {
-            this.submissionStatus = FeedbackSessionSubmissionStatus.NOT_VISIBLE;
-        }
-        if (feedbackSessionAttributes.isVisible() && !feedbackSessionAttributes.isOpened()) {
-            this.submissionStatus = FeedbackSessionSubmissionStatus.VISIBLE_NOT_OPEN;
-        }
-        if (feedbackSessionAttributes.isOpened()) {
-            this.submissionStatus = FeedbackSessionSubmissionStatus.OPEN;
-        }
-        if (feedbackSessionAttributes.isClosed()) {
-            this.submissionStatus = FeedbackSessionSubmissionStatus.CLOSED;
-        }
-        if (feedbackSessionAttributes.isInGracePeriod()) {
-            this.submissionStatus = FeedbackSessionSubmissionStatus.GRACE_PERIOD;
-        }
+@Nullable
+private Long customSessionVisibleTimestamp;
 
-        if (feedbackSessionAttributes.isPublished()) {
-            this.publishStatus = FeedbackSessionPublishStatus.PUBLISHED;
-        } else {
-            this.publishStatus = FeedbackSessionPublishStatus.NOT_PUBLISHED;
-        }
+private ResponseVisibleSetting responseVisibleSetting;
 
-        this.isClosingEmailEnabled = feedbackSessionAttributes.isClosingEmailEnabled();
-        this.isPublishedEmailEnabled = feedbackSessionAttributes.isPublishedEmailEnabled();
+@Nullable
+private Long customResponseVisibleTimestamp;
 
-        this.createdAtTimestamp = feedbackSessionAttributes.getCreatedTime().toEpochMilli();
-        if (feedbackSessionAttributes.getDeletedTime() == null) {
-            this.deletedAtTimestamp = null;
-        } else {
-            this.deletedAtTimestamp = feedbackSessionAttributes.getDeletedTime().toEpochMilli();
-        }
-    }
+private FeedbackSessionSubmissionStatus submissionStatus;
 
-    public String getCourseId() {
-        return courseId;
-    }
+private FeedbackSessionPublishStatus publishStatus;
 
-    public String getTimeZone() {
-        return timeZone;
-    }
+private Boolean isClosingEmailEnabled;
 
-    public String getFeedbackSessionName() {
-        return feedbackSessionName;
-    }
+private Boolean isPublishedEmailEnabled;
 
-    public String getInstructions() {
-        return instructions;
-    }
+private long createdAtTimestamp;
 
-    public long getSubmissionStartTimestamp() {
-        return submissionStartTimestamp;
-    }
+@Nullable
+private final Long deletedAtTimestamp;
 
-    public long getSubmissionEndTimestamp() {
-        return submissionEndTimestamp;
-    }
+@Nullable
+private InstructorPermissionSet privileges;
 
-    public Long getSessionVisibleFromTimestamp() {
-        return sessionVisibleFromTimestamp;
-    }
+public  FeedbackSessionData(FeedbackSessionAttributes feedbackSessionAttributes){
+String timeZone = feedbackSessionAttributes.getTimeZone();
+this.courseId = feedbackSessionAttributes.getCourseId();
+this.timeZone = timeZone;
+this.feedbackSessionName = feedbackSessionAttributes.getFeedbackSessionName();
+this.instructions = feedbackSessionAttributes.getInstructions();
+this.submissionStartTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(feedbackSessionAttributes.getStartTime(), timeZone, true).toEpochMilli();
+this.submissionEndTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(feedbackSessionAttributes.getEndTime(), timeZone, true).toEpochMilli();
+this.gracePeriod = feedbackSessionAttributes.getGracePeriodMinutes();
+Instant sessionVisibleTime = feedbackSessionAttributes.getSessionVisibleFromTime();
+this.sessionVisibleFromTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(sessionVisibleTime, timeZone, true).toEpochMilli();
+if (sessionVisibleTime.equals(Const.TIME_REPRESENTS_FOLLOW_OPENING))
+{
+this.sessionVisibleSetting = SessionVisibleSetting.AT_OPEN;
+}
+else
+{
+this.sessionVisibleSetting = SessionVisibleSetting.CUSTOM;
+this.customSessionVisibleTimestamp = this.sessionVisibleFromTimestamp;
+}
+Instant responseVisibleTime = feedbackSessionAttributes.getResultsVisibleFromTime();
+this.resultVisibleFromTimestamp = TimeHelper.getMidnightAdjustedInstantBasedOnZone(responseVisibleTime, timeZone, true).toEpochMilli();
+if (responseVisibleTime.equals(Const.TIME_REPRESENTS_FOLLOW_VISIBLE))
+{
+this.responseVisibleSetting = ResponseVisibleSetting.AT_VISIBLE;
+}
+else
+if (responseVisibleTime.equals(Const.TIME_REPRESENTS_LATER))
+{
+this.responseVisibleSetting = ResponseVisibleSetting.LATER;
+}
+else
+{
+this.responseVisibleSetting = ResponseVisibleSetting.CUSTOM;
+this.customResponseVisibleTimestamp = this.resultVisibleFromTimestamp;
+}
+if (!feedbackSessionAttributes.isVisible())
+{
+this.submissionStatus = FeedbackSessionSubmissionStatus.NOT_VISIBLE;
+}
+if (feedbackSessionAttributes.isVisible() && !feedbackSessionAttributes.isOpened())
+{
+this.submissionStatus = FeedbackSessionSubmissionStatus.VISIBLE_NOT_OPEN;
+}
+if (feedbackSessionAttributes.isOpened())
+{
+this.submissionStatus = FeedbackSessionSubmissionStatus.OPEN;
+}
+if (feedbackSessionAttributes.isClosed())
+{
+this.submissionStatus = FeedbackSessionSubmissionStatus.CLOSED;
+}
+if (feedbackSessionAttributes.isInGracePeriod())
+{
+this.submissionStatus = FeedbackSessionSubmissionStatus.GRACE_PERIOD;
+}
+if (feedbackSessionAttributes.isPublished())
+{
+this.publishStatus = FeedbackSessionPublishStatus.PUBLISHED;
+}
+else
+{
+this.publishStatus = FeedbackSessionPublishStatus.NOT_PUBLISHED;
+}
+this.isClosingEmailEnabled = feedbackSessionAttributes.isClosingEmailEnabled();
+this.isPublishedEmailEnabled = feedbackSessionAttributes.isPublishedEmailEnabled();
+this.createdAtTimestamp = feedbackSessionAttributes.getCreatedTime().toEpochMilli();
+if (feedbackSessionAttributes.getDeletedTime() == null)
+{
+this.deletedAtTimestamp = null;
+}
+else
+{
+this.deletedAtTimestamp = feedbackSessionAttributes.getDeletedTime().toEpochMilli();
+}
+}
+public  String getCourseId() {
+return courseId;
+}
 
-    public Long getResultVisibleFromTimestamp() {
-        return resultVisibleFromTimestamp;
-    }
+public  String getTimeZone() {
+return timeZone;
+}
 
-    public Long getGracePeriod() {
-        return gracePeriod;
-    }
+public  String getFeedbackSessionName() {
+return feedbackSessionName;
+}
 
-    public SessionVisibleSetting getSessionVisibleSetting() {
-        return sessionVisibleSetting;
-    }
+public  String getInstructions() {
+return instructions;
+}
 
-    public Long getCustomSessionVisibleTimestamp() {
-        return customSessionVisibleTimestamp;
-    }
+public  long getSubmissionStartTimestamp() {
+return submissionStartTimestamp;
+}
 
-    public ResponseVisibleSetting getResponseVisibleSetting() {
-        return responseVisibleSetting;
-    }
+public  long getSubmissionEndTimestamp() {
+return submissionEndTimestamp;
+}
 
-    public Long getCustomResponseVisibleTimestamp() {
-        return customResponseVisibleTimestamp;
-    }
+public  Long getSessionVisibleFromTimestamp() {
+return sessionVisibleFromTimestamp;
+}
 
-    public FeedbackSessionSubmissionStatus getSubmissionStatus() {
-        return submissionStatus;
-    }
+public  Long getResultVisibleFromTimestamp() {
+return resultVisibleFromTimestamp;
+}
 
-    public FeedbackSessionPublishStatus getPublishStatus() {
-        return publishStatus;
-    }
+public  Long getGracePeriod() {
+return gracePeriod;
+}
 
-    public Boolean getIsClosingEmailEnabled() {
-        return isClosingEmailEnabled;
-    }
+public  SessionVisibleSetting getSessionVisibleSetting() {
+return sessionVisibleSetting;
+}
 
-    public Boolean getIsPublishedEmailEnabled() {
-        return isPublishedEmailEnabled;
-    }
+public  Long getCustomSessionVisibleTimestamp() {
+return customSessionVisibleTimestamp;
+}
 
-    public void setSessionVisibleFromTimestamp(Long sessionVisibleFromTimestamp) {
-        this.sessionVisibleFromTimestamp = sessionVisibleFromTimestamp;
-    }
+public  ResponseVisibleSetting getResponseVisibleSetting() {
+return responseVisibleSetting;
+}
 
-    public void setResultVisibleFromTimestamp(Long resultVisibleFromTimestamp) {
-        this.resultVisibleFromTimestamp = resultVisibleFromTimestamp;
-    }
+public  Long getCustomResponseVisibleTimestamp() {
+return customResponseVisibleTimestamp;
+}
 
-    public void setGracePeriod(Long gracePeriod) {
-        this.gracePeriod = gracePeriod;
-    }
+public  FeedbackSessionSubmissionStatus getSubmissionStatus() {
+return submissionStatus;
+}
 
-    public void setSessionVisibleSetting(SessionVisibleSetting sessionVisibleSetting) {
-        this.sessionVisibleSetting = sessionVisibleSetting;
-    }
+public  FeedbackSessionPublishStatus getPublishStatus() {
+return publishStatus;
+}
 
-    public void setCustomSessionVisibleTimestamp(Long customSessionVisibleTimestamp) {
-        this.customSessionVisibleTimestamp = customSessionVisibleTimestamp;
-    }
+public  Boolean getIsClosingEmailEnabled() {
+return isClosingEmailEnabled;
+}
 
-    public void setResponseVisibleSetting(ResponseVisibleSetting responseVisibleSetting) {
-        this.responseVisibleSetting = responseVisibleSetting;
-    }
+public  Boolean getIsPublishedEmailEnabled() {
+return isPublishedEmailEnabled;
+}
 
-    public void setCustomResponseVisibleTimestamp(Long customResponseVisibleTimestamp) {
-        this.customResponseVisibleTimestamp = customResponseVisibleTimestamp;
-    }
+public  void setSessionVisibleFromTimestamp(Long sessionVisibleFromTimestamp) {
+this.sessionVisibleFromTimestamp = sessionVisibleFromTimestamp;
+}
 
-    public void setPublishStatus(FeedbackSessionPublishStatus publishStatus) {
-        this.publishStatus = publishStatus;
-    }
+public  void setResultVisibleFromTimestamp(Long resultVisibleFromTimestamp) {
+this.resultVisibleFromTimestamp = resultVisibleFromTimestamp;
+}
 
-    public void setClosingEmailEnabled(Boolean closingEmailEnabled) {
-        isClosingEmailEnabled = closingEmailEnabled;
-    }
+public  void setGracePeriod(Long gracePeriod) {
+this.gracePeriod = gracePeriod;
+}
 
-    public void setPublishedEmailEnabled(Boolean publishedEmailEnabled) {
-        isPublishedEmailEnabled = publishedEmailEnabled;
-    }
+public  void setSessionVisibleSetting(SessionVisibleSetting sessionVisibleSetting) {
+this.sessionVisibleSetting = sessionVisibleSetting;
+}
 
-    public long getCreatedAtTimestamp() {
-        return createdAtTimestamp;
-    }
+public  void setCustomSessionVisibleTimestamp(Long customSessionVisibleTimestamp) {
+this.customSessionVisibleTimestamp = customSessionVisibleTimestamp;
+}
 
-    public void setCreatedAtTimestamp(long timestamp) {
-        createdAtTimestamp = timestamp;
-    }
+public  void setResponseVisibleSetting(ResponseVisibleSetting responseVisibleSetting) {
+this.responseVisibleSetting = responseVisibleSetting;
+}
 
-    public Long getDeletedAtTimestamp() {
-        return deletedAtTimestamp;
-    }
+public  void setCustomResponseVisibleTimestamp(Long customResponseVisibleTimestamp) {
+this.customResponseVisibleTimestamp = customResponseVisibleTimestamp;
+}
 
-    public InstructorPermissionSet getPrivileges() {
-        return privileges;
-    }
+public  void setPublishStatus(FeedbackSessionPublishStatus publishStatus) {
+this.publishStatus = publishStatus;
+}
 
-    public void setPrivileges(InstructorPermissionSet privileges) {
-        this.privileges = privileges;
-    }
+public  void setClosingEmailEnabled(Boolean closingEmailEnabled) {
+isClosingEmailEnabled = closingEmailEnabled;
+}
 
-    /**
-     * Hides some attributes to student.
-     */
-    public void hideInformationForStudent() {
-        hideInformationForInstructor();
-        setSessionVisibleFromTimestamp(null);
-        setResultVisibleFromTimestamp(null);
-        setSessionVisibleSetting(null);
-        setCustomSessionVisibleTimestamp(null);
-        setResponseVisibleSetting(null);
-        setCustomResponseVisibleTimestamp(null);
-    }
+public  void setPublishedEmailEnabled(Boolean publishedEmailEnabled) {
+isPublishedEmailEnabled = publishedEmailEnabled;
+}
 
-    /**
-     * Hides some attributes to instructor without appropriate privilege.
-     */
-    public void hideInformationForInstructor() {
-        setClosingEmailEnabled(null);
-        setPublishedEmailEnabled(null);
-        setGracePeriod(null);
-        setCreatedAtTimestamp(0);
-    }
+public  long getCreatedAtTimestamp() {
+return createdAtTimestamp;
+}
+
+public  void setCreatedAtTimestamp(long timestamp) {
+createdAtTimestamp = timestamp;
+}
+
+public  Long getDeletedAtTimestamp() {
+return deletedAtTimestamp;
+}
+
+public  InstructorPermissionSet getPrivileges() {
+return privileges;
+}
+
+public  void setPrivileges(InstructorPermissionSet privileges) {
+this.privileges = privileges;
+}
+
+public  void hideInformationForStudent() {
+hideInformationForInstructor();
+setSessionVisibleFromTimestamp(null);
+setResultVisibleFromTimestamp(null);
+setSessionVisibleSetting(null);
+setCustomSessionVisibleTimestamp(null);
+setResponseVisibleSetting(null);
+setCustomResponseVisibleTimestamp(null);
+}
+
+public  void hideInformationForInstructor() {
+setClosingEmailEnabled(null);
+setPublishedEmailEnabled(null);
+setGracePeriod(null);
+setCreatedAtTimestamp(0);
+}
+
 }

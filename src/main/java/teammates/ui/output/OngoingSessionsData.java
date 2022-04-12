@@ -2,64 +2,65 @@ package teammates.ui.output;
 
 import java.util.List;
 import java.util.Map;
-
-/**
- * The API output format for OngoingSessions.
- */
 public class OngoingSessionsData extends ApiOutput {
+private int totalOngoingSessions;
 
-    private int totalOngoingSessions;
-    private int totalOpenSessions;
-    private int totalClosedSessions;
-    private int totalAwaitingSessions;
-    private long totalInstitutes;
-    private Map<String, List<OngoingSession>> sessions;
+private int totalOpenSessions;
 
-    public int getTotalOngoingSessions() {
-        return totalOngoingSessions;
-    }
+private int totalClosedSessions;
 
-    public int getTotalOpenSessions() {
-        return totalOpenSessions;
-    }
+private int totalAwaitingSessions;
 
-    public int getTotalClosedSessions() {
-        return totalClosedSessions;
-    }
+private long totalInstitutes;
 
-    public int getTotalAwaitingSessions() {
-        return totalAwaitingSessions;
-    }
+private Map<String, List<OngoingSession>> sessions;
 
-    public long getTotalInstitutes() {
-        return totalInstitutes;
-    }
+public  int getTotalOngoingSessions() {
+return totalOngoingSessions;
+}
 
-    public Map<String, List<OngoingSession>> getSessions() {
-        return sessions;
-    }
+public  int getTotalOpenSessions() {
+return totalOpenSessions;
+}
 
-    public void setTotalOngoingSessions(int totalOngoingSessions) {
-        this.totalOngoingSessions = totalOngoingSessions;
-    }
+public  int getTotalClosedSessions() {
+return totalClosedSessions;
+}
 
-    public void setTotalOpenSessions(int totalOpenSessions) {
-        this.totalOpenSessions = totalOpenSessions;
-    }
+public  int getTotalAwaitingSessions() {
+return totalAwaitingSessions;
+}
 
-    public void setTotalClosedSessions(int totalClosedSessions) {
-        this.totalClosedSessions = totalClosedSessions;
-    }
+public  long getTotalInstitutes() {
+return totalInstitutes;
+}
 
-    public void setTotalAwaitingSessions(int totalAwaitingSessions) {
-        this.totalAwaitingSessions = totalAwaitingSessions;
-    }
+public  Map<String, List<OngoingSession>> getSessions() {
+return sessions;
+}
 
-    public void setTotalInstitutes(long totalInstitutes) {
-        this.totalInstitutes = totalInstitutes;
-    }
+public  void setTotalOngoingSessions(int totalOngoingSessions) {
+this.totalOngoingSessions = totalOngoingSessions;
+}
 
-    public void setSessions(Map<String, List<OngoingSession>> sessions) {
-        this.sessions = sessions;
-    }
+public  void setTotalOpenSessions(int totalOpenSessions) {
+this.totalOpenSessions = totalOpenSessions;
+}
+
+public  void setTotalClosedSessions(int totalClosedSessions) {
+this.totalClosedSessions = totalClosedSessions;
+}
+
+public  void setTotalAwaitingSessions(int totalAwaitingSessions) {
+this.totalAwaitingSessions = totalAwaitingSessions;
+}
+
+public  void setTotalInstitutes(long totalInstitutes) {
+this.totalInstitutes = totalInstitutes;
+}
+
+public  void setSessions(Map<String, List<OngoingSession>> sessions) {
+this.sessions = sessions;
+}
+
 }

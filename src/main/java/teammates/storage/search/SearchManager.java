@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpStatus;
 import org.apache.solr.client.solrj.SolrQuery;
@@ -15,225 +14,190 @@ import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrInputDocument;
-
 import teammates.common.datatransfer.attributes.EntityAttributes;
 import teammates.common.exception.SearchServiceException;
 import teammates.common.util.Config;
 import teammates.common.util.Const;
 import teammates.common.util.Logger;
 import teammates.common.util.StringHelper;
+abstract class SearchManager<T extends EntityAttributes<?>>  {
+private static final Logger log = Logger.getLogger();
 
-/**
- * Acts as a proxy to search service.
- *
- * @param <T> type of entity to be returned
- */
-abstract class SearchManager<T extends EntityAttributes<?>> {
+private static final String ERROR_DELETE_DOCUMENT = "Failed to delete document(s) %s in Solr. Root cause: %s ";
 
-    private static final Logger log = Logger.getLogger();
+private static final String ERROR_SEARCH_DOCUMENT = "Failed to search for document(s) %s from Solr. Root cause: %s ";
 
-    private static final String ERROR_DELETE_DOCUMENT =
-            "Failed to delete document(s) %s in Solr. Root cause: %s ";
-    private static final String ERROR_SEARCH_DOCUMENT =
-            "Failed to search for document(s) %s from Solr. Root cause: %s ";
-    private static final String ERROR_SEARCH_NOT_IMPLEMENTED =
-            "Search service is not implemented";
-    private static final String ERROR_PUT_DOCUMENT =
-            "Failed to put document %s into Solr. Root cause: %s ";
-    private static final String ERROR_RESET_COLLECTION =
-            "Failed to reset collections. Root cause: %s ";
+private static final String ERROR_SEARCH_NOT_IMPLEMENTED = "Search service is not implemented";
 
-    private static final int START_INDEX = 0;
-    private static final int NUM_OF_RESULTS = Const.SEARCH_QUERY_SIZE_LIMIT;
+private static final String ERROR_PUT_DOCUMENT = "Failed to put document %s into Solr. Root cause: %s ";
 
-    private final HttpSolrClient client;
-    private final boolean isResetAllowed;
+private static final String ERROR_RESET_COLLECTION = "Failed to reset collections. Root cause: %s ";
 
-    SearchManager(String searchServiceHost, boolean isResetAllowed) {
-        this.isResetAllowed = Config.isDevServer() && isResetAllowed;
+private static final int START_INDEX = 0;
 
-        if (StringHelper.isEmpty(searchServiceHost)) {
-            this.client = null;
-        } else {
-            this.client = new HttpSolrClient.Builder(searchServiceHost)
-                    .withConnectionTimeout(2000) // timeout for connecting to Solr server
-                    .withSocketTimeout(5000) // timeout for reading data
-                    .build();
-        }
-    }
+private static final int NUM_OF_RESULTS = Const.SEARCH_QUERY_SIZE_LIMIT;
 
-    SolrQuery getBasicQuery(String queryString) {
-        SolrQuery query = new SolrQuery();
+private final HttpSolrClient client;
 
-        String cleanQueryString = cleanSpecialChars(queryString);
-        query.setQuery(cleanQueryString);
+private final boolean isResetAllowed;
 
-        query.setStart(START_INDEX);
-        query.setRows(NUM_OF_RESULTS);
+ SearchManager(String searchServiceHost, boolean isResetAllowed){
+this.isResetAllowed = Config.isDevServer() && isResetAllowed;
+if (StringHelper.isEmpty(searchServiceHost))
+{
+this.client = null;
+}
+else
+{
+this.client = new  HttpSolrClient.Builder(searchServiceHost).withConnectionTimeout(2000).withSocketTimeout(5000).build();
+}
+}
+ SolrQuery getBasicQuery(String queryString) {
+SolrQuery query = new  SolrQuery();
+String cleanQueryString = cleanSpecialChars(queryString);
+query.setQuery(cleanQueryString);
+query.setStart(START_INDEX);
+query.setRows(NUM_OF_RESULTS);
+return query;
+}
 
-        return query;
-    }
+ QueryResponse performQuery(SolrQuery query)throws SearchServiceException {
+if (client == null)
+{
+throw new  SearchServiceException("Full-text search is not available.", HttpStatus.SC_NOT_IMPLEMENTED);
+}
+try {
+return client.query(getCollectionName(), query);
+}
+catch(SolrServerException e){
+Throwable rootCause = e.getRootCause();
+log.severe(String.format(ERROR_SEARCH_DOCUMENT, query.getQuery(), rootCause), e);
+if (rootCause instanceof SocketTimeoutException)
+{
+throw new  SearchServiceException("A timeout was reached while processing your request. " + "Please try again later.", e, HttpStatus.SC_GATEWAY_TIMEOUT);
+}
+else
+{
+throw new  SearchServiceException("An error has occurred while performing search. " + "Please try again later.", e, HttpStatus.SC_BAD_GATEWAY);
+}
+}
+catch(IOException e){
+log.severe(String.format(ERROR_SEARCH_DOCUMENT, query.getQuery(), e.getCause()), e);
+throw new  SearchServiceException("An error has occurred while performing search. " + "Please try again later.", e, HttpStatus.SC_BAD_GATEWAY);
+}
+}
 
-    QueryResponse performQuery(SolrQuery query) throws SearchServiceException {
-        if (client == null) {
-            throw new SearchServiceException("Full-text search is not available.", HttpStatus.SC_NOT_IMPLEMENTED);
-        }
+abstract  String getCollectionName() ;
 
-        try {
-            return client.query(getCollectionName(), query);
-        } catch (SolrServerException e) {
-            Throwable rootCause = e.getRootCause();
-            log.severe(String.format(ERROR_SEARCH_DOCUMENT, query.getQuery(), rootCause), e);
-            if (rootCause instanceof SocketTimeoutException) {
-                throw new SearchServiceException("A timeout was reached while processing your request. "
-                        + "Please try again later.", e, HttpStatus.SC_GATEWAY_TIMEOUT);
-            } else {
-                throw new SearchServiceException("An error has occurred while performing search. "
-                        + "Please try again later.", e, HttpStatus.SC_BAD_GATEWAY);
-            }
-        } catch (IOException e) {
-            log.severe(String.format(ERROR_SEARCH_DOCUMENT, query.getQuery(), e.getCause()), e);
-            throw new SearchServiceException("An error has occurred while performing search. "
-                    + "Please try again later.", e, HttpStatus.SC_BAD_GATEWAY);
-        }
-    }
+abstract  SearchDocument<T> createDocument(T attribute) ;
 
-    abstract String getCollectionName();
+public  void putDocument(T attributes)throws SearchServiceException {
+if (client == null)
+{
+log.warning(ERROR_SEARCH_NOT_IMPLEMENTED);
+return;
+}
+if (attributes == null)
+{
+return;
+}
+Map<String, Object> searchableFields = createDocument(attributes).getSearchableFields();
+SolrInputDocument document = new  SolrInputDocument();
+searchableFields.forEach((key, value) -> document.addField(key, value));
+try {
+client.add(getCollectionName(), Collections.singleton(document));
+client.commit(getCollectionName());
+}
+catch(SolrServerException e){
+log.severe(String.format(ERROR_PUT_DOCUMENT, document, e.getRootCause()), e);
+throw new  SearchServiceException(e, HttpStatus.SC_BAD_GATEWAY);
+}
+catch(IOException e){
+log.severe(String.format(ERROR_PUT_DOCUMENT, document, e.getCause()), e);
+throw new  SearchServiceException(e, HttpStatus.SC_BAD_GATEWAY);
+}
+}
 
-    abstract SearchDocument<T> createDocument(T attribute);
+public  void deleteDocuments(List<String> keys) {
+if (client == null)
+{
+log.warning(ERROR_SEARCH_NOT_IMPLEMENTED);
+return;
+}
+if (keys.isEmpty())
+{
+return;
+}
+try {
+client.deleteById(getCollectionName(), keys);
+client.commit(getCollectionName());
+}
+catch(SolrServerException e){
+log.severe(String.format(ERROR_DELETE_DOCUMENT, keys, e.getRootCause()), e);
+}
+catch(IOException e){
+log.severe(String.format(ERROR_DELETE_DOCUMENT, keys, e.getCause()), e);
+}
+}
 
-    /**
-     * Creates or updates search document for the given entity.
-     */
-    public void putDocument(T attributes) throws SearchServiceException {
-        if (client == null) {
-            log.warning(ERROR_SEARCH_NOT_IMPLEMENTED);
-            return;
-        }
+public  void resetCollections() {
+if (client == null || !isResetAllowed)
+{
+return;
+}
+try {
+client.deleteByQuery(getCollectionName(), "*:*");
+client.commit(getCollectionName());
+}
+catch(SolrServerException e){
+log.severe(String.format(ERROR_RESET_COLLECTION, e.getRootCause()), e);
+}
+catch(IOException e){
+log.severe(String.format(ERROR_RESET_COLLECTION, e.getCause()), e);
+}
+}
 
-        if (attributes == null) {
-            return;
-        }
+private  String cleanSpecialChars(String queryString) {
+String htmlTagStripPattern = "<[^>]*>";
+String res = queryString.replaceAll(htmlTagStripPattern, "").replace("\\", "\\\\").replace("+", "\\+").replace("-", "\\-").replace("&&", "\\&&").replace("||", "\\||").replace("!", "\\!").replace("(", "\\(").replace(")", "\\)").replace("{", "\\{").replace("}", "\\}").replace("[", "\\[").replace("]", "\\]").replace("^", "\\^").replace("~", "\\~").replace("?", "\\?").replace(":", "\\:").replace("/", "\\/");
+int count = StringUtils.countMatches(res, "\"");
+if (count % 2 == 1)
+{
+res = res.replace("\"", "");
+}
+if (res.contains("@") && count == 0)
+{
+return "\"" + res + "\"";
+}
+else
+{
+return res;
+}
+}
 
-        Map<String, Object> searchableFields = createDocument(attributes).getSearchableFields();
-        SolrInputDocument document = new SolrInputDocument();
-        searchableFields.forEach((key, value) -> document.addField(key, value));
+abstract  T getAttributeFromDocument(SolrDocument document) ;
 
-        try {
-            client.add(getCollectionName(), Collections.singleton(document));
-            client.commit(getCollectionName());
-        } catch (SolrServerException e) {
-            log.severe(String.format(ERROR_PUT_DOCUMENT, document, e.getRootCause()), e);
-            throw new SearchServiceException(e, HttpStatus.SC_BAD_GATEWAY);
-        } catch (IOException e) {
-            log.severe(String.format(ERROR_PUT_DOCUMENT, document, e.getCause()), e);
-            throw new SearchServiceException(e, HttpStatus.SC_BAD_GATEWAY);
-        }
-    }
+abstract  void sortResult(List<T> result) ;
 
-    /**
-     * Removes search documents based on the given keys.
-     */
-    public void deleteDocuments(List<String> keys) {
-        if (client == null) {
-            log.warning(ERROR_SEARCH_NOT_IMPLEMENTED);
-            return;
-        }
-
-        if (keys.isEmpty()) {
-            return;
-        }
-
-        try {
-            client.deleteById(getCollectionName(), keys);
-            client.commit(getCollectionName());
-        } catch (SolrServerException e) {
-            log.severe(String.format(ERROR_DELETE_DOCUMENT, keys, e.getRootCause()), e);
-        } catch (IOException e) {
-            log.severe(String.format(ERROR_DELETE_DOCUMENT, keys, e.getCause()), e);
-        }
-    }
-
-    /**
-     * Resets the data for all collections if, and only if called during component tests.
-     */
-    public void resetCollections() {
-        if (client == null || !isResetAllowed) {
-            return;
-        }
-
-        try {
-            client.deleteByQuery(getCollectionName(), "*:*");
-            client.commit(getCollectionName());
-        } catch (SolrServerException e) {
-            log.severe(String.format(ERROR_RESET_COLLECTION, e.getRootCause()), e);
-        } catch (IOException e) {
-            log.severe(String.format(ERROR_RESET_COLLECTION, e.getCause()), e);
-        }
-    }
-
-    private String cleanSpecialChars(String queryString) {
-        String htmlTagStripPattern = "<[^>]*>";
-
-        // Solr special characters: + - && || ! ( ) { } [ ] ^ " ~ * ? : \ /
-        String res = queryString.replaceAll(htmlTagStripPattern, "")
-                .replace("\\", "\\\\")
-                .replace("+", "\\+")
-                .replace("-", "\\-")
-                .replace("&&", "\\&&")
-                .replace("||", "\\||")
-                .replace("!", "\\!")
-                .replace("(", "\\(")
-                .replace(")", "\\)")
-                .replace("{", "\\{")
-                .replace("}", "\\}")
-                .replace("[", "\\[")
-                .replace("]", "\\]")
-                .replace("^", "\\^")
-                .replace("~", "\\~")
-                .replace("?", "\\?")
-                .replace(":", "\\:")
-                .replace("/", "\\/");
-
-        // imbalanced double quotes are invalid
-        int count = StringUtils.countMatches(res, "\"");
-        if (count % 2 == 1) {
-            res = res.replace("\"", "");
-        }
-
-        // use exact match only when there's email-like input
-        if (res.contains("@") && count == 0) {
-            return "\"" + res + "\"";
-        } else {
-            return res;
-        }
-    }
-
-    abstract T getAttributeFromDocument(SolrDocument document);
-
-    abstract void sortResult(List<T> result);
-
-    List<T> convertDocumentToAttributes(List<SolrDocument> documents) {
-        if (documents == null) {
-            return new ArrayList<>();
-        }
-
-        List<T> result = new ArrayList<>();
-
-        for (SolrDocument document : documents) {
-            T attribute = getAttributeFromDocument(document);
-            if (attribute == null) {
-                // search engine out of sync as SearchManager may fail to delete documents
-                // the chance is low and it is generally not a big problem
-                String id = (String) document.getFirstValue("id");
-                deleteDocuments(Collections.singletonList(id));
-                continue;
-            }
-            result.add(attribute);
-        }
-        sortResult(result);
-
-        return result;
-    }
+ List<T> convertDocumentToAttributes(List<SolrDocument> documents) {
+if (documents == null)
+{
+return new  ArrayList<>();
+}
+List<T> result = new  ArrayList<>();
+for (SolrDocument document : documents)
+{
+T attribute = getAttributeFromDocument(document);
+if (attribute == null)
+{
+String id = (String) document.getFirstValue("id");
+deleteDocuments(Collections.singletonList(id));
+continue;
+}
+result.add(attribute);
+}
+sortResult(result);
+return result;
+}
 
 }

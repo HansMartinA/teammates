@@ -2,62 +2,61 @@ package teammates.ui.output;
 
 import teammates.common.datatransfer.attributes.StudentProfileAttributes;
 import teammates.common.datatransfer.attributes.StudentProfileAttributes.Gender;
-
-/**
- * The API output for the student profile.
- */
 public class StudentProfileData extends ApiOutput {
-    private String name;
-    private String shortName;
-    private String email;
-    private String institute;
-    private String nationality;
-    private Gender gender;
-    private String moreInfo;
+private String name;
 
-    public StudentProfileData(String name, StudentProfileAttributes profileAttributes) {
-        this.name = name;
-        this.shortName = profileAttributes.getShortName();
-        this.email = profileAttributes.getEmail();
-        this.institute = profileAttributes.getInstitute();
-        this.nationality = profileAttributes.getNationality();
-        this.gender = profileAttributes.getGender();
-        this.moreInfo = profileAttributes.getMoreInfo();
-    }
+private String shortName;
 
-    public String getMoreInfo() {
-        return moreInfo;
-    }
+private String email;
 
-    public Gender getGender() {
-        return gender;
-    }
+private String institute;
 
-    public String getNationality() {
-        return nationality;
-    }
+private String nationality;
 
-    public String getInstitute() {
-        return institute;
-    }
+private Gender gender;
 
-    public String getEmail() {
-        return email;
-    }
+private String moreInfo;
 
-    public String getShortName() {
-        return shortName;
-    }
+public  StudentProfileData(String name, StudentProfileAttributes profileAttributes){
+this.name = name;
+this.shortName = profileAttributes.getShortName();
+this.email = profileAttributes.getEmail();
+this.institute = profileAttributes.getInstitute();
+this.nationality = profileAttributes.getNationality();
+this.gender = profileAttributes.getGender();
+this.moreInfo = profileAttributes.getMoreInfo();
+}
+public  String getMoreInfo() {
+return moreInfo;
+}
 
-    public String getName() {
-        return name;
-    }
+public  Gender getGender() {
+return gender;
+}
 
-    /**
-     * Hides certain fields when profile is requested by another student.
-     */
-    public void hideInformationWhenViewedByOtherStudent() {
-        this.email = null;
-        this.shortName = null;
-    }
+public  String getNationality() {
+return nationality;
+}
+
+public  String getInstitute() {
+return institute;
+}
+
+public  String getEmail() {
+return email;
+}
+
+public  String getShortName() {
+return shortName;
+}
+
+public  String getName() {
+return name;
+}
+
+public  void hideInformationWhenViewedByOtherStudent() {
+this.email = null;
+this.shortName = null;
+}
+
 }

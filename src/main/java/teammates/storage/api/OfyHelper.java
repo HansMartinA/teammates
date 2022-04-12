@@ -2,11 +2,9 @@ package teammates.storage.api;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-
 import com.google.cloud.datastore.DatastoreOptions;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
-
 import teammates.common.util.Config;
 import teammates.storage.entity.Account;
 import teammates.storage.entity.AccountRequest;
@@ -19,47 +17,68 @@ import teammates.storage.entity.FeedbackResponseComment;
 import teammates.storage.entity.FeedbackSession;
 import teammates.storage.entity.Instructor;
 import teammates.storage.entity.StudentProfile;
-
-/**
- * Setup in web.xml to register Objectify at application startup.
- **/
 public class OfyHelper implements ServletContextListener {
+private static  void initializeDatastore() {
+DatastoreOptions.Builder builder = DatastoreOptions.newBuilder().setProjectId(Config.APP_ID);
+if (Config.isDevServer())
+{
+builder.setHost("http://localhost:" + Config.APP_LOCALDATASTORE_PORT);
+}
+ObjectifyService.init(new  ObjectifyFactory(builder.build().getService()));
+}
 
-    private static void initializeDatastore() {
-        DatastoreOptions.Builder builder = DatastoreOptions.newBuilder().setProjectId(Config.APP_ID);
-        if (Config.isDevServer()) {
-            builder.setHost("http://localhost:" + Config.APP_LOCALDATASTORE_PORT);
-        }
-        ObjectifyService.init(new ObjectifyFactory(builder.build().getService()));
-    }
+public static  void registerEntityClasses() {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+threadMonitoringController.enterService("_wNiBcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_wNmS4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+ObjectifyService.register(Account.class);
+ObjectifyService.register(Course.class);
+ObjectifyService.register(CourseStudent.class);
+ObjectifyService.register(FeedbackQuestion.class);
+ObjectifyService.register(FeedbackResponse.class);
+ObjectifyService.register(FeedbackResponseComment.class);
+ObjectifyService.register(FeedbackSession.class);
+ObjectifyService.register(Instructor.class);
+ObjectifyService.register(StudentProfile.class);
+ObjectifyService.register(AccountRequest.class);
+ObjectifyService.factory().getTranslators().add(new  BaseEntity.InstantTranslatorFactory());
+threadMonitoringController.exitInternalAction("_wNmS4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_wNiBcLngEeyIw-dB1KCaVA");
+}
+}
 
-    /**
-     * Register entity classes in Objectify service.
-     */
-    public static void registerEntityClasses() {
-        ObjectifyService.register(Account.class);
-        ObjectifyService.register(Course.class);
-        ObjectifyService.register(CourseStudent.class);
-        ObjectifyService.register(FeedbackQuestion.class);
-        ObjectifyService.register(FeedbackResponse.class);
-        ObjectifyService.register(FeedbackResponseComment.class);
-        ObjectifyService.register(FeedbackSession.class);
-        ObjectifyService.register(Instructor.class);
-        ObjectifyService.register(StudentProfile.class);
-        ObjectifyService.register(AccountRequest.class);
-        // enable the ability to use java.time.Instant to issue query
-        ObjectifyService.factory().getTranslators().add(new BaseEntity.InstantTranslatorFactory());
-    }
+@Override
+public  void contextInitialized(ServletContextEvent event) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("event", event);
+threadMonitoringController.enterService("_wN1jcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_wN_7hLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+initializeDatastore();
+threadMonitoringController.exitInternalAction("_wN_7hLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+registerEntityClasses();
+}
+finally {
+threadMonitoringController.exitService("_wN1jcLngEeyIw-dB1KCaVA");
+}
+}
 
-    @Override
-    public void contextInitialized(ServletContextEvent event) {
-        // Invoked by Jetty at application startup.
-        initializeDatastore();
-        registerEntityClasses();
-    }
+@Override
+public  void contextDestroyed(ServletContextEvent event) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("event", event);
+threadMonitoringController.enterService("_wOUEkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+}
+finally {
+threadMonitoringController.exitService("_wOUEkLngEeyIw-dB1KCaVA");
+}
+}
 
-    @Override
-    public void contextDestroyed(ServletContextEvent event) {
-        // Nothing to do
-    }
 }

@@ -1,74 +1,72 @@
 package teammates.ui.output;
 
 import javax.annotation.Nullable;
-
 import teammates.common.datatransfer.UserInfo;
-
-/**
- * Authentication request format.
- */
 public class AuthInfo extends ApiOutput {
+@Nullable
+private final String studentLoginUrl;
 
-    @Nullable
-    private final String studentLoginUrl;
-    @Nullable
-    private final String instructorLoginUrl;
-    @Nullable
-    private final String adminLoginUrl;
-    @Nullable
-    private final String maintainerLoginUrl;
-    @Nullable
-    private final UserInfo user;
-    @Nullable
-    private final String institute;
-    private final boolean masquerade;
+@Nullable
+private final String instructorLoginUrl;
 
-    public AuthInfo(String studentLoginUrl, String instructorLoginUrl, String adminLoginUrl, String maintainerLoginUrl) {
-        this.studentLoginUrl = studentLoginUrl;
-        this.instructorLoginUrl = instructorLoginUrl;
-        this.adminLoginUrl = adminLoginUrl;
-        this.maintainerLoginUrl = maintainerLoginUrl;
-        this.user = null;
-        this.institute = null;
-        this.masquerade = false;
-    }
+@Nullable
+private final String adminLoginUrl;
 
-    public AuthInfo(UserInfo user, String institute, boolean masquerade) {
-        this.studentLoginUrl = null;
-        this.instructorLoginUrl = null;
-        this.adminLoginUrl = null;
-        this.maintainerLoginUrl = null;
-        this.user = user;
-        this.institute = institute;
-        this.masquerade = masquerade;
-    }
+@Nullable
+private final String maintainerLoginUrl;
 
-    public String getStudentLoginUrl() {
-        return studentLoginUrl;
-    }
+@Nullable
+private final UserInfo user;
 
-    public String getInstructorLoginUrl() {
-        return instructorLoginUrl;
-    }
+@Nullable
+private final String institute;
 
-    public String getAdminLoginUrl() {
-        return adminLoginUrl;
-    }
+private final boolean masquerade;
 
-    public String getMaintainerLoginUrl() {
-        return maintainerLoginUrl;
-    }
+public  AuthInfo(String studentLoginUrl, String instructorLoginUrl, String adminLoginUrl, String maintainerLoginUrl){
+this.studentLoginUrl = studentLoginUrl;
+this.instructorLoginUrl = instructorLoginUrl;
+this.adminLoginUrl = adminLoginUrl;
+this.maintainerLoginUrl = maintainerLoginUrl;
+this.user = null;
+this.institute = null;
+this.masquerade = false;
+}
+public  AuthInfo(UserInfo user, String institute, boolean masquerade){
+this.studentLoginUrl = null;
+this.instructorLoginUrl = null;
+this.adminLoginUrl = null;
+this.maintainerLoginUrl = null;
+this.user = user;
+this.institute = institute;
+this.masquerade = masquerade;
+}
+public  String getStudentLoginUrl() {
+return studentLoginUrl;
+}
 
-    public UserInfo getUser() {
-        return user;
-    }
+public  String getInstructorLoginUrl() {
+return instructorLoginUrl;
+}
 
-    public String getInstitute() {
-        return institute;
-    }
+public  String getAdminLoginUrl() {
+return adminLoginUrl;
+}
 
-    public boolean isMasquerade() {
-        return masquerade;
-    }
+public  String getMaintainerLoginUrl() {
+return maintainerLoginUrl;
+}
+
+public  UserInfo getUser() {
+return user;
+}
+
+public  String getInstitute() {
+return institute;
+}
+
+public  boolean isMasquerade() {
+return masquerade;
+}
 
 }

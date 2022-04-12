@@ -1,120 +1,115 @@
 package teammates.ui.output;
 
 import javax.annotation.Nullable;
-
 import teammates.common.datatransfer.attributes.InstructorAttributes;
-
-/**
- * The API output format of an instructor.
- */
 public class InstructorData extends ApiOutput {
-    @Nullable
-    private String googleId;
-    private final String courseId;
-    private final String email;
-    @Nullable
-    private Boolean isDisplayedToStudents;
-    @Nullable
-    private String displayedToStudentsAs;
-    private final String name;
-    @Nullable
-    private InstructorPermissionRole role;
-    private JoinState joinState;
-    @Nullable
-    private String key;
-    @Nullable
-    private String institute;
+@Nullable
+private String googleId;
 
-    public InstructorData(InstructorAttributes instructorAttributes) {
-        this.courseId = instructorAttributes.getCourseId();
-        this.email = instructorAttributes.getEmail();
-        this.role = instructorAttributes.getRole() == null ? null
-                : InstructorPermissionRole.getEnum(instructorAttributes.getRole());
-        this.isDisplayedToStudents = instructorAttributes.isDisplayedToStudents();
-        this.displayedToStudentsAs = instructorAttributes.getDisplayedName();
-        this.name = instructorAttributes.getName();
+private final String courseId;
 
-        this.joinState = instructorAttributes.isRegistered() ? JoinState.JOINED : JoinState.NOT_JOINED;
-    }
+private final String email;
 
-    public String getGoogleId() {
-        return googleId;
-    }
+@Nullable
+private Boolean isDisplayedToStudents;
 
-    public void setGoogleId(String googleId) {
-        this.googleId = googleId;
-    }
+@Nullable
+private String displayedToStudentsAs;
 
-    public String getCourseId() {
-        return courseId;
-    }
+private final String name;
 
-    public String getEmail() {
-        return email;
-    }
+@Nullable
+private InstructorPermissionRole role;
 
-    public InstructorPermissionRole getRole() {
-        return role;
-    }
+private JoinState joinState;
 
-    public void setRole(InstructorPermissionRole role) {
-        this.role = role;
-    }
+@Nullable
+private String key;
 
-    public Boolean getIsDisplayedToStudents() {
-        return isDisplayedToStudents;
-    }
+@Nullable
+private String institute;
 
-    public void setIsDisplayedToStudents(Boolean displayedToStudents) {
-        isDisplayedToStudents = displayedToStudents;
-    }
+public  InstructorData(InstructorAttributes instructorAttributes){
+this.courseId = instructorAttributes.getCourseId();
+this.email = instructorAttributes.getEmail();
+this.role = instructorAttributes.getRole() == null ? null : InstructorPermissionRole.getEnum(instructorAttributes.getRole());
+this.isDisplayedToStudents = instructorAttributes.isDisplayedToStudents();
+this.displayedToStudentsAs = instructorAttributes.getDisplayedName();
+this.name = instructorAttributes.getName();
+this.joinState = instructorAttributes.isRegistered() ? JoinState.JOINED : JoinState.NOT_JOINED;
+}
+public  String getGoogleId() {
+return googleId;
+}
 
-    public String getDisplayedToStudentsAs() {
-        return displayedToStudentsAs;
-    }
+public  void setGoogleId(String googleId) {
+this.googleId = googleId;
+}
 
-    public void setDisplayedToStudentsAs(String displayedToStudentsAs) {
-        this.displayedToStudentsAs = displayedToStudentsAs;
-    }
+public  String getCourseId() {
+return courseId;
+}
 
-    public String getName() {
-        return name;
-    }
+public  String getEmail() {
+return email;
+}
 
-    public JoinState getJoinState() {
-        return joinState;
-    }
+public  InstructorPermissionRole getRole() {
+return role;
+}
 
-    public void setJoinState(JoinState joinState) {
-        this.joinState = joinState;
-    }
+public  void setRole(InstructorPermissionRole role) {
+this.role = role;
+}
 
-    public String getKey() {
-        return key;
-    }
+public  Boolean getIsDisplayedToStudents() {
+return isDisplayedToStudents;
+}
 
-    public void setKey(String key) {
-        this.key = key;
-    }
+public  void setIsDisplayedToStudents(Boolean displayedToStudents) {
+isDisplayedToStudents = displayedToStudents;
+}
 
-    public String getInstitute() {
-        return institute;
-    }
+public  String getDisplayedToStudentsAs() {
+return displayedToStudentsAs;
+}
 
-    public void setInstitute(String institute) {
-        this.institute = institute;
-    }
+public  void setDisplayedToStudentsAs(String displayedToStudentsAs) {
+this.displayedToStudentsAs = displayedToStudentsAs;
+}
 
-    /**
-     * Adds additional attributes only for search result for admin.
-     *
-     * @param key Registration key
-     * @param institute Institute of the instructor
-     * @param googleId Google ID of the instructor
-     */
-    public void addAdditionalInformationForAdminSearch(String key, String institute, String googleId) {
-        setKey(key);
-        setInstitute(institute);
-        setGoogleId(googleId);
-    }
+public  String getName() {
+return name;
+}
+
+public  JoinState getJoinState() {
+return joinState;
+}
+
+public  void setJoinState(JoinState joinState) {
+this.joinState = joinState;
+}
+
+public  String getKey() {
+return key;
+}
+
+public  void setKey(String key) {
+this.key = key;
+}
+
+public  String getInstitute() {
+return institute;
+}
+
+public  void setInstitute(String institute) {
+this.institute = institute;
+}
+
+public  void addAdditionalInformationForAdminSearch(String key, String institute, String googleId) {
+setKey(key);
+setInstitute(institute);
+setGoogleId(googleId);
+}
+
 }

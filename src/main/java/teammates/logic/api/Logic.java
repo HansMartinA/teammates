@@ -4,9 +4,7 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import javax.annotation.Nullable;
-
 import teammates.common.datatransfer.DataBundle;
 import teammates.common.datatransfer.SessionResultsBundle;
 import teammates.common.datatransfer.attributes.AccountAttributes;
@@ -36,1444 +34,1998 @@ import teammates.logic.core.FeedbackSessionsLogic;
 import teammates.logic.core.InstructorsLogic;
 import teammates.logic.core.ProfilesLogic;
 import teammates.logic.core.StudentsLogic;
-
-/**
- * Provides the business logic for production usage of the system.
- *
- * <p>This is a Facade class which simply forwards the method to internal classes.
- */
 public class Logic {
+private static final Logic instance = new  Logic();
+
+final AccountsLogic accountsLogic = AccountsLogic.inst();
+
+final AccountRequestsLogic accountRequestsLogic = AccountRequestsLogic.inst();
+
+final StudentsLogic studentsLogic = StudentsLogic.inst();
+
+final InstructorsLogic instructorsLogic = InstructorsLogic.inst();
+
+final CoursesLogic coursesLogic = CoursesLogic.inst();
+
+final FeedbackSessionsLogic feedbackSessionsLogic = FeedbackSessionsLogic.inst();
+
+final FeedbackQuestionsLogic feedbackQuestionsLogic = FeedbackQuestionsLogic.inst();
+
+final FeedbackResponsesLogic feedbackResponsesLogic = FeedbackResponsesLogic.inst();
+
+final FeedbackResponseCommentsLogic feedbackResponseCommentsLogic = FeedbackResponseCommentsLogic.inst();
+
+final ProfilesLogic profilesLogic = ProfilesLogic.inst();
+
+final DataBundleLogic dataBundleLogic = DataBundleLogic.inst();
+
+ Logic(){
+}
+public static  Logic inst() {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+threadMonitoringController.enterService("_t5OcgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t5QRsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+Logic longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136822740006640391775227783 = instance;
+threadMonitoringController.exitInternalAction("_t5QRsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136822740006640391775227783;
+}
+finally {
+threadMonitoringController.exitService("_t5OcgLngEeyIw-dB1KCaVA");
+}
+}
+
+public  AccountAttributes getAccount(String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t5TVALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t5VKMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+AccountAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682277005663438495817897 = accountsLogic.getAccount(googleId);
+threadMonitoringController.exitInternalAction("_t5VKMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682277005663438495817897;
+}
+finally {
+threadMonitoringController.exitService("_t5TVALngEeyIw-dB1KCaVA");
+}
+}
+
+public  String getCourseInstitute(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t5YNgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t5apwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368228000410644748004946 = coursesLogic.getCourseInstitute(courseId);
+threadMonitoringController.exitInternalAction("_t5apwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368228000410644748004946;
+}
+finally {
+threadMonitoringController.exitService("_t5YNgLngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentProfileAttributes updateOrCreateStudentProfile(StudentProfileAttributes.UpdateOptions updateOptions)throws InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_t5eUILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t5gJULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+StudentProfileAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682282000018534019734589569 = profilesLogic.updateOrCreateStudentProfile(updateOptions);
+threadMonitoringController.exitInternalAction("_t5gJULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682282000018534019734589569;
+}
+finally {
+threadMonitoringController.exitService("_t5eUILngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteAccountCascade(String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t5jzsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t5lo4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+accountsLogic.deleteAccountCascade(googleId);
+threadMonitoringController.exitInternalAction("_t5lo4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t5jzsLngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes createInstructor(InstructorAttributes instructor)throws InvalidParametersException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("instructor", instructor);
+threadMonitoringController.enterService("_t5p6ULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t5rvgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert instructor != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682286008602528323034194 = instructorsLogic.createInstructor(instructor);
+threadMonitoringController.exitInternalAction("_t5rvgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682286008602528323034194;
+}
+finally {
+threadMonitoringController.exitService("_t5p6ULngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<InstructorAttributes> searchInstructorsInWholeSystem(String queryString)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("queryString", queryString);
+threadMonitoringController.enterService("_t5vZ4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t5xPELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert queryString != null;
+List<InstructorAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136822890017012145700804482 = instructorsLogic.searchInstructorsInWholeSystem(queryString);
+threadMonitoringController.exitInternalAction("_t5xPELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136822890017012145700804482;
+}
+finally {
+threadMonitoringController.exitService("_t5vZ4LngEeyIw-dB1KCaVA");
+}
+}
+
+public  void putInstructorDocument(InstructorAttributes instructor)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("instructor", instructor);
+threadMonitoringController.enterService("_t51ggLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t54j0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+instructorsLogic.putDocument(instructor);
+threadMonitoringController.exitInternalAction("_t54j0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t51ggLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void updateToEnsureValidityOfInstructorsForTheCourse(String courseId, InstructorAttributes instructorToEdit) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("instructorToEdit", instructorToEdit);
+threadMonitoringController.enterService("_t57nILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t59cULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert instructorToEdit != null;
+instructorsLogic.updateToEnsureValidityOfInstructorsForTheCourse(courseId, instructorToEdit);
+threadMonitoringController.exitInternalAction("_t59cULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t57nILngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes getInstructorForEmail(String courseId, String email) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("email", email);
+threadMonitoringController.enterService("_t6BGsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6C74LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert email != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682298009938447490352351 = instructorsLogic.getInstructorForEmail(courseId, email);
+threadMonitoringController.exitInternalAction("_t6C74LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682298009938447490352351;
+}
+finally {
+threadMonitoringController.exitService("_t6BGsLngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes getInstructorById(String courseId, String email) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("email", email);
+threadMonitoringController.enterService("_t6HNULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6JCgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert email != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823000024445621095745684 = instructorsLogic.getInstructorById(courseId, email);
+threadMonitoringController.exitInternalAction("_t6JCgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823000024445621095745684;
+}
+finally {
+threadMonitoringController.exitService("_t6HNULngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes getInstructorForGoogleId(String courseId, String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t6Ms4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6N7ALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+assert courseId != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823030039256936058406466 = instructorsLogic.getInstructorForGoogleId(courseId, googleId);
+threadMonitoringController.exitInternalAction("_t6N7ALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823030039256936058406466;
+}
+finally {
+threadMonitoringController.exitService("_t6Ms4LngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes getInstructorForRegistrationKey(String registrationKey) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("registrationKey", registrationKey);
+threadMonitoringController.enterService("_t6SMcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6UBoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert registrationKey != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682306007807992754172893 = instructorsLogic.getInstructorForRegistrationKey(registrationKey);
+threadMonitoringController.exitInternalAction("_t6UBoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682306007807992754172893;
+}
+finally {
+threadMonitoringController.exitService("_t6SMcLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<InstructorAttributes> getInstructorsForGoogleId(String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t6XE8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6Y6ILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+List<InstructorAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823090037929392994578537 = instructorsLogic.getInstructorsForGoogleId(googleId);
+threadMonitoringController.exitInternalAction("_t6Y6ILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823090037929392994578537;
+}
+finally {
+threadMonitoringController.exitService("_t6XE8LngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<InstructorAttributes> getInstructorsForGoogleId(String googleId, boolean omitArchived) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+monitoringServiceParameters.addValue("omitArchived", omitArchived);
+threadMonitoringController.enterService("_t6dLkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6fn0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+List<InstructorAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823120045169869389364725 = instructorsLogic.getInstructorsForGoogleId(googleId, omitArchived);
+threadMonitoringController.exitInternalAction("_t6fn0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823120045169869389364725;
+}
+finally {
+threadMonitoringController.exitService("_t6dLkLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<InstructorAttributes> getInstructorsForCourse(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t6j5QLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6oKsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+List<InstructorAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682314003440297232024909 = instructorsLogic.getInstructorsForCourse(courseId);
+threadMonitoringController.exitInternalAction("_t6oKsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682314003440297232024909;
+}
+finally {
+threadMonitoringController.exitService("_t6j5QLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getAllOngoingSessions(Instant rangeStart, Instant rangeEnd) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("rangeStart", rangeStart);
+monitoringServiceParameters.addValue("rangeEnd", rangeEnd);
+threadMonitoringController.enterService("_t6r1ELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t6wGgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823170045158964500537313 = feedbackSessionsLogic.getAllOngoingSessions(rangeStart, rangeEnd);
+threadMonitoringController.exitInternalAction("_t6wGgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823170045158964500537313;
+}
+finally {
+threadMonitoringController.exitService("_t6r1ELngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes updateInstructorCascade(InstructorAttributes.UpdateOptionsWithGoogleId updateOptions)throws InstructorUpdateException, InvalidParametersException, EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_t6zw4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t61mELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682320001978044803640745 = instructorsLogic.updateInstructorByGoogleIdCascade(updateOptions);
+threadMonitoringController.exitInternalAction("_t61mELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682320001978044803640745;
+}
+finally {
+threadMonitoringController.exitService("_t6zw4LngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes updateInstructor(InstructorAttributes.UpdateOptionsWithEmail updateOptions)throws InstructorUpdateException, InvalidParametersException, EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_t65QcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t67ssLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682323000575863403852912 = instructorsLogic.updateInstructorByEmail(updateOptions);
+threadMonitoringController.exitInternalAction("_t67ssLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682323000575863403852912;
+}
+finally {
+threadMonitoringController.exitService("_t65QcLngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes joinCourseForInstructor(String regkey, String googleId)throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("regkey", regkey);
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t6-wALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7AlMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+assert regkey != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682326008575151024191711 = accountsLogic.joinCourseForInstructor(regkey, googleId);
+threadMonitoringController.exitInternalAction("_t7AlMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682326008575151024191711;
+}
+finally {
+threadMonitoringController.exitService("_t6-wALngEeyIw-dB1KCaVA");
+}
+}
+
+public  void downgradeInstructorToStudentCascade(String googleId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t7FdsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7HS4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+accountsLogic.downgradeInstructorToStudentCascade(googleId);
+threadMonitoringController.exitInternalAction("_t7HS4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t7FdsLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteInstructorCascade(String courseId, String email) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("email", email);
+threadMonitoringController.enterService("_t7K9QLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7NZgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert email != null;
+instructorsLogic.deleteInstructorCascade(courseId, email);
+threadMonitoringController.exitInternalAction("_t7NZgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t7K9QLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void createCourseAndInstructor(String instructorGoogleId, CourseAttributes courseAttributes)throws EntityAlreadyExistsException, InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("instructorGoogleId", instructorGoogleId);
+monitoringServiceParameters.addValue("courseAttributes", courseAttributes);
+threadMonitoringController.enterService("_t7S5ELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7UuQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert instructorGoogleId != null;
+assert courseAttributes != null;
+coursesLogic.createCourseAndInstructor(instructorGoogleId, courseAttributes);
+threadMonitoringController.exitInternalAction("_t7UuQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t7S5ELngEeyIw-dB1KCaVA");
+}
+}
+
+public  CourseAttributes getCourse(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t7YYoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7aN0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+CourseAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823380009573935210795448 = coursesLogic.getCourse(courseId);
+threadMonitoringController.exitInternalAction("_t7aN0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823380009573935210795448;
+}
+finally {
+threadMonitoringController.exitService("_t7YYoLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<CourseAttributes> getCoursesForStudentAccount(String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t7d4MLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7fGULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+List<CourseAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682341008904017369748158 = coursesLogic.getCoursesForStudentAccount(googleId);
+threadMonitoringController.exitInternalAction("_t7fGULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682341008904017369748158;
+}
+finally {
+threadMonitoringController.exitService("_t7d4MLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<CourseAttributes> getCoursesForInstructor(List<InstructorAttributes> instructorList) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("instructorList", instructorList);
+threadMonitoringController.enterService("_t7iwsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7kl4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert instructorList != null;
+List<CourseAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682343006420017673501355 = coursesLogic.getCoursesForInstructor(instructorList);
+threadMonitoringController.exitInternalAction("_t7kl4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682343006420017673501355;
+}
+finally {
+threadMonitoringController.exitService("_t7iwsLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<CourseAttributes> getSoftDeletedCoursesForInstructors(List<InstructorAttributes> instructorList) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("instructorList", instructorList);
+threadMonitoringController.enterService("_t7npMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7peYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert instructorList != null;
+List<CourseAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682346002505907159719939 = coursesLogic.getSoftDeletedCoursesForInstructors(instructorList);
+threadMonitoringController.exitInternalAction("_t7peYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682346002505907159719939;
+}
+finally {
+threadMonitoringController.exitService("_t7npMLngEeyIw-dB1KCaVA");
+}
+}
+
+public  CourseAttributes updateCourseCascade(CourseAttributes.UpdateOptions updateOptions)throws InvalidParametersException, EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_t7tv0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t7vlALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+CourseAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823480043094926867320027 = coursesLogic.updateCourseCascade(updateOptions);
+threadMonitoringController.exitInternalAction("_t7vlALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823480043094926867320027;
+}
+finally {
+threadMonitoringController.exitService("_t7tv0LngEeyIw-dB1KCaVA");
+}
+}
+
+public  void setArchiveStatusOfInstructor(String googleId, String courseId, boolean archiveStatus)throws InvalidParametersException, EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("archiveStatus", archiveStatus);
+threadMonitoringController.enterService("_t7zPYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t725wLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+assert courseId != null;
+instructorsLogic.setArchiveStatusOfInstructor(googleId, courseId, archiveStatus);
+threadMonitoringController.exitInternalAction("_t725wLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t7zPYLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteCourseCascade(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t77yQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t79AYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+coursesLogic.deleteCourseCascade(courseId);
+threadMonitoringController.exitInternalAction("_t79AYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t77yQLngEeyIw-dB1KCaVA");
+}
+}
+
+public  Instant moveCourseToRecycleBin(String courseId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t8B44LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8DuELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+Instant longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682356002741975009956986 = coursesLogic.moveCourseToRecycleBin(courseId);
+threadMonitoringController.exitInternalAction("_t8DuELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682356002741975009956986;
+}
+finally {
+threadMonitoringController.exitService("_t8B44LngEeyIw-dB1KCaVA");
+}
+}
+
+public  void restoreCourseFromRecycleBin(String courseId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t8HYcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8J0sLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+coursesLogic.restoreCourseFromRecycleBin(courseId);
+threadMonitoringController.exitInternalAction("_t8J0sLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t8HYcLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<StudentAttributes> searchStudents(String queryString, List<InstructorAttributes> instructors)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("queryString", queryString);
+monitoringServiceParameters.addValue("instructors", instructors);
+threadMonitoringController.enterService("_t8OGILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8P7ULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert queryString != null;
+assert instructors != null;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823620017021841157893935 = studentsLogic.searchStudents(queryString, instructors);
+threadMonitoringController.exitInternalAction("_t8P7ULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823620017021841157893935;
+}
+finally {
+threadMonitoringController.exitService("_t8OGILngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<StudentAttributes> searchStudentsInWholeSystem(String queryString)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("queryString", queryString);
+threadMonitoringController.enterService("_t8TlsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8Va4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert queryString != null;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368236400006924169284277637 = studentsLogic.searchStudentsInWholeSystem(queryString);
+threadMonitoringController.exitInternalAction("_t8Va4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368236400006924169284277637;
+}
+finally {
+threadMonitoringController.exitService("_t8TlsLngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentAttributes getStudentForRegistrationKey(String registrationKey) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("registrationKey", registrationKey);
+threadMonitoringController.enterService("_t8ZFQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8a6cLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert registrationKey != null;
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682366002968876737951438 = studentsLogic.getStudentForRegistrationKey(registrationKey);
+threadMonitoringController.exitInternalAction("_t8a6cLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682366002968876737951438;
+}
+finally {
+threadMonitoringController.exitService("_t8ZFQLngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentAttributes getStudentForEmail(String courseId, String email) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("email", email);
+threadMonitoringController.enterService("_t8ek0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8gaALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert email != null;
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682368004027204261776578 = studentsLogic.getStudentForEmail(courseId, email);
+threadMonitoringController.exitInternalAction("_t8gaALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682368004027204261776578;
+}
+finally {
+threadMonitoringController.exitService("_t8ek0LngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentAttributes getStudentForGoogleId(String courseId, String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t8kEYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8l5kLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert googleId != null;
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682371009614800818812675 = studentsLogic.getStudentForCourseIdAndGoogleId(courseId, googleId);
+threadMonitoringController.exitInternalAction("_t8l5kLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682371009614800818812675;
+}
+finally {
+threadMonitoringController.exitService("_t8kEYLngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentProfileAttributes getStudentProfile(String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t8pj8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8rZILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+StudentProfileAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682374007283143493186471 = profilesLogic.getStudentProfile(googleId);
+threadMonitoringController.exitInternalAction("_t8rZILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682374007283143493186471;
+}
+finally {
+threadMonitoringController.exitService("_t8pj8LngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<StudentAttributes> getStudentsForGoogleId(String googleId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t8uccLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t8wRoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682377009993920330101549 = studentsLogic.getStudentsForGoogleId(googleId);
+threadMonitoringController.exitInternalAction("_t8wRoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682377009993920330101549;
+}
+finally {
+threadMonitoringController.exitService("_t8uccLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<StudentAttributes> getStudentsForCourse(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t8z8ALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t81xMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682380005513012219426613 = studentsLogic.getStudentsForCourse(courseId);
+threadMonitoringController.exitInternalAction("_t81xMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682380005513012219426613;
+}
+finally {
+threadMonitoringController.exitService("_t8z8ALngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<String> getSectionNamesForCourse(String courseId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t86CoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t88e4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+List<String> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682383009274484080768937 = coursesLogic.getSectionsNameForCourse(courseId);
+threadMonitoringController.exitInternalAction("_t88e4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682383009274484080768937;
+}
+finally {
+threadMonitoringController.exitService("_t86CoLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void populateFieldsToGenerateInQuestion(FeedbackQuestionAttributes feedbackQuestionAttributes, String emailOfEntityDoingQuestion, String teamOfEntityDoingQuestion) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackQuestionAttributes", feedbackQuestionAttributes);
+monitoringServiceParameters.addValue("emailOfEntityDoingQuestion", emailOfEntityDoingQuestion);
+monitoringServiceParameters.addValue("teamOfEntityDoingQuestion", teamOfEntityDoingQuestion);
+threadMonitoringController.enterService("_t9AJQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t9ClgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackQuestionAttributes != null;
+assert emailOfEntityDoingQuestion != null;
+feedbackQuestionsLogic.populateFieldsToGenerateInQuestion(feedbackQuestionAttributes, emailOfEntityDoingQuestion, teamOfEntityDoingQuestion);
+threadMonitoringController.exitInternalAction("_t9ClgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t9AJQLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void resetStudentGoogleId(String originalEmail, String courseId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("originalEmail", originalEmail);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t9G28LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t9JTMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert originalEmail != null;
+assert courseId != null;
+studentsLogic.resetStudentGoogleId(originalEmail, courseId);
+threadMonitoringController.exitInternalAction("_t9JTMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t9G28LngEeyIw-dB1KCaVA");
+}
+}
+
+public  InstructorAttributes regenerateInstructorRegistrationKey(String courseId, String email)throws EntityDoesNotExistException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("email", email);
+threadMonitoringController.enterService("_t9NkoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t9OywLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert email != null;
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682392002846656802044454 = instructorsLogic.regenerateInstructorRegistrationKey(courseId, email);
+threadMonitoringController.exitInternalAction("_t9OywLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682392002846656802044454;
+}
+finally {
+threadMonitoringController.exitService("_t9NkoLngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentAttributes regenerateStudentRegistrationKey(String courseId, String email)throws EntityDoesNotExistException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("email", email);
+threadMonitoringController.enterService("_t9TEMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t9WukLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert email != null;
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823960017968101426373817 = studentsLogic.regenerateStudentRegistrationKey(courseId, email);
+threadMonitoringController.exitInternalAction("_t9WukLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136823960017968101426373817;
+}
+finally {
+threadMonitoringController.exitService("_t9TEMLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void resetInstructorGoogleId(String originalEmail, String courseId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("originalEmail", originalEmail);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t9bAALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t9dcQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert originalEmail != null;
+assert courseId != null;
+instructorsLogic.resetInstructorGoogleId(originalEmail, courseId);
+threadMonitoringController.exitInternalAction("_t9dcQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t9bAALngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentAttributes createStudent(StudentAttributes student)throws InvalidParametersException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("student", student);
+threadMonitoringController.enterService("_t9hGoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.setExternalCallId("_t9i70LngEeyIw-dB1KCaVA");
+assert student.getCourse() != null;
+threadMonitoringController.setExternalCallId("_t9ji4LngEeyIw-dB1KCaVA");
+assert student.getEmail() != null;
+threadMonitoringController.enterInternalAction("_t9kxALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682403003543977635814086 = studentsLogic.createStudent(student);
+threadMonitoringController.exitInternalAction("_t9kxALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682403003543977635814086;
+}
+finally {
+threadMonitoringController.exitService("_t9hGoLngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentAttributes updateStudentCascade(StudentAttributes.UpdateOptions updateOptions)throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_t9q3oLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t9ss0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682406007316717199579397 = studentsLogic.updateStudentCascade(updateOptions);
+threadMonitoringController.exitInternalAction("_t9ss0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682406007316717199579397;
+}
+finally {
+threadMonitoringController.exitService("_t9q3oLngEeyIw-dB1KCaVA");
+}
+}
+
+public  StudentAttributes joinCourseForStudent(String key, String googleId)throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("key", key);
+monitoringServiceParameters.addValue("googleId", googleId);
+threadMonitoringController.enterService("_t9wXMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t9yMYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert googleId != null;
+assert key != null;
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824090048615741263499235 = accountsLogic.joinCourseForStudent(key, googleId);
+threadMonitoringController.exitInternalAction("_t9yMYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824090048615741263499235;
+}
+finally {
+threadMonitoringController.exitService("_t9wXMLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<StudentAttributes> getUnregisteredStudentsForCourse(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t912wLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t93r8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682412003328745117089654 = studentsLogic.getUnregisteredStudentsForCourse(courseId);
+threadMonitoringController.exitInternalAction("_t93r8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682412003328745117089654;
+}
+finally {
+threadMonitoringController.exitService("_t912wLngEeyIw-dB1KCaVA");
+}
+}
+
+public  boolean isFeedbackSessionAttemptedByInstructor(FeedbackSessionAttributes fsa, String userEmail) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("fsa", fsa);
+monitoringServiceParameters.addValue("userEmail", userEmail);
+threadMonitoringController.enterService("_t979YLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t99ykLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert fsa != null;
+assert userEmail != null;
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368241400349285982063417 = feedbackSessionsLogic.isFeedbackSessionAttemptedByInstructor(fsa, userEmail);
+threadMonitoringController.exitInternalAction("_t99ykLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368241400349285982063417;
+}
+finally {
+threadMonitoringController.exitService("_t979YLngEeyIw-dB1KCaVA");
+}
+}
+
+public  boolean isFeedbackSessionAttemptedByStudent(FeedbackSessionAttributes fsa, String userEmail, String userTeam) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("fsa", fsa);
+monitoringServiceParameters.addValue("userEmail", userEmail);
+monitoringServiceParameters.addValue("userTeam", userTeam);
+threadMonitoringController.enterService("_t-Bc8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-DSILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert fsa != null;
+assert userEmail != null;
+assert userTeam != null;
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682417009128306483122839 = feedbackSessionsLogic.isFeedbackSessionAttemptedByStudent(fsa, userEmail, userTeam);
+threadMonitoringController.exitInternalAction("_t-DSILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682417009128306483122839;
+}
+finally {
+threadMonitoringController.exitService("_t-Bc8LngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteStudentCascade(String courseId, String studentEmail) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("studentEmail", studentEmail);
+threadMonitoringController.enterService("_t-G8gLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-JYwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert studentEmail != null;
+studentsLogic.deleteStudentCascade(courseId, studentEmail);
+threadMonitoringController.exitInternalAction("_t-JYwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t-G8gLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteStudentsInCourseCascade(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t-NDILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-PfYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+studentsLogic.deleteStudentsInCourseCascade(courseId);
+threadMonitoringController.exitInternalAction("_t-PfYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t-NDILngEeyIw-dB1KCaVA");
+}
+}
+
+public  void validateSectionsAndTeams(List<StudentAttributes> studentList, String courseId)throws EnrollException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("studentList", studentList);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t-TJwLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-U-8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert studentList != null;
+assert courseId != null;
+studentsLogic.validateSectionsAndTeams(studentList, courseId);
+threadMonitoringController.exitInternalAction("_t-U-8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t-TJwLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<StudentAttributes> getStudentsForTeam(String teamName, String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("teamName", teamName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t-Z3cLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-bsoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert teamName != null;
+assert courseId != null;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824290022002109859583174 = studentsLogic.getStudentsForTeam(teamName, courseId);
+threadMonitoringController.exitInternalAction("_t-bsoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824290022002109859583174;
+}
+finally {
+threadMonitoringController.exitService("_t-Z3cLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void putStudentDocument(StudentAttributes student)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("student", student);
+threadMonitoringController.enterService("_t-ev8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-hzQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+studentsLogic.putDocument(student);
+threadMonitoringController.exitInternalAction("_t-hzQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_t-ev8LngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackSessionAttributes createFeedbackSession(FeedbackSessionAttributes feedbackSession)throws EntityAlreadyExistsException, InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSession", feedbackSession);
+threadMonitoringController.enterService("_t-k2kLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-mrwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSession != null;
+FeedbackSessionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682433005073467692836032 = feedbackSessionsLogic.createFeedbackSession(feedbackSession);
+threadMonitoringController.exitInternalAction("_t-mrwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682433005073467692836032;
+}
+finally {
+threadMonitoringController.exitService("_t-k2kLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackSessionAttributes getFeedbackSession(String feedbackSessionName, String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t-pvELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-sLULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+FeedbackSessionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824350043932994424250216 = feedbackSessionsLogic.getFeedbackSession(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_t-sLULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824350043932994424250216;
+}
+finally {
+threadMonitoringController.exitService("_t-pvELngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackSessionAttributes getFeedbackSessionFromRecycleBin(String feedbackSessionName, String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t-v1sLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-xq4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+FeedbackSessionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682438006873668233896508 = feedbackSessionsLogic.getFeedbackSessionFromRecycleBin(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_t-xq4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682438006873668233896508;
+}
+finally {
+threadMonitoringController.exitService("_t-v1sLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getFeedbackSessionsForCourse(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t-0uMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-3KcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824400014375352190288204 = feedbackSessionsLogic.getFeedbackSessionsForCourse(courseId);
+threadMonitoringController.exitInternalAction("_t-3KcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824400014375352190288204;
+}
+finally {
+threadMonitoringController.exitService("_t-0uMLngEeyIw-dB1KCaVA");
+}
+}
+
+public  int getExpectedTotalSubmission(FeedbackSessionAttributes fsa) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("fsa", fsa);
+threadMonitoringController.enterService("_t-7b4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t-9RELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert fsa != null;
+int longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682445009049134545051284 = feedbackSessionsLogic.getExpectedTotalSubmission(fsa);
+threadMonitoringController.exitInternalAction("_t-9RELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682445009049134545051284;
+}
+finally {
+threadMonitoringController.exitService("_t-7b4LngEeyIw-dB1KCaVA");
+}
+}
+
+public  int getActualTotalSubmission(FeedbackSessionAttributes fsa) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("fsa", fsa);
+threadMonitoringController.enterService("_t_BigLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_DXsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert fsa != null;
+int longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824500008008482033845776 = feedbackSessionsLogic.getActualTotalSubmission(fsa);
+threadMonitoringController.exitInternalAction("_t_DXsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824500008008482033845776;
+}
+finally {
+threadMonitoringController.exitService("_t_BigLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getFeedbackSessionsListForInstructor(List<InstructorAttributes> instructorList) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("instructorList", instructorList);
+threadMonitoringController.enterService("_t_HCELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_I3QLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert instructorList != null;
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824530010120325684864928 = feedbackSessionsLogic.getFeedbackSessionsListForInstructor(instructorList);
+threadMonitoringController.exitInternalAction("_t_I3QLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824530010120325684864928;
+}
+finally {
+threadMonitoringController.exitService("_t_HCELngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getSoftDeletedFeedbackSessionsListForInstructors(List<InstructorAttributes> instructorList) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("instructorList", instructorList);
+threadMonitoringController.enterService("_t_OW0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_QzELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert instructorList != null;
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682456007072568152769062 = feedbackSessionsLogic.getSoftDeletedFeedbackSessionsListForInstructors(instructorList);
+threadMonitoringController.exitInternalAction("_t_QzELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682456007072568152769062;
+}
+finally {
+threadMonitoringController.exitService("_t_OW0LngEeyIw-dB1KCaVA");
+}
+}
+
+public  Map<String, String> getRecipientsOfQuestion(FeedbackQuestionAttributes question, @Nullable
+InstructorAttributes instructorGiver, @Nullable
+StudentAttributes studentGiver) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("question", question);
+monitoringServiceParameters.addValue("instructorGiver", instructorGiver);
+monitoringServiceParameters.addValue("studentGiver", studentGiver);
+threadMonitoringController.enterService("_t_VrkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_XgwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert question != null;
+Map<String, String> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824600007158050073731659 = feedbackQuestionsLogic.getRecipientsOfQuestion(question, instructorGiver, studentGiver, null);
+threadMonitoringController.exitInternalAction("_t_XgwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824600007158050073731659;
+}
+finally {
+threadMonitoringController.exitService("_t_VrkLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackQuestionAttributes getFeedbackQuestion(String feedbackQuestionId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackQuestionId", feedbackQuestionId);
+threadMonitoringController.enterService("_t_dnYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_fckLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackQuestionId != null;
+FeedbackQuestionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682463003127747011692005 = feedbackQuestionsLogic.getFeedbackQuestion(feedbackQuestionId);
+threadMonitoringController.exitInternalAction("_t_fckLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682463003127747011692005;
+}
+finally {
+threadMonitoringController.exitService("_t_dnYLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackQuestionAttributes> getFeedbackQuestionsForStudents(String feedbackSessionName, String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t_jG8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_k8ILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+List<FeedbackQuestionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682466004356159321589109 = feedbackQuestionsLogic.getFeedbackQuestionsForStudents(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_t_k8ILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682466004356159321589109;
+}
+finally {
+threadMonitoringController.exitService("_t_jG8LngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackQuestionAttributes> getFeedbackQuestionsForInstructors(String feedbackSessionName, String courseId, String instructorEmail) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("instructorEmail", instructorEmail);
+threadMonitoringController.enterService("_t_omgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_rCwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+List<FeedbackQuestionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682468004883110743627208 = feedbackQuestionsLogic.getFeedbackQuestionsForInstructors(feedbackSessionName, courseId, instructorEmail);
+threadMonitoringController.exitInternalAction("_t_rCwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682468004883110743627208;
+}
+finally {
+threadMonitoringController.exitService("_t_omgLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackSessionAttributes updateFeedbackSession(FeedbackSessionAttributes.UpdateOptions updateOptions)throws InvalidParametersException, EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_t_v7QLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_yXgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+FeedbackSessionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682471001195595063248921 = feedbackSessionsLogic.updateFeedbackSession(updateOptions);
+threadMonitoringController.exitInternalAction("_t_yXgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682471001195595063248921;
+}
+finally {
+threadMonitoringController.exitService("_t_v7QLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackSessionAttributes publishFeedbackSession(String feedbackSessionName, String courseId)throws EntityDoesNotExistException, InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t_3QALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_t_5sQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+FeedbackSessionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824740012222654233599572 = feedbackSessionsLogic.publishFeedbackSession(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_t_5sQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136824740012222654233599572;
+}
+finally {
+threadMonitoringController.exitService("_t_3QALngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackSessionAttributes unpublishFeedbackSession(String feedbackSessionName, String courseId)throws EntityDoesNotExistException, InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_t_-kwLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uABBALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+FeedbackSessionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682478002889182692401385 = feedbackSessionsLogic.unpublishFeedbackSession(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_uABBALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682478002889182692401385;
+}
+finally {
+threadMonitoringController.exitService("_t_-kwLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteFeedbackSessionCascade(String feedbackSessionName, String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_uAErYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uAGgkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+feedbackSessionsLogic.deleteFeedbackSessionCascade(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_uAGgkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uAErYLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void moveFeedbackSessionToRecycleBin(String feedbackSessionName, String courseId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_uALZELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uAOcYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+feedbackSessionsLogic.moveFeedbackSessionToRecycleBin(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_uAOcYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uALZELngEeyIw-dB1KCaVA");
+}
+}
+
+public  void restoreFeedbackSessionFromRecycleBin(String feedbackSessionName, String courseId)throws EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_uAW_QLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uAY0cLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+feedbackSessionsLogic.restoreFeedbackSessionFromRecycleBin(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_uAY0cLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uAW_QLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackQuestionAttributes createFeedbackQuestion(FeedbackQuestionAttributes feedbackQuestion)throws InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackQuestion", feedbackQuestion);
+threadMonitoringController.enterService("_uAce0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uAeUALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackQuestion != null;
+FeedbackQuestionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682487005689490577411591 = feedbackQuestionsLogic.createFeedbackQuestion(feedbackQuestion);
+threadMonitoringController.exitInternalAction("_uAeUALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682487005689490577411591;
+}
+finally {
+threadMonitoringController.exitService("_uAce0LngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackQuestionAttributes updateFeedbackQuestionCascade(FeedbackQuestionAttributes.UpdateOptions updateOptions)throws InvalidParametersException, EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_uAh-YLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uAjzkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+FeedbackQuestionAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682492009534797825337813 = feedbackQuestionsLogic.updateFeedbackQuestionCascade(updateOptions);
+threadMonitoringController.exitInternalAction("_uAjzkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682492009534797825337813;
+}
+finally {
+threadMonitoringController.exitService("_uAh-YLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteFeedbackQuestionCascade(String questionId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("questionId", questionId);
+threadMonitoringController.enterService("_uAoFALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uAqhQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert questionId != null;
+feedbackQuestionsLogic.deleteFeedbackQuestionCascade(questionId);
+threadMonitoringController.exitInternalAction("_uAqhQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uAoFALngEeyIw-dB1KCaVA");
+}
+}
+
+public  boolean areThereResponsesForQuestion(String feedbackQuestionId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackQuestionId", feedbackQuestionId);
+threadMonitoringController.enterService("_uAuLoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uAwn4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682500009801309078521275 = feedbackResponsesLogic.areThereResponsesForQuestion(feedbackQuestionId);
+threadMonitoringController.exitInternalAction("_uAwn4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682500009801309078521275;
+}
+finally {
+threadMonitoringController.exitService("_uAuLoLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackQuestionAttributes> getFeedbackQuestionsForSession(String feedbackSessionName, String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_uA0SQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uA2HcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+List<FeedbackQuestionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136825020055347105781121 = feedbackQuestionsLogic.getFeedbackQuestionsForSession(feedbackSessionName, courseId);
+threadMonitoringController.exitInternalAction("_uA2HcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136825020055347105781121;
+}
+finally {
+threadMonitoringController.exitService("_uA0SQLngEeyIw-dB1KCaVA");
+}
+}
+
+public  Set<String> getGiverSetThatAnswerFeedbackSession(String courseId, String feedbackSessionName) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+threadMonitoringController.enterService("_uA5KwLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uA7nALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert feedbackSessionName != null;
+Set<String> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682504009547167498174527 = feedbackResponsesLogic.getGiverSetThatAnswerFeedbackSession(courseId, feedbackSessionName);
+threadMonitoringController.exitInternalAction("_uA7nALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682504009547167498174527;
+}
+finally {
+threadMonitoringController.exitService("_uA5KwLngEeyIw-dB1KCaVA");
+}
+}
+
+public  SessionResultsBundle getSessionResultsForCourse(String feedbackSessionName, String courseId, String userEmail, @Nullable
+String questionId, @Nullable
+String section) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("userEmail", userEmail);
+monitoringServiceParameters.addValue("questionId", questionId);
+monitoringServiceParameters.addValue("section", section);
+threadMonitoringController.enterService("_uBAfgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uBCUsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+assert userEmail != null;
+SessionResultsBundle longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682508007872054134349495 = feedbackResponsesLogic.getSessionResultsForCourse(feedbackSessionName, courseId, userEmail, questionId, section);
+threadMonitoringController.exitInternalAction("_uBCUsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682508007872054134349495;
+}
+finally {
+threadMonitoringController.exitService("_uBAfgLngEeyIw-dB1KCaVA");
+}
+}
+
+public  SessionResultsBundle getSessionResultsForUser(String feedbackSessionName, String courseId, String userEmail, boolean isInstructor, @Nullable
+String questionId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("userEmail", userEmail);
+monitoringServiceParameters.addValue("isInstructor", isInstructor);
+monitoringServiceParameters.addValue("questionId", questionId);
+threadMonitoringController.enterService("_uBHNMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uBJpcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackSessionName != null;
+assert courseId != null;
+assert userEmail != null;
+SessionResultsBundle longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682511008495384396573122 = feedbackResponsesLogic.getSessionResultsForUser(feedbackSessionName, courseId, userEmail, isInstructor, questionId);
+threadMonitoringController.exitInternalAction("_uBJpcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682511008495384396573122;
+}
+finally {
+threadMonitoringController.exitService("_uBHNMLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackResponseAttributes> getFeedbackResponsesFromStudentOrTeamForQuestion(FeedbackQuestionAttributes question, StudentAttributes student) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("question", question);
+monitoringServiceParameters.addValue("student", student);
+threadMonitoringController.enterService("_uBNT0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uBQ-MLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert question != null;
+assert student != null;
+List<FeedbackResponseAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682514005866327632995313 = feedbackResponsesLogic.getFeedbackResponsesFromStudentOrTeamForQuestion(question, student);
+threadMonitoringController.exitInternalAction("_uBQ-MLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682514005866327632995313;
+}
+finally {
+threadMonitoringController.exitService("_uBNT0LngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackResponseAttributes> getFeedbackResponsesFromInstructorForQuestion(FeedbackQuestionAttributes question, InstructorAttributes instructorAttributes) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("question", question);
+monitoringServiceParameters.addValue("instructorAttributes", instructorAttributes);
+threadMonitoringController.enterService("_uBVPoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uBXr4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert question != null;
+assert instructorAttributes != null;
+threadMonitoringController.exitInternalAction("_uBXr4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_uBY6ALngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_uBZhELngEeyIw-dB1KCaVA");
+threadMonitoringController.enterInternalAction("_uBaIILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackResponseAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682522008444674220828078 = feedbackResponsesLogic.getFeedbackResponsesFromGiverForQuestion(question.getFeedbackQuestionId(), instructorAttributes.getEmail());
+threadMonitoringController.exitInternalAction("_uBaIILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682522008444674220828078;
+}
+finally {
+threadMonitoringController.exitService("_uBVPoLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackResponseAttributes getFeedbackResponse(String feedbackResponseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackResponseId", feedbackResponseId);
+threadMonitoringController.enterService("_uBeZkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uBgOwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackResponseId != null;
+FeedbackResponseAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136825250033239068614308265 = feedbackResponsesLogic.getFeedbackResponse(feedbackResponseId);
+threadMonitoringController.exitInternalAction("_uBgOwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136825250033239068614308265;
+}
+finally {
+threadMonitoringController.exitService("_uBeZkLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackResponseAttributes createFeedbackResponse(FeedbackResponseAttributes feedbackResponse)throws InvalidParametersException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackResponse", feedbackResponse);
+threadMonitoringController.enterService("_uBkgMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uBm8cLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackResponse != null;
+FeedbackResponseAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682528003727910574073491 = feedbackResponsesLogic.createFeedbackResponse(feedbackResponse);
+threadMonitoringController.exitInternalAction("_uBm8cLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682528003727910574073491;
+}
+finally {
+threadMonitoringController.exitService("_uBkgMLngEeyIw-dB1KCaVA");
+}
+}
+
+public  boolean hasResponsesForCourse(String courseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+threadMonitoringController.enterService("_uBqm0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uBtDELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136825330023461592329948722 = feedbackResponsesLogic.hasResponsesForCourse(courseId);
+threadMonitoringController.exitInternalAction("_uBtDELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136825330023461592329948722;
+}
+finally {
+threadMonitoringController.exitService("_uBqm0LngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackResponseAttributes updateFeedbackResponseCascade(FeedbackResponseAttributes.UpdateOptions updateOptions)throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_uBzJsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uB0-4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+FeedbackResponseAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682593008952508046713779 = feedbackResponsesLogic.updateFeedbackResponseCascade(updateOptions);
+threadMonitoringController.exitInternalAction("_uB0-4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682593008952508046713779;
+}
+finally {
+threadMonitoringController.exitService("_uBzJsLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteFeedbackResponseCascade(String responseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("responseId", responseId);
+threadMonitoringController.enterService("_uB53YLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uB7skLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert responseId != null;
+feedbackResponsesLogic.deleteFeedbackResponseCascade(responseId);
+threadMonitoringController.exitInternalAction("_uB7skLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uB53YLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackResponseCommentAttributes createFeedbackResponseComment(FeedbackResponseCommentAttributes feedbackResponseComment)throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackResponseComment", feedbackResponseComment);
+threadMonitoringController.enterService("_uB-v4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCAlELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackResponseComment != null;
+FeedbackResponseCommentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682599009158848104226884 = feedbackResponseCommentsLogic.createFeedbackResponseComment(feedbackResponseComment);
+threadMonitoringController.exitInternalAction("_uCAlELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682599009158848104226884;
+}
+finally {
+threadMonitoringController.exitService("_uB-v4LngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackResponseCommentAttributes getFeedbackResponseComment(Long feedbackResponseCommentId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackResponseCommentId", feedbackResponseCommentId);
+threadMonitoringController.enterService("_uCEPcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCGEoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackResponseCommentId != null;
+FeedbackResponseCommentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826020044262500997601917 = feedbackResponseCommentsLogic.getFeedbackResponseComment(feedbackResponseCommentId);
+threadMonitoringController.exitInternalAction("_uCGEoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826020044262500997601917;
+}
+finally {
+threadMonitoringController.exitService("_uCEPcLngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackResponseCommentAttributes getFeedbackResponseCommentForResponseFromParticipant(String feedbackResponseId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("feedbackResponseId", feedbackResponseId);
+threadMonitoringController.enterService("_uCJH8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCLkMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert feedbackResponseId != null;
+FeedbackResponseCommentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368260500009817413282761422 = feedbackResponseCommentsLogic.getFeedbackResponseCommentForResponseFromParticipant(feedbackResponseId);
+threadMonitoringController.exitInternalAction("_uCLkMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368260500009817413282761422;
+}
+finally {
+threadMonitoringController.exitService("_uCJH8LngEeyIw-dB1KCaVA");
+}
+}
+
+public  FeedbackResponseCommentAttributes updateFeedbackResponseComment(FeedbackResponseCommentAttributes.UpdateOptions updateOptions)throws EntityDoesNotExistException, InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_uCPOkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCRDwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+FeedbackResponseCommentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826090049502355120971486 = feedbackResponseCommentsLogic.updateFeedbackResponseComment(updateOptions);
+threadMonitoringController.exitInternalAction("_uCRDwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826090049502355120971486;
+}
+finally {
+threadMonitoringController.exitService("_uCPOkLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteFeedbackResponseComment(long commentId) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("commentId", commentId);
+threadMonitoringController.enterService("_uCUHELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCXKYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+feedbackResponseCommentsLogic.deleteFeedbackResponseComment(commentId);
+threadMonitoringController.exitInternalAction("_uCXKYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uCUHELngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getFeedbackSessionsClosedWithinThePastHour() {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+threadMonitoringController.enterService("_uCa0wLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCdRALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826150044032309830162997 = feedbackSessionsLogic.getFeedbackSessionsClosedWithinThePastHour();
+threadMonitoringController.exitInternalAction("_uCdRALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826150044032309830162997;
+}
+finally {
+threadMonitoringController.exitService("_uCa0wLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getFeedbackSessionsClosingWithinTimeLimit() {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+threadMonitoringController.enterService("_uCg7YLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCjXoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682617008649726325327652 = feedbackSessionsLogic.getFeedbackSessionsClosingWithinTimeLimit();
+threadMonitoringController.exitInternalAction("_uCjXoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682617008649726325327652;
+}
+finally {
+threadMonitoringController.exitService("_uCg7YLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getFeedbackSessionsOpeningWithinTimeLimit() {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+threadMonitoringController.enterService("_uCma8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCo3MLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682620006450417900061718 = feedbackSessionsLogic.getFeedbackSessionsOpeningWithinTimeLimit();
+threadMonitoringController.exitInternalAction("_uCo3MLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682620006450417900061718;
+}
+finally {
+threadMonitoringController.exitService("_uCma8LngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getFeedbackSessionsWhichNeedAutomatedPublishedEmailsToBeSent() {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+threadMonitoringController.enterService("_uCshkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uCuWwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826230045532045323266357 = feedbackSessionsLogic.getFeedbackSessionsWhichNeedAutomatedPublishedEmailsToBeSent();
+threadMonitoringController.exitInternalAction("_uCuWwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826230045532045323266357;
+}
+finally {
+threadMonitoringController.exitService("_uCshkLngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<FeedbackSessionAttributes> getFeedbackSessionsWhichNeedOpenEmailsToBeSent() {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+threadMonitoringController.enterService("_uCxaELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uC0dYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackSessionAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682626005407180580901617 = feedbackSessionsLogic.getFeedbackSessionsWhichNeedOpenEmailsToBeSent();
+threadMonitoringController.exitInternalAction("_uC0dYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682626005407180580901617;
+}
+finally {
+threadMonitoringController.exitService("_uCxaELngEeyIw-dB1KCaVA");
+}
+}
+
+public  String getSectionForTeam(String courseId, String teamName) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("teamName", teamName);
+threadMonitoringController.enterService("_uC3gsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uC5V4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert teamName != null;
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682629003620285521736121 = studentsLogic.getSectionForTeam(courseId, teamName);
+threadMonitoringController.exitInternalAction("_uC5V4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682629003620285521736121;
+}
+finally {
+threadMonitoringController.exitService("_uC3gsLngEeyIw-dB1KCaVA");
+}
+}
+
+public  DataBundle persistDataBundle(DataBundle dataBundle)throws InvalidParametersException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("dataBundle", dataBundle);
+threadMonitoringController.enterService("_uC8ZMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDBRsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+DataBundle longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826320045213840528792026 = dataBundleLogic.persistDataBundle(dataBundle);
+threadMonitoringController.exitInternalAction("_uDBRsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826320045213840528792026;
+}
+finally {
+threadMonitoringController.exitService("_uC8ZMLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void removeDataBundle(DataBundle dataBundle) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("dataBundle", dataBundle);
+threadMonitoringController.enterService("_uDImcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDNe8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+dataBundleLogic.removeDataBundle(dataBundle);
+threadMonitoringController.exitInternalAction("_uDNe8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uDImcLngEeyIw-dB1KCaVA");
+}
+}
+
+public  void putDocuments(DataBundle dataBundle)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("dataBundle", dataBundle);
+threadMonitoringController.enterService("_uDSXcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDUzsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+dataBundleLogic.putDocuments(dataBundle);
+threadMonitoringController.exitInternalAction("_uDUzsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uDSXcLngEeyIw-dB1KCaVA");
+}
+}
+
+public  boolean isStudentsInSameTeam(String courseId, String student1Email, String student2Email) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("courseId", courseId);
+monitoringServiceParameters.addValue("student1Email", student1Email);
+monitoringServiceParameters.addValue("student2Email", student2Email);
+threadMonitoringController.enterService("_uDYeELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDaTQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert courseId != null;
+assert student1Email != null;
+assert student2Email != null;
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826400046669081615076946 = studentsLogic.isStudentsInSameTeam(courseId, student1Email, student2Email);
+threadMonitoringController.exitInternalAction("_uDaTQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826400046669081615076946;
+}
+finally {
+threadMonitoringController.exitService("_uDYeELngEeyIw-dB1KCaVA");
+}
+}
+
+public  AccountRequestAttributes createAccountRequest(AccountRequestAttributes accountRequest)throws InvalidParametersException, EntityAlreadyExistsException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("accountRequest", accountRequest);
+threadMonitoringController.enterService("_uDeksLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDgZ4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert accountRequest != null;
+AccountRequestAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682643005095911118653942 = accountRequestsLogic.createAccountRequest(accountRequest);
+threadMonitoringController.exitInternalAction("_uDgZ4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682643005095911118653942;
+}
+finally {
+threadMonitoringController.exitService("_uDeksLngEeyIw-dB1KCaVA");
+}
+}
+
+public  AccountRequestAttributes updateAccountRequest(AccountRequestAttributes.UpdateOptions updateOptions)throws InvalidParametersException, EntityDoesNotExistException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("updateOptions", updateOptions);
+threadMonitoringController.enterService("_uDkrULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDmggLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert updateOptions != null;
+AccountRequestAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682646007354346971282564 = accountRequestsLogic.updateAccountRequest(updateOptions);
+threadMonitoringController.exitInternalAction("_uDmggLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682646007354346971282564;
+}
+finally {
+threadMonitoringController.exitService("_uDkrULngEeyIw-dB1KCaVA");
+}
+}
+
+public  void deleteAccountRequest(String email, String institute) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("email", email);
+monitoringServiceParameters.addValue("institute", institute);
+threadMonitoringController.enterService("_uDqK4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDsAELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert email != null;
+accountRequestsLogic.deleteAccountRequest(email, institute);
+threadMonitoringController.exitInternalAction("_uDsAELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uDqK4LngEeyIw-dB1KCaVA");
+}
+}
+
+public  AccountRequestAttributes getAccountRequestForRegistrationKey(String registrationKey) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("registrationKey", registrationKey);
+threadMonitoringController.enterService("_uDvqcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uDyGsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert registrationKey != null;
+AccountRequestAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826510039792465564122037 = accountRequestsLogic.getAccountRequestForRegistrationKey(registrationKey);
+threadMonitoringController.exitInternalAction("_uDyGsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826510039792465564122037;
+}
+finally {
+threadMonitoringController.exitService("_uDvqcLngEeyIw-dB1KCaVA");
+}
+}
+
+public  AccountRequestAttributes getAccountRequest(String email, String institute) {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("email", email);
+monitoringServiceParameters.addValue("institute", institute);
+threadMonitoringController.enterService("_uD2YILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uD4NULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert email != null;
+assert institute != null;
+AccountRequestAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826540012161756002789059 = accountRequestsLogic.getAccountRequest(email, institute);
+threadMonitoringController.exitInternalAction("_uD4NULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136826540012161756002789059;
+}
+finally {
+threadMonitoringController.exitService("_uD2YILngEeyIw-dB1KCaVA");
+}
+}
+
+public  List<AccountRequestAttributes> searchAccountRequestsInWholeSystem(String queryString)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("queryString", queryString);
+threadMonitoringController.enterService("_uD9F0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uD_iELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+assert queryString != null;
+List<AccountRequestAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682657005641613229481733 = accountRequestsLogic.searchAccountRequestsInWholeSystem(queryString);
+threadMonitoringController.exitInternalAction("_uD_iELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682657005641613229481733;
+}
+finally {
+threadMonitoringController.exitService("_uD9F0LngEeyIw-dB1KCaVA");
+}
+}
+
+public  void putAccountRequestDocument(AccountRequestAttributes accountRequest)throws SearchServiceException {
+cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
+cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
+monitoringServiceParameters.addValue("accountRequest", accountRequest);
+threadMonitoringController.enterService("_uEDMcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+try {
+threadMonitoringController.enterInternalAction("_uEGPwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+accountRequestsLogic.putDocument(accountRequest);
+threadMonitoringController.exitInternalAction("_uEGPwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+}
+finally {
+threadMonitoringController.exitService("_uEDMcLngEeyIw-dB1KCaVA");
+}
+}
 
-    private static final Logic instance = new Logic();
-
-    final AccountsLogic accountsLogic = AccountsLogic.inst();
-    final AccountRequestsLogic accountRequestsLogic = AccountRequestsLogic.inst();
-    final StudentsLogic studentsLogic = StudentsLogic.inst();
-    final InstructorsLogic instructorsLogic = InstructorsLogic.inst();
-    final CoursesLogic coursesLogic = CoursesLogic.inst();
-    final FeedbackSessionsLogic feedbackSessionsLogic = FeedbackSessionsLogic.inst();
-    final FeedbackQuestionsLogic feedbackQuestionsLogic = FeedbackQuestionsLogic.inst();
-    final FeedbackResponsesLogic feedbackResponsesLogic = FeedbackResponsesLogic.inst();
-    final FeedbackResponseCommentsLogic feedbackResponseCommentsLogic = FeedbackResponseCommentsLogic.inst();
-    final ProfilesLogic profilesLogic = ProfilesLogic.inst();
-    final DataBundleLogic dataBundleLogic = DataBundleLogic.inst();
-
-    Logic() {
-        // prevent initialization
-    }
-
-    public static Logic inst() {
-        return instance;
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     */
-    public AccountAttributes getAccount(String googleId) {
-        assert googleId != null;
-
-        return accountsLogic.getAccount(googleId);
-    }
-
-    public String getCourseInstitute(String courseId) {
-        return coursesLogic.getCourseInstitute(courseId);
-    }
-
-    /**
-     * Updates/Creates the profile using {@link StudentProfileAttributes.UpdateOptions}.
-     *
-     * <br/> Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated student profile
-     * @throws InvalidParametersException if attributes to update are not valid
-     */
-    public StudentProfileAttributes updateOrCreateStudentProfile(StudentProfileAttributes.UpdateOptions updateOptions)
-            throws InvalidParametersException {
-
-        assert updateOptions != null;
-
-        return profilesLogic.updateOrCreateStudentProfile(updateOptions);
-    }
-
-    /**
-     * Deletes both instructor and student privileges, as long as the account and associated student profile.
-     *
-     * <ul>
-     * <li>Fails silently if no such account.</li>
-     * </ul>
-     *
-     * <p>Preconditions:</p>
-     * * All parameters are non-null.
-     */
-    public void deleteAccountCascade(String googleId) {
-
-        assert googleId != null;
-
-        accountsLogic.deleteAccountCascade(googleId);
-    }
-
-    /**
-     * Creates an instructor.
-     *
-     * <p>Preconditions:</p>
-     * * All parameters are non-null.
-     *
-     * @return the created instructor
-     * @throws InvalidParametersException if the instructor is not valid
-     * @throws EntityAlreadyExistsException if the instructor already exists in the database
-     */
-    public InstructorAttributes createInstructor(InstructorAttributes instructor)
-            throws InvalidParametersException, EntityAlreadyExistsException {
-        assert instructor != null;
-
-        return instructorsLogic.createInstructor(instructor);
-    }
-
-    /**
-     * This method should be used by admin only since the searching does not restrict the
-     * visibility according to the logged-in user's google ID. This is used by admin to
-     * search instructors in the whole system.
-     * @return Null if no match found.
-     */
-    public List<InstructorAttributes> searchInstructorsInWholeSystem(String queryString)
-            throws SearchServiceException {
-        assert queryString != null;
-
-        return instructorsLogic.searchInstructorsInWholeSystem(queryString);
-    }
-
-    /**
-     * Creates or updates search document for the given instructor.
-     *
-     * @see InstructorsLogic#putDocument(InstructorAttributes)
-     */
-    public void putInstructorDocument(InstructorAttributes instructor) throws SearchServiceException {
-        instructorsLogic.putDocument(instructor);
-    }
-
-    /**
-     * Update instructor being edited to ensure validity of instructors for the course.
-     *
-     * @see InstructorsLogic#updateToEnsureValidityOfInstructorsForTheCourse(String, InstructorAttributes)
-     */
-    public void updateToEnsureValidityOfInstructorsForTheCourse(String courseId, InstructorAttributes instructorToEdit) {
-
-        assert courseId != null;
-        assert instructorToEdit != null;
-
-        instructorsLogic.updateToEnsureValidityOfInstructorsForTheCourse(courseId, instructorToEdit);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return null if not found.
-     */
-    public InstructorAttributes getInstructorForEmail(String courseId, String email) {
-
-        assert courseId != null;
-        assert email != null;
-
-        return instructorsLogic.getInstructorForEmail(courseId, email);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return null if not found.
-     */
-    public InstructorAttributes getInstructorById(String courseId, String email) {
-
-        assert courseId != null;
-        assert email != null;
-
-        return instructorsLogic.getInstructorById(courseId, email);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return null if not found.
-     */
-    public InstructorAttributes getInstructorForGoogleId(String courseId, String googleId) {
-
-        assert googleId != null;
-        assert courseId != null;
-
-        return instructorsLogic.getInstructorForGoogleId(courseId, googleId);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return null if not found.
-     */
-    public InstructorAttributes getInstructorForRegistrationKey(String registrationKey) {
-
-        assert registrationKey != null;
-
-        return instructorsLogic.getInstructorForRegistrationKey(registrationKey);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return Empty list if none found.
-     */
-    public List<InstructorAttributes> getInstructorsForGoogleId(String googleId) {
-
-        assert googleId != null;
-
-        return instructorsLogic.getInstructorsForGoogleId(googleId);
-    }
-
-    public List<InstructorAttributes> getInstructorsForGoogleId(String googleId, boolean omitArchived) {
-
-        assert googleId != null;
-
-        return instructorsLogic.getInstructorsForGoogleId(googleId, omitArchived);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return Empty list if none found.
-     */
-    public List<InstructorAttributes> getInstructorsForCourse(String courseId) {
-
-        assert courseId != null;
-
-        return instructorsLogic.getInstructorsForCourse(courseId);
-    }
-
-    public List<FeedbackSessionAttributes> getAllOngoingSessions(Instant rangeStart, Instant rangeEnd) {
-
-        return feedbackSessionsLogic.getAllOngoingSessions(rangeStart, rangeEnd);
-    }
-
-    /**
-     * Updates an instructor by {@link InstructorAttributes.UpdateOptionsWithGoogleId}.
-     *
-     * <p>Cascade update the comments and responses given by the instructor.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated instructor
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the instructor cannot be found
-     */
-    public InstructorAttributes updateInstructorCascade(InstructorAttributes.UpdateOptionsWithGoogleId updateOptions)
-            throws InstructorUpdateException, InvalidParametersException, EntityDoesNotExistException {
-        assert updateOptions != null;
-
-        return instructorsLogic.updateInstructorByGoogleIdCascade(updateOptions);
-    }
-
-    /**
-     * Updates an instructor by {@link InstructorAttributes.UpdateOptionsWithEmail}.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated instructor
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the instructor cannot be found
-     */
-    public InstructorAttributes updateInstructor(InstructorAttributes.UpdateOptionsWithEmail updateOptions)
-            throws InstructorUpdateException, InvalidParametersException, EntityDoesNotExistException {
-        assert updateOptions != null;
-
-        return instructorsLogic.updateInstructorByEmail(updateOptions);
-    }
-
-    /**
-     * Make the instructor join the course, i.e. associate the Google ID to the instructor.<br>
-     * Creates an account for the instructor if there is no existing account for him.
-     * Preconditions: <br>
-     * * Parameters regkey and googleId are non-null.
-     */
-    public InstructorAttributes joinCourseForInstructor(String regkey, String googleId)
-            throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
-
-        assert googleId != null;
-        assert regkey != null;
-
-        return accountsLogic.joinCourseForInstructor(regkey, googleId);
-    }
-
-    /**
-     * Downgrades an instructor account to student account.
-     *
-     * <p>Cascade deletes all instructors associated with the account.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void downgradeInstructorToStudentCascade(String googleId) throws EntityDoesNotExistException {
-        assert googleId != null;
-
-        accountsLogic.downgradeInstructorToStudentCascade(googleId);
-    }
-
-    /**
-     * Deletes an instructor cascade its associated feedback responses and comments.
-     *
-     * <p>Fails silently if the student does not exist.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void deleteInstructorCascade(String courseId, String email) {
-
-        assert courseId != null;
-        assert email != null;
-
-        instructorsLogic.deleteInstructorCascade(courseId, email);
-    }
-
-    /**
-     * Creates a course and an associated instructor for the course.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null. <br/>
-     * * {@code instructorGoogleId} already has an account and instructor privileges.
-     */
-    public void createCourseAndInstructor(String instructorGoogleId, CourseAttributes courseAttributes)
-            throws EntityAlreadyExistsException, InvalidParametersException {
-        assert instructorGoogleId != null;
-        assert courseAttributes != null;
-
-        coursesLogic.createCourseAndInstructor(instructorGoogleId, courseAttributes);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return null if not found.
-     */
-    public CourseAttributes getCourse(String courseId) {
-
-        assert courseId != null;
-
-        return coursesLogic.getCourse(courseId);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     */
-    public List<CourseAttributes> getCoursesForStudentAccount(String googleId) {
-        assert googleId != null;
-        return coursesLogic.getCoursesForStudentAccount(googleId);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @return Courses the given instructors is in except for courses in Recycle Bin.
-     */
-    public List<CourseAttributes> getCoursesForInstructor(List<InstructorAttributes> instructorList) {
-
-        assert instructorList != null;
-        return coursesLogic.getCoursesForInstructor(instructorList);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @return Courses in Recycle Bin that the given instructors is in.
-     */
-    public List<CourseAttributes> getSoftDeletedCoursesForInstructors(List<InstructorAttributes> instructorList) {
-
-        assert instructorList != null;
-        return coursesLogic.getSoftDeletedCoursesForInstructors(instructorList);
-    }
-
-    /**
-     * Updates a course by {@link CourseAttributes.UpdateOptions}.
-     *
-     * <p>If the {@code timezone} of the course is changed, cascade the change to its corresponding feedback sessions.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated course
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the course cannot be found
-     */
-    public CourseAttributes updateCourseCascade(CourseAttributes.UpdateOptions updateOptions)
-            throws InvalidParametersException, EntityDoesNotExistException {
-        assert updateOptions != null;
-
-        return coursesLogic.updateCourseCascade(updateOptions);
-    }
-
-    /**
-     * Changes the archive status of a course for an instructor.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @param courseId The course of which the archive status is to be changed
-     * @param archiveStatus The archive status to be set
-     */
-
-    public void setArchiveStatusOfInstructor(String googleId, String courseId, boolean archiveStatus)
-            throws InvalidParametersException, EntityDoesNotExistException {
-
-        assert googleId != null;
-        assert courseId != null;
-
-        instructorsLogic.setArchiveStatusOfInstructor(googleId, courseId, archiveStatus);
-    }
-
-    /**
-     * Deletes a course cascade its students, instructors, sessions, responses and comments.
-     *
-     * <p>Fails silently if no such course.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void deleteCourseCascade(String courseId) {
-        assert courseId != null;
-        coursesLogic.deleteCourseCascade(courseId);
-    }
-
-    /**
-     * Moves a course to Recycle Bin by its given corresponding ID.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return the deletion timestamp assigned to the course.
-     */
-    public Instant moveCourseToRecycleBin(String courseId) throws EntityDoesNotExistException {
-        assert courseId != null;
-        return coursesLogic.moveCourseToRecycleBin(courseId);
-    }
-
-    /**
-     * Restores a course and all data related to the course from Recycle Bin by
-     * its given corresponding ID.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void restoreCourseFromRecycleBin(String courseId)
-            throws EntityDoesNotExistException {
-        assert courseId != null;
-
-        coursesLogic.restoreCourseFromRecycleBin(courseId);
-    }
-
-    /**
-     * Search for students. Preconditions: all parameters are non-null.
-     * @param instructors   a list of InstructorAttributes associated to a googleId,
-     *                      used for filtering of search result
-     * @return Null if no match found
-     */
-    public List<StudentAttributes> searchStudents(String queryString, List<InstructorAttributes> instructors)
-            throws SearchServiceException {
-        assert queryString != null;
-        assert instructors != null;
-        return studentsLogic.searchStudents(queryString, instructors);
-    }
-
-    /**
-     * This method should be used by admin only since the searching does not restrict the
-     * visibility according to the logged-in user's google ID. This is used by admin to
-     * search students in the whole system.
-     * @return Null if no match found.
-     */
-    public List<StudentAttributes> searchStudentsInWholeSystem(String queryString)
-            throws SearchServiceException {
-        assert queryString != null;
-
-        return studentsLogic.searchStudentsInWholeSystem(queryString);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @return Null if no match found.
-     */
-    public StudentAttributes getStudentForRegistrationKey(String registrationKey) {
-        assert registrationKey != null;
-        return studentsLogic.getStudentForRegistrationKey(registrationKey);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @return Null if no match found.
-     */
-    public StudentAttributes getStudentForEmail(String courseId, String email) {
-        assert courseId != null;
-        assert email != null;
-
-        return studentsLogic.getStudentForEmail(courseId, email);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @return Null if no match found.
-     */
-    public StudentAttributes getStudentForGoogleId(String courseId, String googleId) {
-        assert courseId != null;
-        assert googleId != null;
-
-        return studentsLogic.getStudentForCourseIdAndGoogleId(courseId, googleId);
-    }
-
-    /**
-     * Gets student profile associated with the {@code googleId}.
-     *
-     * <br/> Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return null if no match found.
-     */
-    public StudentProfileAttributes getStudentProfile(String googleId) {
-        assert googleId != null;
-        return profilesLogic.getStudentProfile(googleId);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @return Empty list if no match found.
-     */
-    public List<StudentAttributes> getStudentsForGoogleId(String googleId) {
-        assert googleId != null;
-        return studentsLogic.getStudentsForGoogleId(googleId);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @return Empty list if none found.
-     */
-    public List<StudentAttributes> getStudentsForCourse(String courseId) {
-        assert courseId != null;
-        return studentsLogic.getStudentsForCourse(courseId);
-    }
-
-    /**
-     * Returns a list of section names for the course with ID courseId.
-     *
-     * <p>Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @see CoursesLogic#getSectionsNameForCourse(String)
-     */
-    public List<String> getSectionNamesForCourse(String courseId) throws EntityDoesNotExistException {
-        assert courseId != null;
-        return coursesLogic.getSectionsNameForCourse(courseId);
-    }
-
-    /**
-     * Populates fields that need dynamic generation in a question.
-     *
-     * <p>Currently, only MCQ/MSQ needs to generate choices dynamically.</p>
-     *
-     * <br/> Preconditions: <br/>
-     * * All parameters except <code>teamOfEntityDoingQuestion</code> are non-null.
-     *
-     * @param feedbackQuestionAttributes the question to populate
-     * @param emailOfEntityDoingQuestion the email of the entity doing the question
-     * @param teamOfEntityDoingQuestion the team of the entity doing the question. If the entity is an instructor,
-     *                                  it can be {@code null}.
-     */
-    public void populateFieldsToGenerateInQuestion(FeedbackQuestionAttributes feedbackQuestionAttributes,
-            String emailOfEntityDoingQuestion, String teamOfEntityDoingQuestion) {
-        assert feedbackQuestionAttributes != null;
-        assert emailOfEntityDoingQuestion != null;
-
-        feedbackQuestionsLogic.populateFieldsToGenerateInQuestion(
-                feedbackQuestionAttributes, emailOfEntityDoingQuestion, teamOfEntityDoingQuestion);
-    }
-
-    /**
-     * Resets the googleId associated with the student.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void resetStudentGoogleId(String originalEmail, String courseId) throws EntityDoesNotExistException {
-        assert originalEmail != null;
-        assert courseId != null;
-
-        studentsLogic.resetStudentGoogleId(originalEmail, courseId);
-    }
-
-    /**
-     * Regenerates the registration key for the instructor with email address {@code email} in course {@code courseId}.
-     *
-     * @return the instructor attributes with the new registration key.
-     * @throws EntityAlreadyExistsException if the newly generated instructor has the same registration key as the
-     *          original one.
-     * @throws EntityDoesNotExistException if the instructor does not exist.
-     */
-    public InstructorAttributes regenerateInstructorRegistrationKey(String courseId, String email)
-            throws EntityDoesNotExistException, EntityAlreadyExistsException {
-
-        assert courseId != null;
-        assert email != null;
-
-        return instructorsLogic.regenerateInstructorRegistrationKey(courseId, email);
-    }
-
-    /**
-     * Regenerates the registration key for the student with email address {@code email} in course {@code courseId}.
-     *
-     * @return the student attributes with the new registration key.
-     * @throws EntityAlreadyExistsException if the newly generated course student has the same registration key as the
-     *          original one.
-     * @throws EntityDoesNotExistException if the student does not exist.
-     */
-    public StudentAttributes regenerateStudentRegistrationKey(String courseId, String email)
-            throws EntityDoesNotExistException, EntityAlreadyExistsException {
-
-        assert courseId != null;
-        assert email != null;
-
-        return studentsLogic.regenerateStudentRegistrationKey(courseId, email);
-    }
-
-    /**
-     * Resets the associated googleId of an instructor.
-     */
-    public void resetInstructorGoogleId(String originalEmail, String courseId) throws EntityDoesNotExistException {
-        assert originalEmail != null;
-        assert courseId != null;
-
-        instructorsLogic.resetInstructorGoogleId(originalEmail, courseId);
-    }
-
-    /**
-     * Creates a student.
-     *
-     * @return the created student.
-     * @throws InvalidParametersException if the student is not valid.
-     * @throws EntityAlreadyExistsException if the student already exists in the database.
-     */
-    public StudentAttributes createStudent(StudentAttributes student)
-            throws InvalidParametersException, EntityAlreadyExistsException {
-        assert student.getCourse() != null;
-        assert student.getEmail() != null;
-
-        return studentsLogic.createStudent(student);
-    }
-
-    /**
-     * Updates a student by {@link StudentAttributes.UpdateOptions}.
-     *
-     * <p>If email changed, update by recreating the student and cascade update all responses the student gives/receives.
-     *
-     * <p>If team changed, cascade delete all responses the student gives/receives within that team.
-     *
-     * <p>If section changed, cascade update all responses the student gives/receives.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated student
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the student cannot be found
-     * @throws EntityAlreadyExistsException if the student cannot be updated
-     *         by recreation because of an existent student
-     */
-    public StudentAttributes updateStudentCascade(StudentAttributes.UpdateOptions updateOptions)
-            throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
-
-        assert updateOptions != null;
-
-        return studentsLogic.updateStudentCascade(updateOptions);
-    }
-
-    /**
-     * Make the student join the course, i.e. associate the Google ID to the student.<br>
-     * Create an account for the student if there is no account exist for him.
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     * @param key the registration key
-     */
-    public StudentAttributes joinCourseForStudent(String key, String googleId)
-            throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
-
-        assert googleId != null;
-        assert key != null;
-
-        return accountsLogic.joinCourseForStudent(key, googleId);
-
-    }
-
-    public List<StudentAttributes> getUnregisteredStudentsForCourse(String courseId) {
-        assert courseId != null;
-        return studentsLogic.getUnregisteredStudentsForCourse(courseId);
-    }
-
-    /**
-     * Checks whether an instructor has attempted a feedback session.
-     *
-     * <p>If there is no question for instructors, the feedback session is considered as attempted.</p>
-     */
-    public boolean isFeedbackSessionAttemptedByInstructor(FeedbackSessionAttributes fsa, String userEmail) {
-        assert fsa != null;
-        assert userEmail != null;
-        return feedbackSessionsLogic.isFeedbackSessionAttemptedByInstructor(fsa, userEmail);
-    }
-
-    /**
-     * Checks whether a student has attempted a feedback session.
-     *
-     * <p>If there is no question for students, the feedback session is considered as attempted.</p>
-     */
-    public boolean isFeedbackSessionAttemptedByStudent(FeedbackSessionAttributes fsa, String userEmail, String userTeam) {
-        assert fsa != null;
-        assert userEmail != null;
-        assert userTeam != null;
-        return feedbackSessionsLogic.isFeedbackSessionAttemptedByStudent(fsa, userEmail, userTeam);
-    }
-
-    /**
-     * Deletes a student cascade its associated feedback responses and comments.
-     *
-     * <p>Fails silently if the student does not exist.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void deleteStudentCascade(String courseId, String studentEmail) {
-        assert courseId != null;
-        assert studentEmail != null;
-
-        studentsLogic.deleteStudentCascade(courseId, studentEmail);
-    }
-
-    /**
-     * Deletes all the students in the course cascade their associated responses and comments.
-     *
-     * <br/>Preconditions: <br>
-     * * All parameters are non-null.
-     */
-    public void deleteStudentsInCourseCascade(String courseId) {
-        assert courseId != null;
-
-        studentsLogic.deleteStudentsInCourseCascade(courseId);
-    }
-
-    /**
-     * Validates sections for any limit violations and teams for any team name violations.
-     *
-     * <p>Preconditions: <br>
-     * * All parameters are non-null.
-     *
-     * @see StudentsLogic#validateSectionsAndTeams(List, String)
-     */
-    public void validateSectionsAndTeams(List<StudentAttributes> studentList, String courseId) throws EnrollException {
-
-        assert studentList != null;
-        assert courseId != null;
-
-        studentsLogic.validateSectionsAndTeams(studentList, courseId);
-    }
-
-    /**
-     * Gets all students of a team.
-     */
-    public List<StudentAttributes> getStudentsForTeam(String teamName, String courseId) {
-        assert teamName != null;
-        assert courseId != null;
-
-        return studentsLogic.getStudentsForTeam(teamName, courseId);
-    }
-
-    /**
-     * Creates or updates search document for the given student.
-     *
-     * @see StudentsLogic#putDocument(StudentAttributes)
-     */
-    public void putStudentDocument(StudentAttributes student) throws SearchServiceException {
-        studentsLogic.putDocument(student);
-    }
-
-    /**
-     * Creates a feedback session.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return created feedback session
-     * @throws InvalidParametersException if the session is not valid
-     * @throws EntityAlreadyExistsException if the session already exist
-     */
-    public FeedbackSessionAttributes createFeedbackSession(FeedbackSessionAttributes feedbackSession)
-            throws EntityAlreadyExistsException, InvalidParametersException {
-        assert feedbackSession != null;
-
-        return feedbackSessionsLogic.createFeedbackSession(feedbackSession);
-    }
-
-    /**
-     * Gets a feedback session from the data storage.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return null if not found or in recycle bin.
-     */
-    public FeedbackSessionAttributes getFeedbackSession(String feedbackSessionName, String courseId) {
-
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        return feedbackSessionsLogic.getFeedbackSession(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Gets a feedback session from the recycle bin.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return null if not found.
-     */
-    public FeedbackSessionAttributes getFeedbackSessionFromRecycleBin(String feedbackSessionName, String courseId) {
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        return feedbackSessionsLogic.getFeedbackSessionFromRecycleBin(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     */
-    public List<FeedbackSessionAttributes> getFeedbackSessionsForCourse(String courseId) {
-        assert courseId != null;
-        return feedbackSessionsLogic.getFeedbackSessionsForCourse(courseId);
-    }
-
-    /**
-     * Gets the expected number of submissions for a feedback session.
-     *
-     * <br>Preconditions: <br>
-     * * All parameters are non-null.
-     */
-    public int getExpectedTotalSubmission(FeedbackSessionAttributes fsa) {
-        assert fsa != null;
-        return feedbackSessionsLogic.getExpectedTotalSubmission(fsa);
-    }
-
-    /**
-     * Gets the actual number of submissions for a feedback session.
-     *
-     * <br>Preconditions: <br>
-     * * All parameters are non-null.
-     */
-    public int getActualTotalSubmission(FeedbackSessionAttributes fsa) {
-        assert fsa != null;
-        return feedbackSessionsLogic.getActualTotalSubmission(fsa);
-    }
-
-    /**
-     * Gets a list of feedback sessions for instructors.
-     */
-    public List<FeedbackSessionAttributes> getFeedbackSessionsListForInstructor(
-            List<InstructorAttributes> instructorList) {
-        assert instructorList != null;
-        return feedbackSessionsLogic.getFeedbackSessionsListForInstructor(instructorList);
-    }
-
-    /**
-     * Returns a {@code List} of feedback sessions in the Recycle Bin for the instructors.
-     * <br>
-     * Omits sessions if the corresponding courses are archived or in Recycle Bin
-     */
-    public List<FeedbackSessionAttributes> getSoftDeletedFeedbackSessionsListForInstructors(
-            List<InstructorAttributes> instructorList) {
-        assert instructorList != null;
-        return feedbackSessionsLogic.getSoftDeletedFeedbackSessionsListForInstructors(instructorList);
-    }
-
-    /**
-     * Gets the recipients of a feedback question for student.
-     *
-     * @see FeedbackQuestionsLogic#getRecipientsOfQuestion
-     */
-    public Map<String, String> getRecipientsOfQuestion(
-            FeedbackQuestionAttributes question,
-            @Nullable InstructorAttributes instructorGiver, @Nullable StudentAttributes studentGiver) {
-        assert question != null;
-
-        // we do not supply course roster here
-        return feedbackQuestionsLogic.getRecipientsOfQuestion(question, instructorGiver, studentGiver, null);
-    }
-
-    /**
-     * Preconditions: <br>
-     * * All parameters are non-null. <br>
-     *
-     */
-    public FeedbackQuestionAttributes getFeedbackQuestion(String feedbackQuestionId) {
-        assert feedbackQuestionId != null;
-        return feedbackQuestionsLogic.getFeedbackQuestion(feedbackQuestionId);
-    }
-
-    /**
-     * Gets a list of all questions for the given session that
-     * students can view/submit.
-     */
-    public List<FeedbackQuestionAttributes> getFeedbackQuestionsForStudents(
-            String feedbackSessionName, String courseId) {
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        return feedbackQuestionsLogic.getFeedbackQuestionsForStudents(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Gets a {@code List} of all questions for the given session that
-     * instructor can view/submit.
-     */
-    public List<FeedbackQuestionAttributes> getFeedbackQuestionsForInstructors(
-            String feedbackSessionName, String courseId, String instructorEmail) {
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        return feedbackQuestionsLogic.getFeedbackQuestionsForInstructors(feedbackSessionName, courseId, instructorEmail);
-    }
-
-    /**
-     * Updates the details of a feedback session by {@link FeedbackSessionAttributes.UpdateOptions}.
-     *
-     * <p>Adjust email sending status if necessary.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated feedback session
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the feedback session cannot be found
-     */
-    public FeedbackSessionAttributes updateFeedbackSession(FeedbackSessionAttributes.UpdateOptions updateOptions)
-            throws InvalidParametersException, EntityDoesNotExistException {
-        assert updateOptions != null;
-
-        return feedbackSessionsLogic.updateFeedbackSession(updateOptions);
-    }
-
-    /**
-     * Publishes a feedback session.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return the published feedback session
-     * @throws EntityDoesNotExistException if the feedback session cannot be found
-     * @throws InvalidParametersException if session is already published
-     */
-    public FeedbackSessionAttributes publishFeedbackSession(String feedbackSessionName, String courseId)
-            throws EntityDoesNotExistException, InvalidParametersException {
-
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        return feedbackSessionsLogic.publishFeedbackSession(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Unpublishes a feedback session.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return the unpublished feedback session
-     * @throws EntityDoesNotExistException if the feedback session cannot be found
-     * @throws InvalidParametersException
-     *             if the feedback session is not ready to be unpublished.
-     */
-    public FeedbackSessionAttributes unpublishFeedbackSession(String feedbackSessionName, String courseId)
-            throws EntityDoesNotExistException, InvalidParametersException {
-
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        return feedbackSessionsLogic.unpublishFeedbackSession(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Deletes a feedback session cascade to its associated questions, responses and comments.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void deleteFeedbackSessionCascade(String feedbackSessionName, String courseId) {
-
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        feedbackSessionsLogic.deleteFeedbackSessionCascade(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Soft-deletes a specific session to Recycle Bin.
-     */
-    public void moveFeedbackSessionToRecycleBin(String feedbackSessionName, String courseId)
-            throws EntityDoesNotExistException {
-
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        feedbackSessionsLogic.moveFeedbackSessionToRecycleBin(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Restores a specific session from Recycle Bin to feedback sessions table.
-     */
-    public void restoreFeedbackSessionFromRecycleBin(String feedbackSessionName, String courseId)
-            throws EntityDoesNotExistException {
-
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        feedbackSessionsLogic.restoreFeedbackSessionFromRecycleBin(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Creates a new feedback question.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return the created question
-     * @throws InvalidParametersException if the question is invalid
-     */
-    public FeedbackQuestionAttributes createFeedbackQuestion(FeedbackQuestionAttributes feedbackQuestion)
-            throws InvalidParametersException {
-        assert feedbackQuestion != null;
-
-        return feedbackQuestionsLogic.createFeedbackQuestion(feedbackQuestion);
-    }
-
-    /**
-     * Updates a feedback question by {@code FeedbackQuestionAttributes.UpdateOptions}.
-     *
-     * <p>Cascade adjust the question number of questions in the same session.
-     *
-     * <p>Cascade adjust the existing response of the question.
-     *
-     * <br/> Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated feedback question
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the feedback question cannot be found
-     */
-    public FeedbackQuestionAttributes updateFeedbackQuestionCascade(FeedbackQuestionAttributes.UpdateOptions updateOptions)
-            throws InvalidParametersException, EntityDoesNotExistException {
-        assert updateOptions != null;
-
-        return feedbackQuestionsLogic.updateFeedbackQuestionCascade(updateOptions);
-    }
-
-    /**
-     * Deletes a feedback question cascade its responses and comments.
-     *
-     * <p>Silently fail if question does not exist.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void deleteFeedbackQuestionCascade(String questionId) {
-        assert questionId != null;
-        feedbackQuestionsLogic.deleteFeedbackQuestionCascade(questionId);
-    }
-
-    /**
-     * Checks whether there are responses for a question.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public boolean areThereResponsesForQuestion(String feedbackQuestionId) {
-        return feedbackResponsesLogic.areThereResponsesForQuestion(feedbackQuestionId);
-    }
-
-    /**
-     * Gets all questions for a feedback session.<br>
-     * Returns an empty list if they are no questions
-     * for the session.
-     * Preconditions: <br>
-     * * All parameters are non-null.
-     */
-    public List<FeedbackQuestionAttributes> getFeedbackQuestionsForSession(String feedbackSessionName, String courseId) {
-        assert feedbackSessionName != null;
-        assert courseId != null;
-
-        return feedbackQuestionsLogic.getFeedbackQuestionsForSession(feedbackSessionName, courseId);
-    }
-
-    /**
-     * Gets a set of giver identifiers that has at least one response under a feedback session.
-     */
-    public Set<String> getGiverSetThatAnswerFeedbackSession(String courseId, String feedbackSessionName) {
-        assert courseId != null;
-        assert feedbackSessionName != null;
-
-        return feedbackResponsesLogic.getGiverSetThatAnswerFeedbackSession(courseId, feedbackSessionName);
-    }
-
-    /**
-     * Gets the session result for a feedback session.
-     *
-     * @see FeedbackResponsesLogic#getSessionResultsForCourse(String, String, String, String, String)
-     */
-    public SessionResultsBundle getSessionResultsForCourse(
-            String feedbackSessionName, String courseId, String userEmail,
-            @Nullable String questionId, @Nullable String section) {
-        assert feedbackSessionName != null;
-        assert courseId != null;
-        assert userEmail != null;
-
-        return feedbackResponsesLogic.getSessionResultsForCourse(
-                feedbackSessionName, courseId, userEmail, questionId, section);
-    }
-
-    /**
-     * Gets the session result for a feedback session for the given user.
-     *
-     * @see FeedbackResponsesLogic#getSessionResultsForUser(String, String, String, boolean, String)
-     */
-    public SessionResultsBundle getSessionResultsForUser(
-            String feedbackSessionName, String courseId, String userEmail, boolean isInstructor,
-            @Nullable String questionId) {
-        assert feedbackSessionName != null;
-        assert courseId != null;
-        assert userEmail != null;
-
-        return feedbackResponsesLogic.getSessionResultsForUser(
-                feedbackSessionName, courseId, userEmail, isInstructor, questionId);
-    }
-
-    /**
-     * Get existing feedback responses from student or his team for the given question.
-     */
-    public List<FeedbackResponseAttributes> getFeedbackResponsesFromStudentOrTeamForQuestion(
-            FeedbackQuestionAttributes question, StudentAttributes student) {
-        assert question != null;
-        assert student != null;
-
-        return feedbackResponsesLogic.getFeedbackResponsesFromStudentOrTeamForQuestion(question, student);
-    }
-
-    /**
-     * Get existing feedback responses from instructor for the given question.
-     */
-    public List<FeedbackResponseAttributes> getFeedbackResponsesFromInstructorForQuestion(
-            FeedbackQuestionAttributes question, InstructorAttributes instructorAttributes) {
-        assert question != null;
-        assert instructorAttributes != null;
-
-        return feedbackResponsesLogic.getFeedbackResponsesFromGiverForQuestion(
-                question.getFeedbackQuestionId(), instructorAttributes.getEmail());
-    }
-
-    public FeedbackResponseAttributes getFeedbackResponse(String feedbackResponseId) {
-        assert feedbackResponseId != null;
-        return feedbackResponsesLogic.getFeedbackResponse(feedbackResponseId);
-    }
-
-    /**
-     * Creates a feedback response.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return created feedback response
-     * @throws InvalidParametersException if the response is not valid
-     * @throws EntityAlreadyExistsException if the response already exist
-     */
-    public FeedbackResponseAttributes createFeedbackResponse(FeedbackResponseAttributes feedbackResponse)
-            throws InvalidParametersException, EntityAlreadyExistsException {
-        assert feedbackResponse != null;
-
-        return feedbackResponsesLogic.createFeedbackResponse(feedbackResponse);
-    }
-
-    public boolean hasResponsesForCourse(String courseId) {
-        return feedbackResponsesLogic.hasResponsesForCourse(courseId);
-    }
-
-    /**
-     * Updates a feedback response by {@link FeedbackResponseAttributes.UpdateOptions}.
-     *
-     * <p>Cascade updates its associated feedback response comment
-     * (e.g. associated response ID, giverSection and recipientSection).
-     *
-     * <p>If the giver/recipient field is changed, the response is updated by recreating the response
-     * as question-giver-recipient is the primary key.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated feedback response
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the comment cannot be found
-     * @throws EntityAlreadyExistsException if the response cannot be updated
-     *         by recreation because of an existent response
-     */
-    public FeedbackResponseAttributes updateFeedbackResponseCascade(FeedbackResponseAttributes.UpdateOptions updateOptions)
-            throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
-        assert updateOptions != null;
-
-        return feedbackResponsesLogic.updateFeedbackResponseCascade(updateOptions);
-    }
-
-    /**
-     * Deletes a feedback response cascade its associated comments.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public void deleteFeedbackResponseCascade(String responseId) {
-        assert responseId != null;
-        feedbackResponsesLogic.deleteFeedbackResponseCascade(responseId);
-    }
-
-    /**
-     * Create a feedback response comment, and return the created comment.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     */
-    public FeedbackResponseCommentAttributes createFeedbackResponseComment(
-            FeedbackResponseCommentAttributes feedbackResponseComment)
-            throws InvalidParametersException, EntityDoesNotExistException, EntityAlreadyExistsException {
-        assert feedbackResponseComment != null;
-
-        return feedbackResponseCommentsLogic.createFeedbackResponseComment(feedbackResponseComment);
-    }
-
-    public FeedbackResponseCommentAttributes getFeedbackResponseComment(Long feedbackResponseCommentId) {
-        assert feedbackResponseCommentId != null;
-        return feedbackResponseCommentsLogic.getFeedbackResponseComment(feedbackResponseCommentId);
-    }
-
-    /**
-     * Gets comment associated with the response.
-     *
-     * <p>The comment is given by a feedback participant to explain the response</p>
-     *
-     * @param feedbackResponseId the response id
-     */
-    public FeedbackResponseCommentAttributes getFeedbackResponseCommentForResponseFromParticipant(
-            String feedbackResponseId) {
-        assert feedbackResponseId != null;
-
-        return feedbackResponseCommentsLogic.getFeedbackResponseCommentForResponseFromParticipant(feedbackResponseId);
-    }
-
-    /**
-     * Updates a feedback response comment by {@link FeedbackResponseCommentAttributes.UpdateOptions}.
-     *
-     * <br/>Preconditions: <br/>
-     * * All parameters are non-null.
-     *
-     * @return updated comment
-     * @throws InvalidParametersException if attributes to update are not valid
-     * @throws EntityDoesNotExistException if the comment cannot be found
-     */
-    public FeedbackResponseCommentAttributes updateFeedbackResponseComment(
-            FeedbackResponseCommentAttributes.UpdateOptions updateOptions)
-            throws EntityDoesNotExistException, InvalidParametersException {
-        assert updateOptions != null;
-
-        return feedbackResponseCommentsLogic.updateFeedbackResponseComment(updateOptions);
-    }
-
-    /**
-     * Deletes a comment.
-     */
-    public void deleteFeedbackResponseComment(long commentId) {
-        feedbackResponseCommentsLogic.deleteFeedbackResponseComment(commentId);
-    }
-
-    /**
-     * Returns returns a list of sessions that were closed within past hour.
-     *
-     * @see FeedbackSessionsLogic#getFeedbackSessionsClosedWithinThePastHour()
-     */
-    public List<FeedbackSessionAttributes> getFeedbackSessionsClosedWithinThePastHour() {
-        return feedbackSessionsLogic.getFeedbackSessionsClosedWithinThePastHour();
-    }
-
-    public List<FeedbackSessionAttributes> getFeedbackSessionsClosingWithinTimeLimit() {
-        return feedbackSessionsLogic.getFeedbackSessionsClosingWithinTimeLimit();
-    }
-
-    public List<FeedbackSessionAttributes> getFeedbackSessionsOpeningWithinTimeLimit() {
-        return feedbackSessionsLogic.getFeedbackSessionsOpeningWithinTimeLimit();
-    }
-
-    /**
-     * Returns a list of sessions that require automated emails to be sent as they are published.
-     *
-     * @see FeedbackSessionsLogic#getFeedbackSessionsWhichNeedAutomatedPublishedEmailsToBeSent()
-     */
-    public List<FeedbackSessionAttributes> getFeedbackSessionsWhichNeedAutomatedPublishedEmailsToBeSent() {
-        return feedbackSessionsLogic.getFeedbackSessionsWhichNeedAutomatedPublishedEmailsToBeSent();
-    }
-
-    public List<FeedbackSessionAttributes> getFeedbackSessionsWhichNeedOpenEmailsToBeSent() {
-        return feedbackSessionsLogic.getFeedbackSessionsWhichNeedOpenEmailsToBeSent();
-    }
-
-    public String getSectionForTeam(String courseId, String teamName) {
-        assert courseId != null;
-        assert teamName != null;
-        return studentsLogic.getSectionForTeam(courseId, teamName);
-    }
-
-    /**
-     * Persists the given data bundle to the database.
-     *
-     * @see DataBundleLogic#persistDataBundle(DataBundle)
-     */
-    public DataBundle persistDataBundle(DataBundle dataBundle) throws InvalidParametersException {
-        return dataBundleLogic.persistDataBundle(dataBundle);
-    }
-
-    /**
-     * Removes the given data bundle from the database.
-     *
-     * @see DataBundleLogic#removeDataBundle(DataBundle)
-     */
-    public void removeDataBundle(DataBundle dataBundle) {
-        dataBundleLogic.removeDataBundle(dataBundle);
-    }
-
-    /**
-     * Puts searchable documents from the data bundle to the database.
-     *
-     * @see DataBundleLogic#putDocuments(DataBundle)
-     */
-    public void putDocuments(DataBundle dataBundle) throws SearchServiceException {
-        dataBundleLogic.putDocuments(dataBundle);
-    }
-
-    public boolean isStudentsInSameTeam(String courseId, String student1Email, String student2Email) {
-        assert courseId != null;
-        assert student1Email != null;
-        assert student2Email != null;
-        return studentsLogic.isStudentsInSameTeam(courseId, student1Email, student2Email);
-    }
-
-    /**
-     * Creates an account request.
-     *
-     * <p>Preconditions:</p>
-     * * All parameters are non-null.
-     *
-     * @return the created account request
-     * @throws InvalidParametersException if the account request is not valid
-     * @throws EntityAlreadyExistsException if the account request already exists
-     */
-    public AccountRequestAttributes createAccountRequest(AccountRequestAttributes accountRequest)
-            throws InvalidParametersException, EntityAlreadyExistsException {
-        assert accountRequest != null;
-
-        return accountRequestsLogic.createAccountRequest(accountRequest);
-    }
-
-    /**
-     * Updates an account request.
-     *
-     * <p>Preconditions:</p>
-     * * All parameters are non-null.
-     *
-     * @return the updated account request
-     * @throws InvalidParametersException if the account request is not valid
-     * @throws EntityDoesNotExistException if the account request does not exist
-     */
-    public AccountRequestAttributes updateAccountRequest(AccountRequestAttributes.UpdateOptions updateOptions)
-            throws InvalidParametersException, EntityDoesNotExistException {
-        assert updateOptions != null;
-
-        return accountRequestsLogic.updateAccountRequest(updateOptions);
-    }
-
-    /**
-     * Deletes an account request.
-     *
-     * <p>Preconditions:</p>
-     * * All parameters are non-null.
-     */
-    public void deleteAccountRequest(String email, String institute) {
-        assert email != null;
-
-        accountRequestsLogic.deleteAccountRequest(email, institute);
-    }
-
-    /**
-     * Gets an account request by unique constraint {@code registrationKey}.
-     *
-     * <p>Preconditions:</p>
-     * * All parameters are non-null.
-     *
-     * @return the account request
-     */
-    public AccountRequestAttributes getAccountRequestForRegistrationKey(String registrationKey) {
-        assert registrationKey != null;
-
-        return accountRequestsLogic.getAccountRequestForRegistrationKey(registrationKey);
-    }
-
-    /**
-     * Gets an account request by email address and institute.
-     *
-     * <p>Preconditions:</p>
-     * * All parameters are non-null.
-     *
-     * @return the account request
-     */
-    public AccountRequestAttributes getAccountRequest(String email, String institute) {
-        assert email != null;
-        assert institute != null;
-
-        return accountRequestsLogic.getAccountRequest(email, institute);
-    }
-
-    /**
-     * This is used by admin to search account requests in the whole system.
-     *
-     * @return A list of {@link AccountRequestAttributes} or {@code null} if no match found.
-     */
-    public List<AccountRequestAttributes> searchAccountRequestsInWholeSystem(String queryString)
-            throws SearchServiceException {
-        assert queryString != null;
-
-        return accountRequestsLogic.searchAccountRequestsInWholeSystem(queryString);
-    }
-
-    /**
-     * Creates or updates search document for the given account request.
-     *
-     * @see AccountRequestsLogic#putDocument(AccountRequestAttributes)
-     */
-    public void putAccountRequestDocument(AccountRequestAttributes accountRequest) throws SearchServiceException {
-        accountRequestsLogic.putDocument(accountRequest);
-    }
 }

@@ -1,200 +1,161 @@
 package teammates.storage.entity;
 
 import java.time.Instant;
-
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import com.googlecode.objectify.annotation.OnSave;
 import com.googlecode.objectify.annotation.Translate;
 import com.googlecode.objectify.annotation.Unindex;
-
 import teammates.common.datatransfer.questions.FeedbackQuestionType;
 import teammates.common.util.Const;
-
-/**
- * Represents a feedback response.
- */
 @Entity
 @Index
 public class FeedbackResponse extends BaseEntity {
+@Id
+private String feedbackResponseId;
 
-    /**
-     * The unique id of the entity.
-     *
-     * @see #generateId(String, String, String)
-     */
-    @Id
-    private String feedbackResponseId;
+private String feedbackSessionName;
 
-    private String feedbackSessionName;
+private String courseId;
 
-    private String courseId;
+private String feedbackQuestionId;
 
-    private String feedbackQuestionId;
+private FeedbackQuestionType feedbackQuestionType;
 
-    private FeedbackQuestionType feedbackQuestionType;
+private String giverEmail;
 
-    /**
-     * {@code giverEmail} does not necessarily contain an email. Depending on the question giver type,
-     * it may contain the giver's email, the team name, "anonymous", etc.
-     */
-    private String giverEmail;
+private String giverSection;
 
-    private String giverSection;
+private String receiver;
 
-    private String receiver;
+private String receiverSection;
 
-    private String receiverSection;
+@Unindex
+private String answer;
 
-    /**
-     * Serialized {@link teammates.common.datatransfer.questions.FeedbackResponseDetails} stored as a string.
-     *
-     * @see teammates.common.datatransfer.attributes.FeedbackResponseAttributes#getResponseDetailsCopy()
-     */
-    @Unindex
-    private String answer;
+@Translate(InstantTranslatorFactory.class)
+private Instant createdAt;
 
-    @Translate(InstantTranslatorFactory.class)
-    private Instant createdAt;
+@Translate(InstantTranslatorFactory.class)
+private Instant updatedAt;
 
-    @Translate(InstantTranslatorFactory.class)
-    private Instant updatedAt;
+@SuppressWarnings("unused")
+private  FeedbackResponse(){
+}
+public  FeedbackResponse(String feedbackSessionName, String courseId, String feedbackQuestionId, FeedbackQuestionType feedbackQuestionType, String giverEmail, String giverSection, String recipient, String recipientSection, String answer){
+this.feedbackSessionName = feedbackSessionName;
+this.courseId = courseId;
+this.feedbackQuestionId = feedbackQuestionId;
+this.feedbackQuestionType = feedbackQuestionType;
+this.giverEmail = giverEmail;
+this.giverSection = giverSection;
+this.receiver = recipient;
+this.receiverSection = recipientSection;
+this.answer = answer;
+this.feedbackResponseId = generateId(feedbackQuestionId, giverEmail, receiver);
+this.setCreatedAt(Instant.now());
+}
+public static  String generateId(String feedbackQuestionId, String giver, String receiver) {
+return feedbackQuestionId + '%' + giver + '%' + receiver;
+}
 
-    @SuppressWarnings("unused")
-    private FeedbackResponse() {
-        // required by Objectify
-    }
+public  String getId() {
+return feedbackResponseId;
+}
 
-    public FeedbackResponse(String feedbackSessionName, String courseId,
-            String feedbackQuestionId, FeedbackQuestionType feedbackQuestionType,
-            String giverEmail, String giverSection, String recipient, String recipientSection, String answer) {
-        this.feedbackSessionName = feedbackSessionName;
-        this.courseId = courseId;
-        this.feedbackQuestionId = feedbackQuestionId;
-        this.feedbackQuestionType = feedbackQuestionType;
-        this.giverEmail = giverEmail;
-        this.giverSection = giverSection;
-        this.receiver = recipient;
-        this.receiverSection = recipientSection;
-        this.answer = answer;
+public  String getFeedbackSessionName() {
+return feedbackSessionName;
+}
 
-        this.feedbackResponseId = generateId(feedbackQuestionId, giverEmail, receiver);
+public  void setFeedbackSessionName(String feedbackSessionName) {
+this.feedbackSessionName = feedbackSessionName;
+}
 
-        this.setCreatedAt(Instant.now());
-    }
+public  String getCourseId() {
+return courseId;
+}
 
-    /**
-     * Generates an unique ID for the feedback response.
-     */
-    public static String generateId(String feedbackQuestionId, String giver, String receiver) {
-        // Format is feedbackQuestionId%giverEmail%receiver
-        // i.e. if response is feedback for team: qnId%giver@gmail.com%Team1
-        //         if response is feedback for person: qnId%giver@gmail.com%reciever@email.com
-        return feedbackQuestionId + '%' + giver + '%' + receiver;
-    }
+public  void setCourseId(String courseId) {
+this.courseId = courseId;
+}
 
-    public String getId() {
-        return feedbackResponseId;
-    }
+public  String getFeedbackQuestionId() {
+return feedbackQuestionId;
+}
 
-    public String getFeedbackSessionName() {
-        return feedbackSessionName;
-    }
+public  void setFeedbackQuestionId(String feedbackQuestionId) {
+this.feedbackQuestionId = feedbackQuestionId;
+}
 
-    public void setFeedbackSessionName(String feedbackSessionName) {
-        this.feedbackSessionName = feedbackSessionName;
-    }
+public  FeedbackQuestionType getFeedbackQuestionType() {
+return feedbackQuestionType;
+}
 
-    public String getCourseId() {
-        return courseId;
-    }
+public  void setFeedbackQuestionType(FeedbackQuestionType feedbackQuestionType) {
+this.feedbackQuestionType = feedbackQuestionType;
+}
 
-    public void setCourseId(String courseId) {
-        this.courseId = courseId;
-    }
+public  String getGiverEmail() {
+return giverEmail;
+}
 
-    public String getFeedbackQuestionId() {
-        return feedbackQuestionId;
-    }
+public  void setGiverEmail(String giverEmail) {
+this.giverEmail = giverEmail;
+}
 
-    public void setFeedbackQuestionId(String feedbackQuestionId) {
-        this.feedbackQuestionId = feedbackQuestionId;
-    }
+public  String getGiverSection() {
+return giverSection;
+}
 
-    public FeedbackQuestionType getFeedbackQuestionType() {
-        return feedbackQuestionType;
-    }
+public  void setGiverSection(String giverSection) {
+this.giverSection = giverSection;
+}
 
-    public void setFeedbackQuestionType(FeedbackQuestionType feedbackQuestionType) {
-        this.feedbackQuestionType = feedbackQuestionType;
-    }
+public  String getRecipientEmail() {
+return receiver;
+}
 
-    public String getGiverEmail() {
-        return giverEmail;
-    }
+public  void setRecipientEmail(String receiverEmail) {
+this.receiver = receiverEmail;
+}
 
-    public void setGiverEmail(String giverEmail) {
-        this.giverEmail = giverEmail;
-    }
+public  String getRecipientSection() {
+return receiverSection;
+}
 
-    public String getGiverSection() {
-        return giverSection;
-    }
+public  void setRecipientSection(String recipientSection) {
+this.receiverSection = recipientSection;
+}
 
-    public void setGiverSection(String giverSection) {
-        this.giverSection = giverSection;
-    }
+public  String getAnswer() {
+return answer;
+}
 
-    public String getRecipientEmail() {
-        return receiver;
-    }
+public  void setAnswer(String answer) {
+this.answer = answer;
+}
 
-    public void setRecipientEmail(String receiverEmail) {
-        this.receiver = receiverEmail;
-    }
+public  Instant getCreatedAt() {
+return createdAt == null ? Const.TIME_REPRESENTS_DEFAULT_TIMESTAMP : createdAt;
+}
 
-    public String getRecipientSection() {
-        return receiverSection;
-    }
+public  Instant getUpdatedAt() {
+return updatedAt == null ? Const.TIME_REPRESENTS_DEFAULT_TIMESTAMP : updatedAt;
+}
 
-    public void setRecipientSection(String recipientSection) {
-        this.receiverSection = recipientSection;
-    }
+public  void setCreatedAt(Instant newDate) {
+this.createdAt = newDate;
+setLastUpdate(newDate);
+}
 
-    public String getAnswer() {
-        return answer;
-    }
+public  void setLastUpdate(Instant newDate) {
+this.updatedAt = newDate;
+}
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
+@OnSave
+public  void updateLastUpdateTimestamp() {
+this.setLastUpdate(Instant.now());
+}
 
-    public Instant getCreatedAt() {
-        return createdAt == null ? Const.TIME_REPRESENTS_DEFAULT_TIMESTAMP : createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt == null ? Const.TIME_REPRESENTS_DEFAULT_TIMESTAMP : updatedAt;
-    }
-
-    /**
-     * Sets the createdAt timestamp of the response.
-     */
-    public void setCreatedAt(Instant newDate) {
-        this.createdAt = newDate;
-        setLastUpdate(newDate);
-    }
-
-    public void setLastUpdate(Instant newDate) {
-        this.updatedAt = newDate;
-    }
-
-    /**
-     * Updates the updatedAt timestamp when saving.
-     */
-    @OnSave
-    public void updateLastUpdateTimestamp() {
-        this.setLastUpdate(Instant.now());
-    }
 }

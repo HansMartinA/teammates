@@ -1,48 +1,45 @@
 package teammates.ui.request;
 
 import javax.annotation.Nullable;
-
-/**
- * The request body format for creation of feedback session.
- */
 public class FeedbackSessionCreateRequest extends FeedbackSessionBasicRequest {
-    private String feedbackSessionName;
-    @Nullable
-    private String toCopyCourseId;
-    @Nullable
-    private String toCopySessionName;
+private String feedbackSessionName;
 
-    public String getFeedbackSessionName() {
-        return feedbackSessionName;
-    }
+@Nullable
+private String toCopyCourseId;
 
-    public String getToCopyCourseId() {
-        return toCopyCourseId;
-    }
+@Nullable
+private String toCopySessionName;
 
-    public String getToCopySessionName() {
-        return toCopySessionName;
-    }
+public  String getFeedbackSessionName() {
+return feedbackSessionName;
+}
 
-    public void setFeedbackSessionName(String feedbackSessionName) {
-        this.feedbackSessionName = feedbackSessionName;
-    }
+public  String getToCopyCourseId() {
+return toCopyCourseId;
+}
 
-    public void setToCopyCourseId(String toCopyCourseId) {
-        this.toCopyCourseId = toCopyCourseId;
-    }
+public  String getToCopySessionName() {
+return toCopySessionName;
+}
 
-    public void setToCopySessionName(String toCopySessionName) {
-        this.toCopySessionName = toCopySessionName;
-    }
+public  void setFeedbackSessionName(String feedbackSessionName) {
+this.feedbackSessionName = feedbackSessionName;
+}
 
-    @Override
-    public void validate() throws InvalidHttpRequestBodyException {
-        super.validate();
+public  void setToCopyCourseId(String toCopyCourseId) {
+this.toCopyCourseId = toCopyCourseId;
+}
 
-        assertTrue(feedbackSessionName != null, "Session name cannot be null");
-        assertTrue(!feedbackSessionName.isEmpty(), "Session name cannot be empty");
-        assertTrue(toCopyCourseId == null || toCopySessionName != null,
-                "Session name to be copied from cannot be null if course ID to be copied from is not null");
-    }
+public  void setToCopySessionName(String toCopySessionName) {
+this.toCopySessionName = toCopySessionName;
+}
+
+@Override
+public  void validate()throws InvalidHttpRequestBodyException {
+super.validate();
+assertTrue(feedbackSessionName != null, "Session name cannot be null");
+assertTrue(!feedbackSessionName.isEmpty(), "Session name cannot be empty");
+assertTrue(toCopyCourseId == null || toCopySessionName != null, "Session name to be copied from cannot be null if course ID to be copied from is not null");
+}
+
 }
