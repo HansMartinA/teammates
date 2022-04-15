@@ -10,21 +10,21 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("template", template);
 monitoringServiceParameters.addValue("keyValuePairs", keyValuePairs);
-threadMonitoringController.enterService("_tZ9toLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_b9HuoLvVEeyr6avTgCRLkQ", Templates.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_taAJ4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_b9Jj0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert keyValuePairs.length % 2 == 0 : "The number of elements in keyValuePairs passed in must be even";
 String populatedTemplate = template;
 for (int i = 0 ; i < keyValuePairs.length ; i += 2)
 {
 populatedTemplate = populatedTemplate.replace(keyValuePairs[i], keyValuePairs[i + 1]);
 }
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681934008361803585556058 = populatedTemplate;
-threadMonitoringController.exitInternalAction("_taAJ4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681934008361803585556058;
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130233210026857968225811013 = populatedTemplate;
+threadMonitoringController.exitInternalAction("_b9Jj0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130233210026857968225811013;
 }
 finally {
-threadMonitoringController.exitService("_tZ9toLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_b9HuoLvVEeyr6avTgCRLkQ");
 }
 }
 

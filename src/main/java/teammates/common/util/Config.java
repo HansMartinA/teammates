@@ -115,49 +115,49 @@ return isDevServer() ? "http://localhost:" + getPort() : "https://" + APP_ID + "
 public static  int getPort() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_s9gbILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_beQBULvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s9iQULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_beR2gLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 String portEnv = System.getenv("PORT");
 if (portEnv == null || !portEnv.matches("\\d{2,5}"))
 {
 return 8080;
 }
-int longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368172800789155908378994 = Integer.parseInt(portEnv);
-threadMonitoringController.exitInternalAction("_s9iQULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368172800789155908378994;
+int longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022475005962836922602319 = Integer.parseInt(portEnv);
+threadMonitoringController.exitInternalAction("_beR2gLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022475005962836922602319;
 }
 finally {
-threadMonitoringController.exitService("_s9gbILngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_beQBULvVEeyr6avTgCRLkQ");
 }
 }
 
 public static  String getInstanceId() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_s9l6sLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_beVg4LvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s9nv4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_beXWELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 String instanceId = System.getenv("GAE_INSTANCE");
 if (instanceId == null)
 {
 return "dev_server_instance_id";
 }
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681732009032815296562637 = instanceId;
-threadMonitoringController.exitInternalAction("_s9nv4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681732009032815296562637;
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022488006559734291877202 = instanceId;
+threadMonitoringController.exitInternalAction("_beXWELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022488006559734291877202;
 }
 finally {
-threadMonitoringController.exitService("_s9l6sLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_beVg4LvVEeyr6avTgCRLkQ");
 }
 }
 
 public static  boolean isDevServer() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_s9qzMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_beZyULvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s9udkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_bebngLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 String version = System.getenv("GAE_VERSION");
 if (!APP_VERSION.equals(version))
 {
@@ -169,24 +169,24 @@ if ("standard".equals(env))
 String appName = System.getenv("GAE_APPLICATION");
 return appName == null || !appName.endsWith(APP_ID);
 }
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681734009421513842651308 = env != null;
-threadMonitoringController.exitInternalAction("_s9udkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681734009421513842651308;
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022501009042837311674645 = env != null;
+threadMonitoringController.exitInternalAction("_bebngLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022501009042837311674645;
 }
 finally {
-threadMonitoringController.exitService("_s9qzMLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_beZyULvVEeyr6avTgCRLkQ");
 }
 }
 
 public static  boolean isDevServerLoginEnabled() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_s9yH8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bef48LvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
 return Config.isDevServer() && ENABLE_DEVSERVER_LOGIN;
 }
 finally {
-threadMonitoringController.exitService("_s9yH8LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bef48LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -194,22 +194,22 @@ public static  AppUrl getFrontEndAppUrl(String relativeUrl) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("relativeUrl", relativeUrl);
-threadMonitoringController.enterService("_ri1z8bngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_Z79vMLvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_ri2bALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_Z7-WQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (Config.isDevServer() && APP_FRONTENDDEV_URL != null)
 {
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713679061007049877805539659 = new  AppUrl(APP_FRONTENDDEV_URL + relativeUrl);
-threadMonitoringController.exitInternalAction("_ri2bALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713679061007049877805539659;
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013015181002611070065029555 = new  AppUrl(APP_FRONTENDDEV_URL + relativeUrl);
+threadMonitoringController.exitInternalAction("_Z7-WQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013015181002611070065029555;
 }
-threadMonitoringController.enterInternalAction("_ri4QMbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971367906100355647543169778 = getBackEndAppUrl(relativeUrl);
-threadMonitoringController.exitInternalAction("_ri4QMbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971367906100355647543169778;
+threadMonitoringController.enterInternalAction("_Z7_kb7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130151820031698096642089124 = getBackEndAppUrl(relativeUrl);
+threadMonitoringController.exitInternalAction("_Z7_kb7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130151820031698096642089124;
 }
 finally {
-threadMonitoringController.exitService("_ri1z8bngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_Z79vMLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -220,45 +220,45 @@ return new  AppUrl(getBaseAppUrl() + relativeUrl);
 public static  boolean isUsingSendgrid() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_s96q0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_beob0LvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s99HELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681740008914375286091303 = "sendgrid".equalsIgnoreCase(EMAIL_SERVICE) && SENDGRID_APIKEY != null && !SENDGRID_APIKEY.isEmpty();
-threadMonitoringController.exitInternalAction("_s99HELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681740008914375286091303;
+threadMonitoringController.enterInternalAction("_beq4ELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022522006134175025353709 = "sendgrid".equalsIgnoreCase(EMAIL_SERVICE) && SENDGRID_APIKEY != null && !SENDGRID_APIKEY.isEmpty();
+threadMonitoringController.exitInternalAction("_beq4ELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022522006134175025353709;
 }
 finally {
-threadMonitoringController.exitService("_s96q0LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_beob0LvVEeyr6avTgCRLkQ");
 }
 }
 
 public static  boolean isUsingMailgun() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_s9_jULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bet7YLvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s-DNsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681744009721158225150993 = "mailgun".equalsIgnoreCase(EMAIL_SERVICE) && MAILGUN_APIKEY != null && !MAILGUN_APIKEY.isEmpty() && MAILGUN_DOMAINNAME != null && !MAILGUN_DOMAINNAME.isEmpty();
-threadMonitoringController.exitInternalAction("_s-DNsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681744009721158225150993;
+threadMonitoringController.enterInternalAction("_bew-sLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130225340010359355333207398 = "mailgun".equalsIgnoreCase(EMAIL_SERVICE) && MAILGUN_APIKEY != null && !MAILGUN_APIKEY.isEmpty() && MAILGUN_DOMAINNAME != null && !MAILGUN_DOMAINNAME.isEmpty();
+threadMonitoringController.exitInternalAction("_bew-sLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130225340010359355333207398;
 }
 finally {
-threadMonitoringController.exitService("_s9_jULngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bet7YLvVEeyr6avTgCRLkQ");
 }
 }
 
 public static  boolean isUsingMailjet() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_s-Fp8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_beza8LvVEeyr6avTgCRLkQ", Config.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s-JUULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136817470048552703848289314 = "mailjet".equalsIgnoreCase(EMAIL_SERVICE) && MAILJET_APIKEY != null && !MAILJET_APIKEY.isEmpty() && MAILJET_SECRETKEY != null && !MAILJET_SECRETKEY.isEmpty();
-threadMonitoringController.exitInternalAction("_s-JUULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136817470048552703848289314;
+threadMonitoringController.enterInternalAction("_be2eQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022545008158506435153497 = "mailjet".equalsIgnoreCase(EMAIL_SERVICE) && MAILJET_APIKEY != null && !MAILJET_APIKEY.isEmpty() && MAILJET_SECRETKEY != null && !MAILJET_SECRETKEY.isEmpty();
+threadMonitoringController.exitInternalAction("_be2eQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022545008158506435153497;
 }
 finally {
-threadMonitoringController.exitService("_s-Fp8LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_beza8LvVEeyr6avTgCRLkQ");
 }
 }
 

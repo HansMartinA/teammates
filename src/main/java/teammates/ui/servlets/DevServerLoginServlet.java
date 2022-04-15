@@ -18,9 +18,9 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
 monitoringServiceParameters.addValue("resp", resp);
-threadMonitoringController.enterService("_xiTcALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_gSTmMLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_xiXGYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gSX3oLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 String nextUrl = req.getParameter("nextUrl");
 if (nextUrl == null)
 {
@@ -34,29 +34,28 @@ resp.setHeader("Location", Const.WebPageURIs.LOGIN + "?nextUrl=" + nextUrl.repla
 return;
 }
 String cookie = HttpRequestHelper.getCookieValueFromRequest(req, Const.SecurityConfig.AUTH_COOKIE_NAME);
-threadMonitoringController.exitInternalAction("_xiXGYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_xib-4LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitInternalAction("_gSX3oLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_gSd-QLvVEeyr6avTgCRLkQ");
 UserInfoCookie uic = UserInfoCookie.fromCookie(cookie);
-threadMonitoringController.setExternalCallId("_xidNALngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_gSfMYLvVEeyr6avTgCRLkQ");
 boolean isLoginNeeded = uic == null || !uic.isValid();
-threadMonitoringController.enterInternalAction("_xiebILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gSgagLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (!isLoginNeeded)
 {
 resp.sendRedirect(nextUrl);
-void longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368411800585543844205403;
-threadMonitoringController.exitInternalAction("_xiebILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368411800585543844205403;
+threadMonitoringController.exitInternalAction("_gSgagLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return;
 }
-threadMonitoringController.setExternalCallId("_xifCMLngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_gShBkLvVEeyr6avTgCRLkQ");
 String html = FileHelper.readResourceFile("devServerLoginPage.html");
-threadMonitoringController.enterInternalAction("_xigQULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gSiPsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 resp.setContentType("text/html");
 PrintWriter pw = resp.getWriter();
 pw.print(html);
-threadMonitoringController.exitInternalAction("_xigQULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_gSiPsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_xiTcALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_gSTmMLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -66,9 +65,9 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
 monitoringServiceParameters.addValue("resp", resp);
-threadMonitoringController.enterService("_xilv4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_gSoWULvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_xiqBULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gSsnwLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (!Config.isDevServerLoginEnabled())
 {
 resp.setStatus(HttpStatus.SC_FORBIDDEN);
@@ -89,10 +88,10 @@ nextUrl = "/";
 }
 nextUrl = resp.encodeRedirectURL(nextUrl.replace("\r\n", ""));
 resp.sendRedirect(nextUrl);
-threadMonitoringController.exitInternalAction("_xiqBULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_gSsnwLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_xilv4LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_gSoWULvVEeyr6avTgCRLkQ");
 }
 }
 

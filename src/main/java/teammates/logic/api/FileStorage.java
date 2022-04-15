@@ -22,15 +22,15 @@ service = new  GoogleCloudStorageService();
 public static  FileStorage inst() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_t2B-kLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cbHSMLvVEeyr6avTgCRLkQ", FileStorage.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_t2DzwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-FileStorage longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682257006148442009956544 = instance;
-threadMonitoringController.exitInternalAction("_t2DzwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682257006148442009956544;
+threadMonitoringController.enterInternalAction("_cbJHYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+FileStorage longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130248870035104066980423554 = instance;
+threadMonitoringController.exitInternalAction("_cbJHYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130248870035104066980423554;
 }
 finally {
-threadMonitoringController.exitService("_t2B-kLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cbHSMLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -38,15 +38,15 @@ public  boolean doesFileExist(String fileKey) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("fileKey", fileKey);
-threadMonitoringController.enterService("_t2HeILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cbMxwLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_t2J6YLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682260008721213185166563 = service.doesFileExist(fileKey);
-threadMonitoringController.exitInternalAction("_t2J6YLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682260008721213185166563;
+threadMonitoringController.enterInternalAction("_cbP1ELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130249000023219928987315497 = service.doesFileExist(fileKey);
+threadMonitoringController.exitInternalAction("_cbP1ELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130249000023219928987315497;
 }
 finally {
-threadMonitoringController.exitService("_t2HeILngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cbMxwLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -54,15 +54,15 @@ public  byte[]  getContent(String fileKey) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("fileKey", fileKey);
-threadMonitoringController.enterService("_t2NkwLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cbUtkLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_t2QoELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-byte[]  longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682264002136136993250991 = service.getContent(fileKey);
-threadMonitoringController.exitInternalAction("_t2QoELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682264002136136993250991;
+threadMonitoringController.enterInternalAction("_cbXJ0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+byte[]  longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013024912007018156750649883 = service.getContent(fileKey);
+threadMonitoringController.exitInternalAction("_cbXJ0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013024912007018156750649883;
 }
 finally {
-threadMonitoringController.exitService("_t2NkwLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cbUtkLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -70,14 +70,14 @@ public  void delete(String fileKey) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("fileKey", fileKey);
-threadMonitoringController.enterService("_t2UScLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cbaNILvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_t2WHoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_cbcpYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 service.delete(fileKey);
-threadMonitoringController.exitInternalAction("_t2WHoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_cbcpYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_t2UScLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cbaNILvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -87,14 +87,14 @@ cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServic
 monitoringServiceParameters.addValue("fileKey", fileKey);
 monitoringServiceParameters.addValue("contentBytes", contentBytes);
 monitoringServiceParameters.addValue("contentType", contentType);
-threadMonitoringController.enterService("_t2ZK8LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cbfssLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_t2eDcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_cbiwALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 service.create(fileKey, contentBytes, contentType);
-threadMonitoringController.exitInternalAction("_t2eDcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_cbiwALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_t2ZK8LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cbfssLvVEeyr6avTgCRLkQ");
 }
 }
 

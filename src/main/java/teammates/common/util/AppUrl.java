@@ -9,15 +9,15 @@ public  AppUrl withUserId(String userId) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("userId", userId);
-threadMonitoringController.enterService("_s8YZwLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bdEVkLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s8d5V7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681710004790685428256587 = withParam(Const.ParamsNames.USER_ID, userId);
-threadMonitoringController.exitInternalAction("_s8d5V7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681710004790685428256587;
+threadMonitoringController.enterInternalAction("_bdJ1J7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022412008076492921920788 = withParam(Const.ParamsNames.USER_ID, userId);
+threadMonitoringController.exitInternalAction("_bdJ1J7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022412008076492921920788;
 }
 finally {
-threadMonitoringController.exitService("_s8YZwLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bdEVkLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -25,15 +25,15 @@ public  AppUrl withRegistrationKey(String key) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("key", key);
-threadMonitoringController.enterService("_ri76kLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_Z8CAobvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_ri76kbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713679067002759166979089941 = withParam(Const.ParamsNames.REGKEY, key);
-threadMonitoringController.exitInternalAction("_ri76kbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713679067002759166979089941;
+threadMonitoringController.enterInternalAction("_Z8CnsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013015196005516064874369535 = withParam(Const.ParamsNames.REGKEY, key);
+threadMonitoringController.exitInternalAction("_Z8CnsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013015196005516064874369535;
 }
 finally {
-threadMonitoringController.exitService("_ri76kLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_Z8CAobvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -41,15 +41,15 @@ public  AppUrl withIsCreatingAccount(String isCreatingAccount) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("isCreatingAccount", isCreatingAccount);
-threadMonitoringController.enterService("_ri6FYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_Z8BZkLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_ri6scLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136790640042940434930058724 = withParam(Const.ParamsNames.IS_CREATING_ACCOUNT, isCreatingAccount);
-threadMonitoringController.exitInternalAction("_ri6scLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136790640042940434930058724;
+threadMonitoringController.enterInternalAction("_Z8BZkbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013015189008325441663507382 = withParam(Const.ParamsNames.IS_CREATING_ACCOUNT, isCreatingAccount);
+threadMonitoringController.exitInternalAction("_Z8BZkbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013015189008325441663507382;
 }
 finally {
-threadMonitoringController.exitService("_ri6FYLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_Z8BZkLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -57,15 +57,15 @@ public  AppUrl withCourseId(String courseId) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("courseId", courseId);
-threadMonitoringController.enterService("_s8gVkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bdMRYLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s8mcMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681713005472335284780283 = withParam(Const.ParamsNames.COURSE_ID, courseId);
-threadMonitoringController.exitInternalAction("_s8mcMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681713005472335284780283;
+threadMonitoringController.enterInternalAction("_bdSYB7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022425005999598067549234 = withParam(Const.ParamsNames.COURSE_ID, courseId);
+threadMonitoringController.exitInternalAction("_bdSYB7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022425005999598067549234;
 }
 finally {
-threadMonitoringController.exitService("_s8gVkLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bdMRYLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -73,15 +73,15 @@ public  AppUrl withSessionName(String feedbackSessionName) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("feedbackSessionName", feedbackSessionName);
-threadMonitoringController.enterService("_s8o4cLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bdU0QLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s8tw97ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681715008575880702436844 = withParam(Const.ParamsNames.FEEDBACK_SESSION_NAME, feedbackSessionName);
-threadMonitoringController.exitInternalAction("_s8tw97ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681715008575880702436844;
+threadMonitoringController.enterInternalAction("_bdaT17vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130224360026325087577802564 = withParam(Const.ParamsNames.FEEDBACK_SESSION_NAME, feedbackSessionName);
+threadMonitoringController.exitInternalAction("_bdaT17vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130224360026325087577802564;
 }
 finally {
-threadMonitoringController.exitService("_s8o4cLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bdU0QLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -89,15 +89,15 @@ public  AppUrl withStudentEmail(String email) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("email", email);
-threadMonitoringController.enterService("_s8w0QLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bdcwELvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_s82T17ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681718003708099385531157 = withParam(Const.ParamsNames.STUDENT_EMAIL, email);
-threadMonitoringController.exitInternalAction("_s82T17ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681718003708099385531157;
+threadMonitoringController.enterInternalAction("_bdi2tLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022448009769133248294322 = withParam(Const.ParamsNames.STUDENT_EMAIL, email);
+threadMonitoringController.exitInternalAction("_bdi2tLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022448009769133248294322;
 }
 finally {
-threadMonitoringController.exitService("_s8w0QLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bdcwELvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -105,15 +105,15 @@ public  AppUrl withEntityType(String entityType) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("entityType", entityType);
-threadMonitoringController.enterService("_r5YrsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_aV7uYLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_r5bH97ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680117007038814421468008 = withParam(Const.ParamsNames.ENTITY_TYPE, entityType);
-threadMonitoringController.exitInternalAction("_r5bH97ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680117007038814421468008;
+threadMonitoringController.enterInternalAction("_aV-KqbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+AppUrl longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013017742006992949151360395 = withParam(Const.ParamsNames.ENTITY_TYPE, entityType);
+threadMonitoringController.exitInternalAction("_aV-KqbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013017742006992949151360395;
 }
 finally {
-threadMonitoringController.exitService("_r5YrsLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_aV7uYLvVEeyr6avTgCRLkQ");
 }
 }
 

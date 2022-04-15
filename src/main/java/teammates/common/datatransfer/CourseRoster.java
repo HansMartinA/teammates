@@ -22,45 +22,45 @@ teamToMembersTable = buildTeamToMembersTable(getStudents());
 public  List<StudentAttributes> getStudents() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sFw60LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_ahv80LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sFyI8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804230012528898964774748 = new  ArrayList<>(studentListByEmail.values());
-threadMonitoringController.exitInternalAction("_sFyI8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804230012528898964774748;
+threadMonitoringController.enterInternalAction("_ahxK8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001301849400844710527308924 = new  ArrayList<>(studentListByEmail.values());
+threadMonitoringController.exitInternalAction("_ahxK8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001301849400844710527308924;
 }
 finally {
-threadMonitoringController.exitService("_sFw60LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_ahv80LvVEeyr6avTgCRLkQ");
 }
 }
 
 public  List<InstructorAttributes> getInstructors() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sFzXELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_ahzAILvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sF0lMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<InstructorAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804250017599858179069494 = new  ArrayList<>(instructorListByEmail.values());
-threadMonitoringController.exitInternalAction("_sF0lMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804250017599858179069494;
+threadMonitoringController.enterInternalAction("_ah0OQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<InstructorAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018503009509749989523973 = new  ArrayList<>(instructorListByEmail.values());
+threadMonitoringController.exitInternalAction("_ah0OQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018503009509749989523973;
 }
 finally {
-threadMonitoringController.exitService("_sFzXELngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_ahzAILvVEeyr6avTgCRLkQ");
 }
 }
 
 public  Map<String, List<StudentAttributes>> getTeamToMembersTable() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sF1zULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_ah2DcLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sF2aYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-Map<String, List<StudentAttributes>> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680429001056629909010941 = teamToMembersTable;
-threadMonitoringController.exitInternalAction("_sF2aYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680429001056629909010941;
+threadMonitoringController.enterInternalAction("_ah2qgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+Map<String, List<StudentAttributes>> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185120002170919555260964 = teamToMembersTable;
+threadMonitoringController.exitInternalAction("_ah2qgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185120002170919555260964;
 }
 finally {
-threadMonitoringController.exitService("_sF1zULngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_ah2DcLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -68,15 +68,15 @@ public  boolean isStudentInCourse(String studentEmail) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("studentEmail", studentEmail);
-threadMonitoringController.enterService("_sF4PkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_ah4fsLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sF6EwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804320026015436599131014 = studentListByEmail.containsKey(studentEmail);
-threadMonitoringController.exitInternalAction("_sF6EwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804320026015436599131014;
+threadMonitoringController.enterInternalAction("_ah5GwLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185200015985253592713988 = studentListByEmail.containsKey(studentEmail);
+threadMonitoringController.exitInternalAction("_ah5GwLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185200015985253592713988;
 }
 finally {
-threadMonitoringController.exitService("_sF4PkLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_ah4fsLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -84,15 +84,15 @@ public  boolean isTeamInCourse(String teamName) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("teamName", teamName);
-threadMonitoringController.enterService("_sF7S4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_ah678LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sF8hALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368043400016826829706369728 = teamToMembersTable.containsKey(teamName);
-threadMonitoringController.exitInternalAction("_sF8hALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368043400016826829706369728;
+threadMonitoringController.enterInternalAction("_ah8KELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018529009190842386882375 = teamToMembersTable.containsKey(teamName);
+threadMonitoringController.exitInternalAction("_ah8KELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018529009190842386882375;
 }
 finally {
-threadMonitoringController.exitService("_sF7S4LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_ah678LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -101,16 +101,16 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("studentEmail", studentEmail);
 monitoringServiceParameters.addValue("targetTeamName", targetTeamName);
-threadMonitoringController.enterService("_sF-WMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_ah9_QLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sF-9QLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_ah_NYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 StudentAttributes student = studentListByEmail.get(studentEmail);
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680437000035337953682593737 = student != null && student.getTeam().equals(targetTeamName);
-threadMonitoringController.exitInternalAction("_sF-9QLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680437000035337953682593737;
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185400041952759419218777 = student != null && student.getTeam().equals(targetTeamName);
+threadMonitoringController.exitInternalAction("_ah_NYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185400041952759419218777;
 }
 finally {
-threadMonitoringController.exitService("_sF-WMLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_ah9_QLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -119,17 +119,17 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("studentEmail1", studentEmail1);
 monitoringServiceParameters.addValue("studentEmail2", studentEmail2);
-threadMonitoringController.enterService("_sGBZgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_aiBCkLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sGD1wLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_aiCQsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 StudentAttributes student1 = studentListByEmail.get(studentEmail1);
 StudentAttributes student2 = studentListByEmail.get(studentEmail2);
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680442006143416953465877 = student1 != null && student2 != null && student1.getTeam() != null && student1.getTeam().equals(student2.getTeam());
-threadMonitoringController.exitInternalAction("_sGD1wLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680442006143416953465877;
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018547006001099514699871 = student1 != null && student2 != null && student1.getTeam() != null && student1.getTeam().equals(student2.getTeam());
+threadMonitoringController.exitInternalAction("_aiCQsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018547006001099514699871;
 }
 finally {
-threadMonitoringController.exitService("_sGBZgLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_aiBCkLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -137,15 +137,15 @@ public  StudentAttributes getStudentForEmail(String email) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("email", email);
-threadMonitoringController.enterService("_sGG5ELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_aiGiILvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sGIHMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680445003953898039880732 = studentListByEmail.get(email);
-threadMonitoringController.exitInternalAction("_sGIHMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680445003953898039880732;
+threadMonitoringController.enterInternalAction("_aiHJMLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018556001360520047959406 = studentListByEmail.get(email);
+threadMonitoringController.exitInternalAction("_aiHJMLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018556001360520047959406;
 }
 finally {
-threadMonitoringController.exitService("_sGG5ELngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_aiGiILvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -153,15 +153,15 @@ public  InstructorAttributes getInstructorForEmail(String email) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("email", email);
-threadMonitoringController.enterService("_sGJ8YLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_aiI-YLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sGKjcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680447003196125117573111 = instructorListByEmail.get(email);
-threadMonitoringController.exitInternalAction("_sGKjcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680447003196125117573111;
+threadMonitoringController.enterInternalAction("_aiKMgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+InstructorAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018564008692954905094291 = instructorListByEmail.get(email);
+threadMonitoringController.exitInternalAction("_aiKMgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018564008692954905094291;
 }
 finally {
-threadMonitoringController.exitService("_sGJ8YLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_aiI-YLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -191,20 +191,20 @@ public static  Map<String, List<StudentAttributes>> buildTeamToMembersTable(List
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("students", students);
-threadMonitoringController.enterService("_sGO04LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_aiN24LvVEeyr6avTgCRLkQ", CourseRoster.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sGQDALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_aiOd8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 Map<String, List<StudentAttributes>> teamToMembersTable = new  HashMap<>();
 for (StudentAttributes studentAttributes : students)
 {
 teamToMembersTable.computeIfAbsent(studentAttributes.getTeam(), key -> new  ArrayList<>()).add(studentAttributes);
 }
-Map<String, List<StudentAttributes>> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804500045278013573052345 = teamToMembersTable;
-threadMonitoringController.exitInternalAction("_sGQDALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804500045278013573052345;
+Map<String, List<StudentAttributes>> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018573009708818019667225 = teamToMembersTable;
+threadMonitoringController.exitInternalAction("_aiOd8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013018573009708818019667225;
 }
 finally {
-threadMonitoringController.exitService("_sGO04LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_aiN24LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -212,9 +212,9 @@ public  ParticipantInfo getInfoForIdentifier(String identifier) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("identifier", identifier);
-threadMonitoringController.enterService("_sGTGULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_aiRhQLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sGTtYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_aiSvYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 String name = Const.USER_NOBODY_TEXT;
 String teamName = Const.USER_NOBODY_TEXT;
 String sectionName = Const.DEFAULT_SECTION;
@@ -244,12 +244,12 @@ name = identifier;
 teamName = identifier;
 sectionName = teamMember.getSection();
 }
-ParticipantInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804520026936333671503276 = new  ParticipantInfo(name, teamName, sectionName);
-threadMonitoringController.exitInternalAction("_sGTtYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136804520026936333671503276;
+ParticipantInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185840040647585498682237 = new  ParticipantInfo(name, teamName, sectionName);
+threadMonitoringController.exitInternalAction("_aiSvYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130185840040647585498682237;
 }
 finally {
-threadMonitoringController.exitService("_sGTGULngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_aiRhQLvVEeyr6avTgCRLkQ");
 }
 }
 

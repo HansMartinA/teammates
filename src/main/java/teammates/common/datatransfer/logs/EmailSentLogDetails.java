@@ -24,15 +24,15 @@ super(LogEvent.EMAIL_SENT);
 public  String getEmailRecipient() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sOjqcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arDp0LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sOk4kLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680601003267364726020594 = emailRecipient;
-threadMonitoringController.exitInternalAction("_sOk4kLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680601003267364726020594;
+threadMonitoringController.enterInternalAction("_arEQ4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013019012002761504981243912 = emailRecipient;
+threadMonitoringController.exitInternalAction("_arEQ4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013019012002761504981243912;
 }
 finally {
-threadMonitoringController.exitService("_sOjqcLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arDp0LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -40,29 +40,29 @@ public  void setEmailRecipient(String emailRecipient) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("emailRecipient", emailRecipient);
-threadMonitoringController.enterService("_sOmGsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arGGELvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sOmtwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_arGtILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 this.emailRecipient = emailRecipient;
-threadMonitoringController.exitInternalAction("_sOmtwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_arGtILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_sOmGsLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arGGELvVEeyr6avTgCRLkQ");
 }
 }
 
 public  String getEmailSubject() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sOpKALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arJJYLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sOpxELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136806080034571090937021776 = emailSubject;
-threadMonitoringController.exitInternalAction("_sOpxELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136806080034571090937021776;
+threadMonitoringController.enterInternalAction("_arKXgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130190290022704160436352172 = emailSubject;
+threadMonitoringController.exitInternalAction("_arKXgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130190290022704160436352172;
 }
 finally {
-threadMonitoringController.exitService("_sOpKALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arJJYLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -70,29 +70,29 @@ public  void setEmailSubject(String emailSubject) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("emailSubject", emailSubject);
-threadMonitoringController.enterService("_sOsNULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arMMsLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sOs0YLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_arMzwLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 this.emailSubject = emailSubject;
-threadMonitoringController.exitInternalAction("_sOs0YLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_arMzwLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_sOsNULngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arMMsLvVEeyr6avTgCRLkQ");
 }
 }
 
 public  String getEmailContent() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sOuCgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arOo8LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sOupkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680614009216591814132586 = emailContent;
-threadMonitoringController.exitInternalAction("_sOupkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680614009216591814132586;
+threadMonitoringController.enterInternalAction("_arP3ELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013019051007315695753768177 = emailContent;
+threadMonitoringController.exitInternalAction("_arP3ELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013019051007315695753768177;
 }
 finally {
-threadMonitoringController.exitService("_sOuCgLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arOo8LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -100,29 +100,29 @@ public  void setEmailContent(String emailContent) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("emailContent", emailContent);
-threadMonitoringController.enterService("_sOv3sLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arThcLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sOxF0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_arVWoLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 this.emailContent = emailContent;
-threadMonitoringController.exitInternalAction("_sOxF0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_arVWoLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_sOv3sLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arThcLvVEeyr6avTgCRLkQ");
 }
 }
 
 public  EmailType getEmailType() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sOy7ALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arZBALvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sOziELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-EmailType longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680618007050627048497753 = emailType;
-threadMonitoringController.exitInternalAction("_sOziELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680618007050627048497753;
+threadMonitoringController.enterInternalAction("_arbdQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+EmailType longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130190690040127075621472685 = emailType;
+threadMonitoringController.exitInternalAction("_arbdQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130190690040127075621472685;
 }
 finally {
-threadMonitoringController.exitService("_sOy7ALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arZBALvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -130,29 +130,29 @@ public  void setEmailType(EmailType emailType) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("emailType", emailType);
-threadMonitoringController.enterService("_sO1XQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arfHoLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sO2lYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_arhj4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 this.emailType = emailType;
-threadMonitoringController.exitInternalAction("_sO2lYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_arhj4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_sO1XQLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arfHoLvVEeyr6avTgCRLkQ");
 }
 }
 
 public  int getEmailStatus() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sO3zgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_arl1ULvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sO4akLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-int longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680623008757945765625914 = emailStatus;
-threadMonitoringController.exitInternalAction("_sO4akLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680623008757945765625914;
+threadMonitoringController.enterInternalAction("_aroRkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+int longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130190870007104885398874816 = emailStatus;
+threadMonitoringController.exitInternalAction("_aroRkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130190870007104885398874816;
 }
 finally {
-threadMonitoringController.exitService("_sO3zgLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_arl1ULvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -160,29 +160,29 @@ public  void setEmailStatus(int emailStatus) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("emailStatus", emailStatus);
-threadMonitoringController.enterService("_sO6PwLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_asHZwLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sO620LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_asIn4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 this.emailStatus = emailStatus;
-threadMonitoringController.exitInternalAction("_sO620LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_asIn4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_sO6PwLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_asHZwLvVEeyr6avTgCRLkQ");
 }
 }
 
 public  String getEmailStatusMessage() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sO8sALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_asJ2ALvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sO96ILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680628009753038245722682 = emailStatusMessage;
-threadMonitoringController.exitInternalAction("_sO96ILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713680628009753038245722682;
+threadMonitoringController.enterInternalAction("_asLEILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130191040026431771952517735 = emailStatusMessage;
+threadMonitoringController.exitInternalAction("_asLEILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130191040026431771952517735;
 }
 finally {
-threadMonitoringController.exitService("_sO8sALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_asJ2ALvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -190,14 +190,14 @@ public  void setEmailStatusMessage(String emailStatusMessage) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("emailStatusMessage", emailStatusMessage);
-threadMonitoringController.enterService("_sO_IQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_asM5ULvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sPAWYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_asOHcLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 this.emailStatusMessage = emailStatusMessage;
-threadMonitoringController.exitInternalAction("_sPAWYLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_asOHcLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_sO_IQLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_asM5ULvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -205,16 +205,16 @@ threadMonitoringController.exitService("_sO_IQLngEeyIw-dB1KCaVA");
 public  void hideSensitiveInformation() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_sPBkgLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_asQjsLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_sPCyoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_asTnALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 emailRecipient = null;
 emailSubject = null;
 emailContent = null;
-threadMonitoringController.exitInternalAction("_sPCyoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_asTnALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_sPBkgLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_asQjsLvVEeyr6avTgCRLkQ");
 }
 }
 

@@ -15,9 +15,9 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
 monitoringServiceParameters.addValue("resp", resp);
-threadMonitoringController.enterService("_xolDILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_gYj_MLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_xop7oLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gYo3sLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 req.getSession().invalidate();
 Cookie cookie = getLoginInvalidationCookie();
 resp.addCookie(cookie);
@@ -28,10 +28,10 @@ frontendUrl = "";
 }
 log.request(req, HttpStatus.SC_MOVED_TEMPORARILY, "Redirect to home page after logging out");
 resp.sendRedirect(frontendUrl + "/web");
-threadMonitoringController.exitInternalAction("_xop7oLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_gYo3sLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_xolDILngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_gYj_MLvVEeyr6avTgCRLkQ");
 }
 }
 

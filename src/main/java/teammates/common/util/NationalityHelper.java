@@ -10,15 +10,15 @@ private  NationalityHelper(){
 public static  List<String> getNationalities() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_tGUY4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bnom0LvVEeyr6avTgCRLkQ", NationalityHelper.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_tGWOELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<String> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681823005770115841397319 = Arrays.asList(NATIONALITIES);
-threadMonitoringController.exitInternalAction("_tGWOELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681823005770115841397319;
+threadMonitoringController.enterInternalAction("_bnrDELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<String> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022854007469358229431194 = Arrays.asList(NATIONALITIES);
+threadMonitoringController.exitInternalAction("_bnrDELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022854007469358229431194;
 }
 finally {
-threadMonitoringController.exitService("_tGUY4LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bnom0LvVEeyr6avTgCRLkQ");
 }
 }
 

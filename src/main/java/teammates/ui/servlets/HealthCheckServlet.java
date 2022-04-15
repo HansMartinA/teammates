@@ -12,15 +12,15 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
 monitoringServiceParameters.addValue("resp", resp);
-threadMonitoringController.enterService("_xj27MLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_gT1QMLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_xj7zsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gT46kLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 resp.setStatus(HttpStatus.SC_OK);
 resp.getWriter().write("OK");
-threadMonitoringController.exitInternalAction("_xj7zsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_gT46kLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_xj27MLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_gT1QMLvVEeyr6avTgCRLkQ");
 }
 }
 

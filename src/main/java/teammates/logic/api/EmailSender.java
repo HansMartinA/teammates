@@ -50,15 +50,15 @@ service = new  EmptyEmailService();
 public static  EmailSender inst() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_t0XxsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cZloMLvVEeyr6avTgCRLkQ", EmailSender.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_t0aN8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-EmailSender longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368222300924557843237987 = instance;
-threadMonitoringController.exitInternalAction("_t0aN8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368222300924557843237987;
+threadMonitoringController.enterInternalAction("_cZndYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+EmailSender longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013024710007749083390924064 = instance;
+threadMonitoringController.exitInternalAction("_cZndYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013024710007749083390924064;
 }
 finally {
-threadMonitoringController.exitService("_t0XxsLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cZloMLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -66,9 +66,9 @@ public  EmailSendingStatus sendEmail(EmailWrapper message) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("message", message);
-threadMonitoringController.enterService("_t0dRQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cZqgsLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_t0fGcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_cZs88LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (isTestingAccount(message.getRecipient()))
 {
 return new  EmailSendingStatus(HttpStatus.SC_OK, "Not sending email to test account");
@@ -84,55 +84,55 @@ status = new  EmailSendingStatus(e.getStatusCode(), e.getMessage());
 }
 if (!status.isSuccess())
 {
-threadMonitoringController.enterBranch("_t0iJwLngEeyIw-dB1KCaVA");
+threadMonitoringController.enterBranch("_cZvZMLvVEeyr6avTgCRLkQ");
 if (caughtE == null)
 {
-threadMonitoringController.enterBranch("_t0iJxLngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0iJyLngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0iJybngEeyIw-dB1KCaVA");
+threadMonitoringController.enterBranch("_cZvZNLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZwAQLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZwAQbvVEeyr6avTgCRLkQ");
 log.severe("Email failed to send: " + status.getMessage());
 }
 else
 {
-threadMonitoringController.setExternalCallId("_t0iw1LngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0jX4LngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_cZwnVLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZwnVbvVEeyr6avTgCRLkQ");
 log.severe("Email failed to send: " + status.getMessage(), caughtE);
 }
 }
 EmailSentLogDetails details = new  EmailSentLogDetails();
-threadMonitoringController.exitInternalAction("_t0fGcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_t0j-8LngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0kmALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitInternalAction("_cZs88LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_cZx1cLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZycgLvVEeyr6avTgCRLkQ");
 details.setEmailRecipient(message.getRecipient());
-threadMonitoringController.setExternalCallId("_t0lNELngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0l0ILngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_cZzDkLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZzDkbvVEeyr6avTgCRLkQ");
 details.setEmailSubject(message.getSubject());
-threadMonitoringController.setExternalCallId("_t0mbMLngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0nCQLngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_cZ0RsLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZ04wLvVEeyr6avTgCRLkQ");
 details.setEmailContent(message.getContent());
-threadMonitoringController.setExternalCallId("_t0npULngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0oQYLngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_cZ2G4LvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZ2t8LvVEeyr6avTgCRLkQ");
 details.setEmailType(message.getType());
-threadMonitoringController.setExternalCallId("_t0o3cLngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0o3cbngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_cZ3VALvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZ38ELvVEeyr6avTgCRLkQ");
 details.setEmailStatus(status.getStatusCode());
 if (status.getMessage() != null)
 {
-threadMonitoringController.enterBranch("_t0pegLngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0pehLngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0pehbngEeyIw-dB1KCaVA");
+threadMonitoringController.enterBranch("_cZ4jILvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZ5KMLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZ5KMbvVEeyr6avTgCRLkQ");
 details.setEmailStatusMessage(status.getMessage());
 }
-threadMonitoringController.setExternalCallId("_t0qsobngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_t0r6wLngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_cZ5xQbvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_cZ6YULvVEeyr6avTgCRLkQ");
 log.event("Email sent: " + message.getType(), details);
-threadMonitoringController.enterInternalAction("_t0r6wbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-EmailSendingStatus longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682252007017542300596769 = status;
-threadMonitoringController.exitInternalAction("_t0r6wbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682252007017542300596769;
+threadMonitoringController.enterInternalAction("_cZ6YUbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+EmailSendingStatus longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302486900553924418939482 = status;
+threadMonitoringController.exitInternalAction("_cZ6YUbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302486900553924418939482;
 }
 finally {
-threadMonitoringController.exitService("_t0dRQLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cZqgsLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -144,7 +144,7 @@ public  void sendReport(EmailWrapper report) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("report", report);
-threadMonitoringController.enterService("_t0yocLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_cZ_34LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
 try {
 sendEmail(report);
@@ -154,7 +154,7 @@ log.severe("Error in sending report: " + (report == null ? "" : report.getInfoFo
 }
 }
 finally {
-threadMonitoringController.exitService("_t0yocLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_cZ_34LvVEeyr6avTgCRLkQ");
 }
 }
 

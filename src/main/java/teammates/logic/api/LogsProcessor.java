@@ -27,30 +27,30 @@ service = new  GoogleCloudLoggingService();
 public static  LogsProcessor inst() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_uSobALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c3fFILvVEeyr6avTgCRLkQ", LogsProcessor.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uStTgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-LogsProcessor longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682664006119784237698179 = instance;
-threadMonitoringController.exitInternalAction("_uStTgLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682664006119784237698179;
+threadMonitoringController.enterInternalAction("_c3ivgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+LogsProcessor longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302644200437032286147538 = instance;
+threadMonitoringController.exitInternalAction("_c3ivgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302644200437032286147538;
 }
 finally {
-threadMonitoringController.exitService("_uSobALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c3fFILvVEeyr6avTgCRLkQ");
 }
 }
 
 public  List<ErrorLogEntry> getRecentErrorLogs() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_uS0oQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c3ly0LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uS5gwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<ErrorLogEntry> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368266600576869222136129 = service.getRecentErrorLogs();
-threadMonitoringController.exitInternalAction("_uS5gwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368266600576869222136129;
+threadMonitoringController.enterInternalAction("_c3oPELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<ErrorLogEntry> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026457009446322085073803 = service.getRecentErrorLogs();
+threadMonitoringController.exitInternalAction("_c3oPELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026457009446322085073803;
 }
 finally {
-threadMonitoringController.exitService("_uS0oQLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c3ly0LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -58,15 +58,15 @@ public  QueryLogsResults queryLogs(QueryLogsParams queryLogsParams) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("queryLogsParams", queryLogsParams);
-threadMonitoringController.enterService("_uS_nYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c3r5cLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uTCqsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-QueryLogsResults longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682668003028015464436862 = service.queryLogs(queryLogsParams);
-threadMonitoringController.exitInternalAction("_uTCqsLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682668003028015464436862;
+threadMonitoringController.enterInternalAction("_c3vj0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+QueryLogsResults longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302647000023956416409465997 = service.queryLogs(queryLogsParams);
+threadMonitoringController.exitInternalAction("_c3vj0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302647000023956416409465997;
 }
 finally {
-threadMonitoringController.exitService("_uS_nYLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c3r5cLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -77,14 +77,14 @@ monitoringServiceParameters.addValue("courseId", courseId);
 monitoringServiceParameters.addValue("email", email);
 monitoringServiceParameters.addValue("fsName", fsName);
 monitoringServiceParameters.addValue("fslType", fslType);
-threadMonitoringController.enterService("_uTFuALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c3ynILvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uTIKQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_c3574LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 service.createFeedbackSessionLog(courseId, email, fsName, fslType);
-threadMonitoringController.exitInternalAction("_uTIKQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_c3574LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_uTFuALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c3ynILvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -96,15 +96,15 @@ monitoringServiceParameters.addValue("email", email);
 monitoringServiceParameters.addValue("startTime", startTime);
 monitoringServiceParameters.addValue("endTime", endTime);
 monitoringServiceParameters.addValue("fsName", fsName);
-threadMonitoringController.enterService("_uTLNkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c4BQoLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uTOQ4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<FeedbackSessionLogEntry> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368267700811334868624795 = service.getFeedbackSessionLogs(courseId, email, startTime, endTime, fsName);
-threadMonitoringController.exitInternalAction("_uTOQ4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368267700811334868624795;
+threadMonitoringController.enterInternalAction("_c4Ds4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<FeedbackSessionLogEntry> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026502003978688298174098 = service.getFeedbackSessionLogs(courseId, email, startTime, endTime, fsName);
+threadMonitoringController.exitInternalAction("_c4Ds4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026502003978688298174098;
 }
 finally {
-threadMonitoringController.exitService("_uTLNkLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c4BQoLvVEeyr6avTgCRLkQ");
 }
 }
 

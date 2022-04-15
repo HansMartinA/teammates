@@ -31,15 +31,15 @@ private  StudentsDb(){
 public static  StudentsDb inst() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_uml40LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_dMnAkLvVEeyr6avTgCRLkQ", StudentsDb.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_umnuALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentsDb longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368293200031750831441531235 = instance;
-threadMonitoringController.exitInternalAction("_umnuALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368293200031750831441531235;
+threadMonitoringController.enterInternalAction("_dMpc0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentsDb longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013027763003307487690313978 = instance;
+threadMonitoringController.exitInternalAction("_dMpc0LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013027763003307487690313978;
 }
 finally {
-threadMonitoringController.exitService("_uml40LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_dMnAkLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -51,16 +51,16 @@ public  void putDocument(StudentAttributes student)throws SearchServiceException
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("student", student);
-threadMonitoringController.enterService("_uoFtoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_dOIqkLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uoKmJLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_uoKmJbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_dONjFLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_dOOKILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 getSearchManager().putDocument(student);
-threadMonitoringController.exitInternalAction("_uoKmJbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_uoKmJLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_dOOKILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_dONjFLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_uoFtoLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_dOIqkLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -69,25 +69,25 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("queryString", queryString);
 monitoringServiceParameters.addValue("instructors", instructors);
-threadMonitoringController.enterService("_vtXToLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eVFEgLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vtaW8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eVIu4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (queryString.trim().isEmpty())
 {
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683991008294115619528882 = new  ArrayList<>();
-threadMonitoringController.exitInternalAction("_vtaW8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683991008294115619528882;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033479005428044179782254 = new  ArrayList<>();
+threadMonitoringController.exitInternalAction("_eVIu4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033479005428044179782254;
 }
-threadMonitoringController.enterInternalAction("_vteoZLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368399100688750174108164 = getSearchManager().searchStudents(queryString, instructors);
-threadMonitoringController.exitInternalAction("_vteoZLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vteoZbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839910004172165780259662 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368399100688750174108164;
-threadMonitoringController.exitInternalAction("_vteoZbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839910004172165780259662;
+threadMonitoringController.enterInternalAction("_eVMZRLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033479008765691921309401 = getSearchManager().searchStudents(queryString, instructors);
+threadMonitoringController.exitInternalAction("_eVMZRLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eVMZRbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033479006746601490672061 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033479008765691921309401;
+threadMonitoringController.exitInternalAction("_eVMZRbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033479006746601490672061;
 }
 finally {
-threadMonitoringController.exitService("_vtXToLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eVFEgLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -95,25 +95,25 @@ public  List<StudentAttributes> searchStudentsInWholeSystem(String queryString)t
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("queryString", queryString);
-threadMonitoringController.enterService("_vtkvALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eVUVELvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vtpAcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eVXYYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (queryString.trim().isEmpty())
 {
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839980010840614194067599 = new  ArrayList<>();
-threadMonitoringController.exitInternalAction("_vtpAcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839980010840614194067599;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033506006183756682077325 = new  ArrayList<>();
+threadMonitoringController.exitInternalAction("_eVXYYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033506006183756682077325;
 }
-threadMonitoringController.enterInternalAction("_vtsDxLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683998007074322163605011 = getSearchManager().searchStudents(queryString, null);
-threadMonitoringController.exitInternalAction("_vtsDxLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vtsDxbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683998007546393504109192 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683998007074322163605011;
-threadMonitoringController.exitInternalAction("_vtsDxbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683998007546393504109192;
+threadMonitoringController.enterInternalAction("_eVbCxLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033506009131546528098394 = getSearchManager().searchStudents(queryString, null);
+threadMonitoringController.exitInternalAction("_eVbCxLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eVbCxbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130335060032525538111312935 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033506009131546528098394;
+threadMonitoringController.exitInternalAction("_eVbCxbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130335060032525538111312935;
 }
 finally {
-threadMonitoringController.exitService("_vtkvALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eVUVELvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -121,16 +121,16 @@ public  void deleteDocumentByStudentId(String studentUniqueId) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("studentUniqueId", studentUniqueId);
-threadMonitoringController.enterService("_wQ8h0LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_e6NK0LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_wRCodLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_wRCodbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_e6VGpLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_e6VGpbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 getSearchManager().deleteDocuments(Collections.singletonList(studentUniqueId));
-threadMonitoringController.exitInternalAction("_wRCodbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_wRCodLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_e6VGpbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_e6VGpLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_wQ8h0LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_e6NK0LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -138,40 +138,40 @@ public  StudentAttributes regenerateEntityKey(StudentAttributes originalStudent)
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("originalStudent", originalStudent);
-threadMonitoringController.enterService("_vv4cILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eXll8LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vv64YLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXoCMLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 int numTries = 0;
-threadMonitoringController.exitInternalAction("_vv64YLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXoCMLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 java.util.concurrent.atomic.AtomicInteger loopIterationCounter1 = new  java.util.concurrent.atomic.AtomicInteger(0);
 while (numTries < MAX_KEY_REGENERATION_TRIES)
 {
 loopIterationCounter1.getAndIncrement();
-threadMonitoringController.enterInternalAction("_vwI60rngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eX350rvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 CourseStudent updatedEntity = convertToEntityForSaving(originalStudent);
-threadMonitoringController.exitInternalAction("_vwI60rngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eX350rvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (!updatedEntity.getRegistrationKey().equals(originalStudent.getKey()))
 {
-threadMonitoringController.enterBranch("_vwI607ngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vwKwArngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterBranch("_eX3507vVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eX5vArvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 saveEntity(updatedEntity);
-threadMonitoringController.exitInternalAction("_vwKwArngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vwL-JbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713684073007191632613074044 = makeAttributes(updatedEntity);
-threadMonitoringController.exitInternalAction("_vwL-JbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713684073007191632613074044;
+threadMonitoringController.exitInternalAction("_eX5vArvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eX69JbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033859004426521722921972 = makeAttributes(updatedEntity);
+threadMonitoringController.exitInternalAction("_eX69JbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033859004426521722921972;
 }
 numTries++;
 }
-threadMonitoringController.exitLoop("_vwHFoLngEeyIw-dB1KCaVA", loopIterationCounter1.get());
-threadMonitoringController.setExternalCallId("_vwMlMrngEeyIw-dB1KCaVA");
+threadMonitoringController.exitLoop("_eX2EoLvVEeyr6avTgCRLkQ", loopIterationCounter1.get());
+threadMonitoringController.setExternalCallId("_eX7kMbvVEeyr6avTgCRLkQ");
 log.severe("Failed to generate new registration key for student after " + MAX_KEY_REGENERATION_TRIES + " tries");
-threadMonitoringController.enterInternalAction("_vwNMQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eX8LQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eX8LQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 throw new  EntityAlreadyExistsException("Could not regenerate a new course registration key for the student.");
-threadMonitoringController.exitInternalAction("_vwNMQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_vv4cILngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eXll8LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -180,22 +180,22 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("courseId", courseId);
 monitoringServiceParameters.addValue("email", email);
-threadMonitoringController.enterService("_un45ULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_dN29wLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_un6ugLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_dN7PMLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert courseId != null;
 assert email != null;
-threadMonitoringController.exitInternalAction("_un6ugLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_uoA1JLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682949009303027541593089 = makeAttributesOrNull(getCourseStudentEntityForEmail(courseId, email));
-threadMonitoringController.exitInternalAction("_uoA1JLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_uoBcNLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136829490021818478867321722 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682949009303027541593089;
-threadMonitoringController.exitInternalAction("_uoBcNLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136829490021818478867321722;
+threadMonitoringController.exitInternalAction("_dN7PMLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_dOCj9LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130278720012986094916830881 = makeAttributesOrNull(getCourseStudentEntityForEmail(courseId, email));
+threadMonitoringController.exitInternalAction("_dOCj9LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_dODyFLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013027872007937863393629829 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130278720012986094916830881;
+threadMonitoringController.exitInternalAction("_dODyFLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013027872007937863393629829;
 }
 finally {
-threadMonitoringController.exitService("_un45ULngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_dN29wLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -203,21 +203,21 @@ public  List<StudentAttributes> getAllStudentsForEmail(String email) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("email", email);
-threadMonitoringController.enterService("_vrHQ4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eSnmYLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vrKUMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eSqCoLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert email != null;
-threadMonitoringController.exitInternalAction("_vrKUMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vrOlpLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eSqCoLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eSu7JLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 List<CourseStudent> students = getAllCourseStudentEntitiesForEmail(email);
-threadMonitoringController.exitInternalAction("_vrOlpLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vrS3ELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683946008742710522541265 = students.stream().map(this::makeAttributes).collect(Collectors.toList());
-threadMonitoringController.exitInternalAction("_vrS3ELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683946008742710522541265;
+threadMonitoringController.exitInternalAction("_eSu7JLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eSzMkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033283005366794973162389 = students.stream().map(this::makeAttributes).collect(Collectors.toList());
+threadMonitoringController.exitInternalAction("_eSzMkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033283005366794973162389;
 }
 finally {
-threadMonitoringController.exitService("_vrHQ4LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eSnmYLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -226,20 +226,20 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("courseId", courseId);
 monitoringServiceParameters.addValue("googleId", googleId);
-threadMonitoringController.enterService("_vray4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eS-LsLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vrd2MLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTAn8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert googleId != null;
 assert courseId != null;
 CourseStudent student = load().filter("courseId =", courseId).filter("googleId =", googleId).first().now();
-threadMonitoringController.exitInternalAction("_vrd2MLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vrlK9LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683950004732654685679961 = makeAttributesOrNull(student);
-threadMonitoringController.exitInternalAction("_vrlK9LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683950004732654685679961;
+threadMonitoringController.exitInternalAction("_eTAn8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTJK1LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001303330500129856172332646 = makeAttributesOrNull(student);
+threadMonitoringController.exitInternalAction("_eTJK1LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001303330500129856172332646;
 }
 finally {
-threadMonitoringController.exitService("_vray4LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eS-LsLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -247,24 +247,24 @@ public  StudentAttributes getStudentForRegistrationKey(String registrationKey) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("registrationKey", registrationKey);
-threadMonitoringController.enterService("_vrrRkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eTRGoLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vrtt0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTTi4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert registrationKey != null;
-threadMonitoringController.exitInternalAction("_vrtt0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vr57HLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683957007945064111204037 = makeAttributesOrNull(getCourseStudentEntityForRegistrationKey(registrationKey.trim()));
-threadMonitoringController.exitInternalAction("_vr57HLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vr57HbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839570037355736406358686 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683957007945064111204037;
-threadMonitoringController.exitInternalAction("_vr57HbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vr7JNLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368395700935072594648648 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839570037355736406358686;
-threadMonitoringController.exitInternalAction("_vr7JNLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368395700935072594648648;
+threadMonitoringController.exitInternalAction("_eTTi4LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTfwI7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333330027769715558906216 = makeAttributesOrNull(getCourseStudentEntityForRegistrationKey(registrationKey.trim()));
+threadMonitoringController.exitInternalAction("_eTfwI7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTfwJLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333330012529502608903065 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333330027769715558906216;
+threadMonitoringController.exitInternalAction("_eTfwJLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTgXNLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333330044634340500522973 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333330012529502608903065;
+threadMonitoringController.exitInternalAction("_eTgXNLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333330044634340500522973;
 }
 finally {
-threadMonitoringController.exitService("_vrrRkLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eTRGoLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -272,21 +272,21 @@ public  List<StudentAttributes> getStudentsForGoogleId(String googleId) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("googleId", googleId);
-threadMonitoringController.enterService("_vsAowLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eTnE4LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vsDFALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTphILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert googleId != null;
-threadMonitoringController.exitInternalAction("_vsDFALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vsH9hLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683964005339029965283505 = makeAttributes(getCourseStudentEntitiesForGoogleId(googleId));
-threadMonitoringController.exitInternalAction("_vsH9hLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vsJLobngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683964009459023517908776 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683964005339029965283505;
-threadMonitoringController.exitInternalAction("_vsJLobngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683964009459023517908776;
+threadMonitoringController.exitInternalAction("_eTphILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTvnxLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033361004870993782904045 = makeAttributes(getCourseStudentEntitiesForGoogleId(googleId));
+threadMonitoringController.exitInternalAction("_eTvnxLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eTw15LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033361007890453474174173 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033361004870993782904045;
+threadMonitoringController.exitInternalAction("_eTw15LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033361007890453474174173;
 }
 finally {
-threadMonitoringController.exitService("_vsAowLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eTnE4LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -294,21 +294,21 @@ public  List<StudentAttributes> getStudentsForCourse(String courseId) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("courseId", courseId);
-threadMonitoringController.enterService("_vsOrMLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eT4KoLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vsRHcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eT7N8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert courseId != null;
-threadMonitoringController.exitInternalAction("_vsRHcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vsWnBLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839690009772505169390178 = makeAttributes(getCourseStudentEntitiesForCourse(courseId));
-threadMonitoringController.exitInternalAction("_vsWnBLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vsYcNLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683969008360236151678189 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136839690009772505169390178;
-threadMonitoringController.exitInternalAction("_vsYcNLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683969008360236151678189;
+threadMonitoringController.exitInternalAction("_eT7N8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUBUlLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333870024278050036893273 = makeAttributes(getCourseStudentEntitiesForCourse(courseId));
+threadMonitoringController.exitInternalAction("_eUBUlLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUB7pLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001303338700862527522162286 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130333870024278050036893273;
+threadMonitoringController.exitInternalAction("_eUB7pLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001303338700862527522162286;
 }
 finally {
-threadMonitoringController.exitService("_vsOrMLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eT4KoLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -317,22 +317,22 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("sectionName", sectionName);
 monitoringServiceParameters.addValue("courseId", courseId);
-threadMonitoringController.enterService("_vsfJ4LngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eUJ3cLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vsiNMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUMTsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert sectionName != null;
 assert courseId != null;
-threadMonitoringController.exitInternalAction("_vsiNMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vso65LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683975008079527807232588 = makeAttributes(getCourseStudentEntitiesForSection(sectionName, courseId));
-threadMonitoringController.exitInternalAction("_vso65LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vsph9LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683975008621512104310448 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683975008079527807232588;
-threadMonitoringController.exitInternalAction("_vsph9LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683975008621512104310448;
+threadMonitoringController.exitInternalAction("_eUMTsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUU2lLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033412005837203267503688 = makeAttributes(getCourseStudentEntitiesForSection(sectionName, courseId));
+threadMonitoringController.exitInternalAction("_eUU2lLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUWEtLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033412005886389320959521 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033412005837203267503688;
+threadMonitoringController.exitInternalAction("_eUWEtLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033412005886389320959521;
 }
 finally {
-threadMonitoringController.exitService("_vsfJ4LngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eUJ3cLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -341,22 +341,22 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("teamName", teamName);
 monitoringServiceParameters.addValue("courseId", courseId);
-threadMonitoringController.enterService("_vsw2sLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eUhD0LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vszS8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUjgELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert teamName != null;
 assert courseId != null;
-threadMonitoringController.exitInternalAction("_vszS8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vs8c5LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368398100531438823813441 = makeAttributes(getCourseStudentEntitiesForTeam(teamName, courseId));
-threadMonitoringController.exitInternalAction("_vs8c5LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vs9rBLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368398100011939577577346538 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368398100531438823813441;
-threadMonitoringController.exitInternalAction("_vs9rBLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368398100011939577577346538;
+threadMonitoringController.exitInternalAction("_eUjgELvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUrb5LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130334360042226250827945244 = makeAttributes(getCourseStudentEntitiesForTeam(teamName, courseId));
+threadMonitoringController.exitInternalAction("_eUrb5LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eUsC9LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033436009546979442719838 = longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130334360042226250827945244;
+threadMonitoringController.exitInternalAction("_eUsC9LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033436009546979442719838;
 }
 finally {
-threadMonitoringController.exitService("_vsw2sLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eUhD0LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -364,9 +364,9 @@ public  List<StudentAttributes> getUnregisteredStudentsForCourse(String courseId
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("courseId", courseId);
-threadMonitoringController.enterService("_vtE_wLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eUzXsLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vtHcALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eU1z8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert courseId != null;
 List<StudentAttributes> allStudents = getStudentsForCourse(courseId);
 List<StudentAttributes> unregistered = new  ArrayList<>();
@@ -377,12 +377,12 @@ if (s.getGoogleId() == null || s.getGoogleId().trim().isEmpty())
 unregistered.add(s);
 }
 }
-List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683983008990416293256495 = unregistered;
-threadMonitoringController.exitInternalAction("_vtHcALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713683983008990416293256495;
+List<StudentAttributes> longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033448003482350196117088 = unregistered;
+threadMonitoringController.exitInternalAction("_eU1z8LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033448003482350196117088;
 }
 finally {
-threadMonitoringController.exitService("_vtE_wLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eUzXsLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -390,123 +390,123 @@ public  StudentAttributes updateStudent(StudentAttributes.UpdateOptions updateOp
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("updateOptions", updateOptions);
-threadMonitoringController.enterService("_vuEeQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eVyPILvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vuHhkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eV0rYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert updateOptions != null;
-threadMonitoringController.enterInternalAction("_vuOPRLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eV8nNLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 CourseStudent student = getCourseStudentEntityForEmail(updateOptions.getCourseId(), updateOptions.getEmail());
-threadMonitoringController.exitInternalAction("_vuOPRLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vuHhkLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vuOPRbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eV8nNLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eV0rYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eV8nNbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (student == null)
 {
 throw new  EntityDoesNotExistException(ERROR_UPDATE_NON_EXISTENT + updateOptions);
 }
-threadMonitoringController.exitInternalAction("_vuOPRbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vuRSkbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eV8nNbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eV_DdbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 StudentAttributes newAttributes = makeAttributes(student);
-threadMonitoringController.exitInternalAction("_vuRSkbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vuR5oLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitInternalAction("_eV_DdbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eV_qgLvVEeyr6avTgCRLkQ");
 newAttributes.update(updateOptions);
-threadMonitoringController.setExternalCallId("_vuTHwLngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_eWARkLvVEeyr6avTgCRLkQ");
 newAttributes.sanitizeForSaving();
 if (!newAttributes.isValid())
 {
-threadMonitoringController.enterBranch("_vuTu0LngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_vuUV4LngEeyIw-dB1KCaVA");
+threadMonitoringController.enterBranch("_eWBfsLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_eWBftLvVEeyr6avTgCRLkQ");
 throw new  InvalidParametersException(newAttributes.getInvalidityInfo());
 }
-threadMonitoringController.enterInternalAction("_vuWyILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vuWyIbngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vuXZMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eWD78LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eWD78bvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eWEjALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 boolean isEmailChanged = !student.getEmail().equals(newAttributes.getEmail());
-threadMonitoringController.exitInternalAction("_vuXZMLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vuWyILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eWEjALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eWD78LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (isEmailChanged)
 {
-threadMonitoringController.enterBranch("_vvHnILngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvOU17ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterBranch("_eW9T0LvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXDad7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 newAttributes = createEntity(newAttributes);
-threadMonitoringController.exitInternalAction("_vvOU17ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvOU2LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvQKBLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXDad7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXEBgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXEolLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 deleteStudent(student.getCourseId(), student.getEmail());
-threadMonitoringController.exitInternalAction("_vvQKBLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvOU2LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXEolLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXEBgLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 return newAttributes;
 }
 else
 {
-threadMonitoringController.enterInternalAction("_vvQKCbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvQKCrngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvRYJLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvRYJbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvRYJrngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvSmQ7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvSmRLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvSmRbngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvUbc7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvUbdLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvUbdbngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvWQo7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvWQpLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvWQpbngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvYF07ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXEombvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXEomrvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXGdxLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXGdxbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXGdxrvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXHr47vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXHr5LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXHr5bvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXI6A7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXI6BLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXI6BbvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXKII7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXKIJLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXKIJbvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXL9U7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 boolean hasSameAttributes = this.<String>hasSameValue(student.getName(), newAttributes.getName()) && this.<String>hasSameValue(student.getComments(), newAttributes.getComments()) && this.<String>hasSameValue(student.getGoogleId(), newAttributes.getGoogleId()) && this.<String>hasSameValue(student.getTeamName(), newAttributes.getTeam()) && this.<String>hasSameValue(student.getSectionName(), newAttributes.getSection());
-threadMonitoringController.exitInternalAction("_vvYF07ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvWQpLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvWQo7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvUbdLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvUbc7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvSmRLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvSmQ7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvRYJbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvRYJLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.exitInternalAction("_vvQKCbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXL9U7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXKIJLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXKII7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXI6BLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXI6A7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXHr5LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXHr47vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXGdxbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXGdxLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXEombvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (hasSameAttributes)
 {
-threadMonitoringController.enterBranch("_vvYF1LngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvYF2LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvYF2bngEeyIw-dB1KCaVA");
+threadMonitoringController.enterBranch("_eXL9VLvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXMkYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXMkYbvVEeyr6avTgCRLkQ");
 log.info(String.format(OPTIMIZED_SAVING_POLICY_APPLIED, CourseStudent.class.getSimpleName(), updateOptions));
-threadMonitoringController.exitInternalAction("_vvYF2LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvYs4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713684055000662937546296446 = newAttributes;
-threadMonitoringController.exitInternalAction("_vvYs4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713684055000662937546296446;
+threadMonitoringController.exitInternalAction("_eXMkYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXMkYrvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033805005786638161532528 = newAttributes;
+threadMonitoringController.exitInternalAction("_eXMkYrvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033805005786638161532528;
 }
-threadMonitoringController.setExternalCallId("_vvYs4rngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvZT8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXNLcLvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXNLcbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 student.setName(newAttributes.getName());
-threadMonitoringController.exitInternalAction("_vvZT8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvZT8bngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvZ7ALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXNLcbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXNLcrvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXNygLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 student.setComments(newAttributes.getComments());
-threadMonitoringController.exitInternalAction("_vvZ7ALngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvZ7AbngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvaiELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXNygLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXNygbvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXOZkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 student.setGoogleId(newAttributes.getGoogleId());
-threadMonitoringController.exitInternalAction("_vvaiELngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvaiEbngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvaiErngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXOZkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXOZkbvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXPAoLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 student.setTeamName(newAttributes.getTeam());
-threadMonitoringController.exitInternalAction("_vvaiErngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_vvaiE7ngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_vvbJILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXPAoLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_eXPAobvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_eXPAorvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 student.setSectionName(newAttributes.getSection());
-threadMonitoringController.exitInternalAction("_vvbJILngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vvc-UrngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eXPAorvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXQ107vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 saveEntity(student);
-threadMonitoringController.exitInternalAction("_vvc-UrngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vveMc7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713684055004240493227628974 = makeAttributes(student);
-threadMonitoringController.exitInternalAction("_vveMc7ngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713684055004240493227628974;
+threadMonitoringController.exitInternalAction("_eXQ107vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eXSrA7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+StudentAttributes longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033806007376755614133265 = makeAttributes(student);
+threadMonitoringController.exitInternalAction("_eXSrA7vVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013033806007376755614133265;
 }
 }
 finally {
-threadMonitoringController.exitService("_vuEeQLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eVyPILvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -515,25 +515,25 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("courseId", courseId);
 monitoringServiceParameters.addValue("email", email);
-threadMonitoringController.enterService("_vxFWALngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_eY5NgLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_vxHyQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eY834LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 assert courseId != null;
 assert email != null;
-threadMonitoringController.exitInternalAction("_vxHyQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vxNR1LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eY834LvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eZBJVLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 CourseStudent courseStudentToDelete = getCourseStudentEntityForEmail(courseId, email);
-threadMonitoringController.exitInternalAction("_vxNR1LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_vxV0sLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eZBJVLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_eZJFILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (courseStudentToDelete != null)
 {
 deleteDocumentByStudentId(courseStudentToDelete.getUniqueId());
 deleteEntity(Key.create(CourseStudent.class, courseStudentToDelete.getUniqueId()));
 }
-threadMonitoringController.exitInternalAction("_vxV0sLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_eZJFILvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_vxFWALngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_eY5NgLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -541,21 +541,21 @@ public  void deleteStudents(AttributesDeletionQuery query) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("query", query);
-threadMonitoringController.enterService("_urg1ELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_dRPo8LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
 if (query.isCourseIdPresent())
 {
-threadMonitoringController.enterBranch("_usxZULngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_usxZVLngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_usz1kLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterBranch("_dRe5gLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_dRfgkLvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_dRfgkbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 List<CourseStudent> studentsToDelete = getCourseStudentsForCourseQuery(query.getCourseId()).list();
-threadMonitoringController.exitInternalAction("_usz1kLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_dRfgkbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 getSearchManager().deleteDocuments(studentsToDelete.stream().map(CourseStudent::getUniqueId).collect(Collectors.toList()));
 deleteEntity(studentsToDelete.stream().map(s -> Key.create(CourseStudent.class, s.getUniqueId())).collect(Collectors.toList()));
 }
 }
 finally {
-threadMonitoringController.exitService("_urg1ELngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_dRPo8LvVEeyr6avTgCRLkQ");
 }
 }
 

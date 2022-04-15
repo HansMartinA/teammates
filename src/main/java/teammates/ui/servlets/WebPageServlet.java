@@ -16,12 +16,12 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
 monitoringServiceParameters.addValue("resp", resp);
-threadMonitoringController.enterService("_xzmnYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_gjSBcLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
 try {
-threadMonitoringController.enterInternalAction("_xzvKQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gjakULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 req.getRequestDispatcher("/index.html").forward(req, resp);
-threadMonitoringController.exitInternalAction("_xzvKQLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_gjakULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 catch(RuntimeException e){
 if ("BadMessageException".equals(e.getClass().getSimpleName()))
@@ -37,7 +37,7 @@ throw e;
 }
 }
 finally {
-threadMonitoringController.exitService("_xzmnYLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_gjSBcLvVEeyr6avTgCRLkQ");
 }
 }
 

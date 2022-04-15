@@ -20,9 +20,9 @@ public static  String executeGetRequest(URI uri)throws IOException {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("uri", uri);
-threadMonitoringController.enterService("_tI06ULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_bqa1ELvVEeyr6avTgCRLkQ", HttpRequest.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_tI2IcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_bqcqQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 HttpUriRequest request = new  HttpGet(uri);
 RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(TIMEOUT_IN_MS).build();
 HttpResponse httpResponse = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build().execute(request);
@@ -30,9 +30,9 @@ HttpEntity entity = httpResponse.getEntity();
 String response = EntityUtils.toString(entity, Const.ENCODING);
 if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK)
 {
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681833005032894389997445 = response;
-threadMonitoringController.exitInternalAction("_tI2IcLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681833005032894389997445;
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022905004379463222595015 = response;
+threadMonitoringController.exitInternalAction("_bqcqQLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022905004379463222595015;
 }
 else
 {
@@ -40,7 +40,7 @@ throw new  HttpResponseException(httpResponse.getStatusLine().getStatusCode(), r
 }
 }
 finally {
-threadMonitoringController.exitService("_tI06ULngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_bqa1ELvVEeyr6avTgCRLkQ");
 }
 }
 

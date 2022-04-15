@@ -21,9 +21,9 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
 monitoringServiceParameters.addValue("resp", resp);
-threadMonitoringController.enterService("_xnYwULngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_gXUCALvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_xndo0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gXY6gLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 String nextUrl = req.getParameter("nextUrl");
 if (nextUrl == null)
 {
@@ -38,12 +38,12 @@ log.request(req, HttpStatus.SC_MOVED_PERMANENTLY, "Redirect to dev server login 
 return;
 }
 String cookie = HttpRequestHelper.getCookieValueFromRequest(req, Const.SecurityConfig.AUTH_COOKIE_NAME);
-threadMonitoringController.exitInternalAction("_xndo0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_xnk9kLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitInternalAction("_gXY6gLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_gXfoMLvVEeyr6avTgCRLkQ");
 UserInfoCookie uic = UserInfoCookie.fromCookie(cookie);
-threadMonitoringController.setExternalCallId("_xnmLsLngEeyIw-dB1KCaVA");
+threadMonitoringController.setExternalCallId("_gXg2ULvVEeyr6avTgCRLkQ");
 boolean isLoginNeeded = uic == null || !uic.isValid();
-threadMonitoringController.enterInternalAction("_xnoA4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_gXjSkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (!isLoginNeeded)
 {
 log.request(req, HttpStatus.SC_MOVED_TEMPORARILY, "Redirect to next URL");
@@ -53,17 +53,17 @@ return;
 AuthState state = new  AuthState(nextUrl, req.getSession().getId());
 AuthorizationCodeRequestUrl authorizationUrl = getAuthorizationFlow().newAuthorizationUrl();
 authorizationUrl.setRedirectUri(getRedirectUri(req));
-threadMonitoringController.exitInternalAction("_xnoA4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_xnv8sLngEeyIw-dB1KCaVA");
-threadMonitoringController.setExternalCallId("_xnwjwLngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_xnwjwbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_gXjSkLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_gXtDkLvVEeyr6avTgCRLkQ");
+threadMonitoringController.setExternalCallId("_gXtDkbvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_gXuRsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 authorizationUrl.setState(StringHelper.encrypt(JsonUtils.toCompactJson(state)));
 log.request(req, HttpStatus.SC_MOVED_TEMPORARILY, "Redirect to Google sign-in page");
 resp.sendRedirect(authorizationUrl.build());
-threadMonitoringController.exitInternalAction("_xnwjwbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_gXuRsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_xnYwULngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_gXUCALvVEeyr6avTgCRLkQ");
 }
 }
 

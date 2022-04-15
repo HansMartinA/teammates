@@ -22,15 +22,15 @@ service = new  GoogleRecaptchaService(Config.CAPTCHA_SECRET_KEY);
 public static  RecaptchaVerifier inst() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_uUn_ELngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c5URILvVEeyr6avTgCRLkQ", RecaptchaVerifier.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uUqbULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-RecaptchaVerifier longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682680008279861335622805 = instance;
-threadMonitoringController.exitInternalAction("_uUqbULngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682680008279861335622805;
+threadMonitoringController.enterInternalAction("_c5WtYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+RecaptchaVerifier longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026521007278498345429694 = instance;
+threadMonitoringController.exitInternalAction("_c5WtYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026521007278498345429694;
 }
 finally {
-threadMonitoringController.exitService("_uUn_ELngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c5URILvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -38,15 +38,15 @@ public  boolean isVerificationSuccessful(String captchaResponse) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("captchaResponse", captchaResponse);
-threadMonitoringController.enterService("_uUuFsLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c5cM8LvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uUwh8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368268300807860668422319 = service.isVerificationSuccessful(captchaResponse);
-threadMonitoringController.exitInternalAction("_uUwh8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368268300807860668422319;
+threadMonitoringController.enterInternalAction("_c5f3ULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+boolean longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026536002535368760591906 = service.isVerificationSuccessful(captchaResponse);
+threadMonitoringController.exitInternalAction("_c5f3ULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026536002535368760591906;
 }
 finally {
-threadMonitoringController.exitService("_uUuFsLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c5cM8LvVEeyr6avTgCRLkQ");
 }
 }
 

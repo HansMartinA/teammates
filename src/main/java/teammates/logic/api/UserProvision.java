@@ -17,15 +17,15 @@ private final StudentsLogic studentsLogic = StudentsLogic.inst();
 public static  UserProvision inst() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_uZvvoLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c-zOELvVEeyr6avTgCRLkQ", UserProvision.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uZxk0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-UserProvision longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682748008297151523268084 = instance;
-threadMonitoringController.exitInternalAction("_uZxk0LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682748008297151523268084;
+threadMonitoringController.enterInternalAction("_c-1qULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+UserProvision longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130268350016662911360634858 = instance;
+threadMonitoringController.exitInternalAction("_c-1qULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130268350016662911360634858;
 }
 finally {
-threadMonitoringController.exitService("_uZvvoLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c-zOELvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -33,12 +33,12 @@ public  UserInfo getCurrentUser(UserInfoCookie uic) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("uic", uic);
-threadMonitoringController.enterService("_uZ0oILngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c-57wLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uZ45lbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_c-_bUbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 UserInfo user = getCurrentLoggedInUser(uic);
-threadMonitoringController.exitInternalAction("_uZ45lbngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.enterInternalAction("_uZ5goLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_c-_bUbvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_c-_bUrvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 if (user == null)
 {
 return null;
@@ -47,16 +47,16 @@ String userId = user.id;
 user.isAdmin = Config.APP_ADMINS.contains(userId);
 user.isInstructor = accountsLogic.isAccountAnInstructor(userId);
 user.isStudent = studentsLogic.isStudentInAnyCourse(userId);
-threadMonitoringController.exitInternalAction("_uZ5goLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-threadMonitoringController.setExternalCallId("_uZ784LngEeyIw-dB1KCaVA");
-threadMonitoringController.enterInternalAction("_uZ8j8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_c-_bUrvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.setExternalCallId("_c_CeoLvVEeyr6avTgCRLkQ");
+threadMonitoringController.enterInternalAction("_c_DFsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 user.isMaintainer = Config.APP_MAINTAINERS.contains(user.getId());
-UserInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136827560017363469358908634 = user;
-threadMonitoringController.exitInternalAction("_uZ8j8LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136827560017363469358908634;
+UserInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026872005927440221807055 = user;
+threadMonitoringController.exitInternalAction("_c_DFsLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026872005927440221807055;
 }
 finally {
-threadMonitoringController.exitService("_uZ0oILngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c-57wLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -72,20 +72,20 @@ public  UserInfo getMasqueradeUser(String googleId) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("googleId", googleId);
-threadMonitoringController.enterService("_uaCqkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c_JMULvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uaEfwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_c_LokLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 UserInfo userInfo = new  UserInfo(googleId);
 userInfo.isAdmin = false;
 userInfo.isInstructor = accountsLogic.isAccountAnInstructor(googleId);
 userInfo.isStudent = studentsLogic.isStudentInAnyCourse(googleId);
 userInfo.isMaintainer = Config.APP_MAINTAINERS.contains(googleId);
-UserInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682760004114885415060625 = userInfo;
-threadMonitoringController.exitInternalAction("_uaEfwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713682760004114885415060625;
+UserInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026896008393175171568708 = userInfo;
+threadMonitoringController.exitInternalAction("_c_LokLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013026896008393175171568708;
 }
 finally {
-threadMonitoringController.exitService("_uaCqkLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c_JMULvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -93,17 +93,17 @@ public  UserInfo getAdminOnlyUser(String userId) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("userId", userId);
-threadMonitoringController.enterService("_uaJYQLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_c_RIILvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_uaL0gLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_c_TkYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 UserInfo userInfo = new  UserInfo(userId);
 userInfo.isAdmin = true;
-UserInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368276200747127852674988 = userInfo;
-threadMonitoringController.exitInternalAction("_uaL0gLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors164971368276200747127852674988;
+UserInfo longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130269160024450493077994717 = userInfo;
+threadMonitoringController.exitInternalAction("_c_TkYLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16500130269160024450493077994717;
 }
 finally {
-threadMonitoringController.exitService("_uaJYQLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_c_RIILvVEeyr6avTgCRLkQ");
 }
 }
 

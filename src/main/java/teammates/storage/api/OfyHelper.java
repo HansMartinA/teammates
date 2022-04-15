@@ -30,9 +30,9 @@ ObjectifyService.init(new  ObjectifyFactory(builder.build().getService()));
 public static  void registerEntityClasses() {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
-threadMonitoringController.enterService("_wNiBcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_e2-QoLvVEeyr6avTgCRLkQ", OfyHelper.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_wNmS4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_e3B7ALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 ObjectifyService.register(Account.class);
 ObjectifyService.register(Course.class);
 ObjectifyService.register(CourseStudent.class);
@@ -44,10 +44,10 @@ ObjectifyService.register(Instructor.class);
 ObjectifyService.register(StudentProfile.class);
 ObjectifyService.register(AccountRequest.class);
 ObjectifyService.factory().getTranslators().add(new  BaseEntity.InstantTranslatorFactory());
-threadMonitoringController.exitInternalAction("_wNmS4LngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_e3B7ALvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 }
 finally {
-threadMonitoringController.exitService("_wNiBcLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_e2-QoLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -56,15 +56,15 @@ public  void contextInitialized(ServletContextEvent event) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("event", event);
-threadMonitoringController.enterService("_wN1jcLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_e3P9cLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_wN_7hLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_e3ZudLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 initializeDatastore();
-threadMonitoringController.exitInternalAction("_wN_7hLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.exitInternalAction("_e3ZudLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 registerEntityClasses();
 }
 finally {
-threadMonitoringController.exitService("_wN1jcLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_e3P9cLvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -73,11 +73,11 @@ public  void contextDestroyed(ServletContextEvent event) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("event", event);
-threadMonitoringController.enterService("_wOUEkLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_e3rbQLvVEeyr6avTgCRLkQ", this, monitoringServiceParameters);
 try {
 }
 finally {
-threadMonitoringController.exitService("_wOUEkLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_e3rbQLvVEeyr6avTgCRLkQ");
 }
 }
 

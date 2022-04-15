@@ -51,20 +51,20 @@ cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadM
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
 monitoringServiceParameters.addValue("cookieName", cookieName);
-threadMonitoringController.enterService("_tJm9cLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_brKb8LvVEeyr6avTgCRLkQ", HttpRequestHelper.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_tJoyoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_brM4MLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 Cookie[]  existingCookies = req.getCookies();
 if (existingCookies == null)
 {
 return null;
 }
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136818360048635547001208423 = Arrays.stream(existingCookies).filter(cookie -> cookie.getName().equals(cookieName)).map(Cookie::getValue).findFirst().orElse(null);
-threadMonitoringController.exitInternalAction("_tJoyoLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136818360048635547001208423;
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022921005042734447506223 = Arrays.stream(existingCookies).filter(cookie -> cookie.getName().equals(cookieName)).map(Cookie::getValue).findFirst().orElse(null);
+threadMonitoringController.exitInternalAction("_brM4MLvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022921005042734447506223;
 }
 finally {
-threadMonitoringController.exitService("_tJm9cLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_brKb8LvVEeyr6avTgCRLkQ");
 }
 }
 
@@ -72,22 +72,22 @@ public static  String getRequestBody(HttpServletRequest req) {
 cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController threadMonitoringController = cipm.consistency.bridge.monitoring.controller.ThreadMonitoringController.getInstance();
 cipm.consistency.bridge.monitoring.controller.ServiceParameters monitoringServiceParameters = new  cipm.consistency.bridge.monitoring.controller.ServiceParameters();
 monitoringServiceParameters.addValue("req", req);
-threadMonitoringController.enterService("_tJwHYLngEeyIw-dB1KCaVA", this, monitoringServiceParameters);
+threadMonitoringController.enterService("_brUM8LvVEeyr6avTgCRLkQ", HttpRequestHelper.class, monitoringServiceParameters);
 try {
-threadMonitoringController.enterInternalAction("_tJzxwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
+threadMonitoringController.enterInternalAction("_brX3ULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
 try(BufferedReader br = req.getReader()) {
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681839001897002738385133 = br.lines().collect(Collectors.joining(System.lineSeparator()));
-threadMonitoringController.exitInternalAction("_tJzxwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1649713681839001897002738385133;
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022932009313069091991669 = br.lines().collect(Collectors.joining(System.lineSeparator()));
+threadMonitoringController.exitInternalAction("_brX3ULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors1650013022932009313069091991669;
 }
 catch(IOException e){
-String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136818390016538937847464308 = "";
-threadMonitoringController.exitInternalAction("_tJzxwLngEeyIw-dB1KCaVA", "_oro4gG3fEdy4YaaT-RYrLQ");
-return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors16497136818390016538937847464308;
+String longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302293200801692632179588 = "";
+threadMonitoringController.exitInternalAction("_brX3ULvVEeyr6avTgCRLkQ", "_oro4gG3fEdy4YaaT-RYrLQ");
+return longAndUniqueNameToAvoidDuplicationsAndCompilationErrors165001302293200801692632179588;
 }
 }
 finally {
-threadMonitoringController.exitService("_tJwHYLngEeyIw-dB1KCaVA");
+threadMonitoringController.exitService("_brUM8LvVEeyr6avTgCRLkQ");
 }
 }
 
